@@ -1,38 +1,85 @@
-name: Notify Telegram on PR Events
+name: Notify Telegram on PR, Issue, and Comment Events
 
 on:
   pull_request:
     types: [opened, closed]
+  issues:
+    types: [opened, closed]
+  issue_comment:
+    types: [created]
 
 jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
       - name: Send Telegram Message
-        if: github.event.pull_request.state == 'open' || github.event.pull_request.merged == true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TELEGRAM_THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
+          EVENT_NAME: ${{ github.event_name }}
+          ACTION: ${{ github.event.action }}
+          IS_MERGED: ${{ github.event.pull_request.merged }}
           PR_TITLE: ${{ github.event.pull_request.title }}
           PR_URL: ${{ github.event.pull_request.html_url }}
           PR_AUTHOR: ${{ github.event.pull_request.user.login }}
-          IS_MERGED: ${{ github.event.pull_request.merged }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          COMMENT_AUTHOR: ${{ github.event.comment.user.login }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+          COMMENT_URL: ${{ github.event.comment.html_url }}
         run: |
-          if [ "$IS_MERGED" = "true" ]; then
-            TEXT="✅ *PR Merged!* by $PR_AUTHOR: *$PR_TITLE*%0ALink: $PR_URL"
+          echo "🔍 GitHub Event: $EVENT_NAME"
+          echo "🔍 Action: $ACTION"
+
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            echo "🛠️ Handling a pull request event"
+            echo "PR Title: $PR_TITLE"
+            echo "PR Author: $PR_AUTHOR"
+            echo "PR URL: $PR_URL"
+            echo "Is Merged: $IS_MERGED"
+
+            if [ "$IS_MERGED" = "true" ]; then
+              TEXT="✅ *PR Merged!* by $PR_AUTHOR: *$PR_TITLE*%0ALink: $PR_URL"
+            else
+              TEXT="🆕 *New PR* by $PR_AUTHOR: *$PR_TITLE*%0ALink: $PR_URL"
+            fi
+
+          elif [ "$EVENT_NAME" = "issues" ]; then
+            echo "📌 Handling an issue event"
+            echo "Issue Title: $ISSUE_TITLE"
+            echo "Issue Author: $ISSUE_AUTHOR"
+            echo "Issue URL: $ISSUE_URL"
+
+            if [ "$ACTION" = "opened" ]; then
+              TEXT="📝 *New Issue* by $ISSUE_AUTHOR: *$ISSUE_TITLE*%0ALink: $ISSUE_URL"
+            elif [ "$ACTION" = "closed" ]; then
+              TEXT="✅ *Issue Closed* by $ISSUE_AUTHOR: *$ISSUE_TITLE*%0ALink: $ISSUE_URL"
+            else
+              echo "⚠️ Unsupported issue action: $ACTION"
+              exit 0
+            fi
+
+          elif [ "$EVENT_NAME" = "issue_comment" ]; then
+            echo "💬 Handling an issue comment"
+            echo "Comment Author: $COMMENT_AUTHOR"
+            echo "Comment URL: $COMMENT_URL"
+            echo "Comment Body: $COMMENT_BODY"
+
+            SHORT_BODY=$(echo "$COMMENT_BODY" | head -c 200)
+            TEXT="💬 *New Comment* by $COMMENT_AUTHOR on an issue:%0A${SHORT_BODY}%0ALink: $COMMENT_URL"
+
           else
-            TEXT="🆕 New PR by $PR_AUTHOR: *$PR_TITLE*%0ALink: $PR_URL"
+            echo "⚠️ Unsupported event: $EVENT_NAME"
+            exit 1
           fi
 
-          CURL_ARGS=(
-            -d chat_id="$TELEGRAM_CHAT_ID"
-            -d text="$TEXT"
-            -d parse_mode=Markdown
-          )
+          echo "📤 Sending message to Telegram:"
+          echo "$TEXT"
 
-          if [ -n "$TELEGRAM_THREAD_ID" ]; then
-            CURL_ARGS+=(-d message_thread_id="$TELEGRAM_THREAD_ID")
-          fi
+          RESPONSE=$(curl -s -X POST https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage \
+            -d chat_id="$TELEGRAM_CHAT_ID" \
+            -d text="$TEXT" \
+            -d parse_mode=Markdown)
 
-          curl -s -X POST https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage "${CURL_ARGS[@]}"
+          echo "📨 Telegram API Response: $RESPONSE"
