@@ -27,6 +27,21 @@ We're excited to announce **LAIT Night Chats** - a new weekly gathering for anyo
 **RSVP (Optional):** [Join via Meetup](https://www.meetup.com/linux-users-of-victoria/events/fghgstyhcnbkb/?ref=linuxvictoria.org)
 
 
+## Previous events:
+
+- LAIT Night #1 -- July 8, 2025
+- LAIT Night #2 -- July 15, 2025
+- LAIT Night #3 -- July 22, 2025
+- LAIT Night #4 -- July 29, 2025
+- LAIT Night #5 -- August 5, 2025
+- LAIT Night #6 -- August 12, 2025
+- LAIT Night #7 -- August 19, 2025
+- LAIT Night #8 -- August 26, 2025
+- LAIT Night #9 -- September 2, 2025
+- LAIT Night #10 -- September 9, 2025
+- LAIT Night #11 -- September 16, 2025
+- LAIT Night #12 -- September 23, 2025 [CANCELLED]
+
 ## What Are LAIT Night Chats?
 
 Every Tuesday evening, we bring together technologists, researchers, tinkerers, and curious minds for informal discussions that explore how Linux and AI intersect in our daily work and personal projects. Think of it as a community knowledge exchange where experience levels don't matter - just curiosity and a willingness to learn together.
