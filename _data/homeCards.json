@@ -21,11 +21,22 @@
     "cta": "Read More"
   },
   {
+    "title": "Fringe Event of EO2026 - Instalfest, unconference, discussions",
+    "date": "2026-01-24",
+    "time": "Time: 2:00PM to 5:00PM",
+    "location": "Location: Dissent Cafe and Bar \n 181 City Walk, Canberra",
+    "join_link": "",
+    "image": "/assets/images/InstallFest_V3.png",
+    "past": false,
+    "cta": "Read More"
+  },
+  {
     "title": "LUV BBQ",
     "date": "2026-01-31",
     "time": "Time: from 11am onwards",
     "location": "Location: Yarra Bank Reserve, 44 Creswick St, Hawthorn VIC 3122",
     "join_link": "",
+    "link": "/posts/2026-01-31_LUV-BBQ",
     "image": "/assets/images/luv-bbq-2026.webp",
     "past": false,
     "cta": "Read More"
