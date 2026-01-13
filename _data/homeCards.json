@@ -22,10 +22,21 @@
   {
     "title": "Meet LUV at Everything Open 2026",
     "date": "2026-01-22",
-    "time": "LUV Breakfast",
-    "location": "Canberra, Australia",
+    "time": "8:00AM to 9:00AM",
+    "location": "Mizzuna Cafe, University of Canberra",
     "join_link": "https://electronworkshop.com.au/goto/venue",
     "image": "/assets/images/luv-breakfast-eo-2026.webp",
+    "link": "/posts/2026-01-22_Meet-LUV-EO2026",
+    "past": false,
+    "cta": "Read More"
+  },
+  {
+    "title": "Fringe Event of EO2026 - Instalfest, unconference, discussions",
+    "date": "2026-01-24",
+    "time": "Time: 2:00PM to 5:00PM",
+    "location": "Location: Dissent Cafe and Bar \n 181 City Walk, Canberra",
+    "join_link": "",
+    "image": "/assets/images/InstallFest_V3.png",
     "past": false,
     "cta": "Read More"
   },
@@ -35,6 +46,7 @@
     "time": "Time: from 11am onwards",
     "location": "Location: Yarra Bank Reserve, 44 Creswick St, Hawthorn VIC 3122",
     "join_link": "",
+    "link": "/posts/2026-01-31_LUV-BBQ",
     "image": "/assets/images/luv-bbq-2026.webp",
     "past": false,
     "cta": "Read More"
