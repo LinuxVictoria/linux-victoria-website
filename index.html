@@ -107,9 +107,9 @@ layout: layout.html
                   {% endif %}
                 </div>
               </div>
-
+              
               <div class="col-md-5 d-flex align-items-center justify-content-center p-2">
-                <img src="{{ card.image }}" class="img-fluid rounded" alt="{{ card.title }}">
+                <img src="{{ card.image | default: '/assets/images/default-card-image-luv-2026.webp' }}" class="img-fluid rounded" alt="{{ card.title }}">
               </div>
             </div>
           </article>
@@ -293,6 +293,7 @@ layout: layout.html
 
         <!-- Useful Links -->
         <div class="mb-5 container">
+        <div class="mx-5">
           <h3 class="text-primary fw-semibold mb-4 text-center text-lg-start">Useful Links</h3>
           <div class="row row-gap-2">
             {% for link in usefulLinks %}
@@ -302,6 +303,7 @@ layout: layout.html
             </a>
             {% endfor %}
           </div>
+        </div>
         </div>
   </div>
 </section>
