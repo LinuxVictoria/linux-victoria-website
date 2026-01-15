@@ -18,4 +18,4 @@ Location: Dissent Cafe and Bar, 181 City Walk, Canberra
 Map: <https://maps.app.goo.gl/hvRfG7f3GDDNkCR18>   
 
 
-<!-- To get updates, [RSVP on Luma](https://luma.com/o6m7ew24/) -->
+To get updates, [RSVP on Luma](https://luma.com/fgoar73d)
