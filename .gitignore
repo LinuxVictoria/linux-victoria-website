@@ -8,3 +8,6 @@ posts/.obsidian/appearance.json
 posts/.obsidian/core-plugins.json
 posts/.obsidian/workspace.json
 .env
+assets/js/bootstrap.bundle.min.js
+assets/js/bootstrap.min.css
+.DS_Store

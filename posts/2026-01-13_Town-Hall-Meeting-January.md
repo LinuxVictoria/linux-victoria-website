@@ -4,7 +4,7 @@ title: Linux Victoria Town Hall Meeting January
 description: Join us for Linux Victoria's January Town Hall meeting where we'll be sharing recent discussions and decisions and plan for future events. Major discussion points for this month is Year in Review.
 image: "/assets/images/Town-Hall-Meeting-January2026.webp"
 preview_image: "https://linuxvictoria.org/assets/images/Town-Hall-Meeting-January2026.webp"
-tags: ["Upcoming","Event", "2026", "Online"]
+tags: ["Town Hall", "2026", "Online"]
 ---
 
 ## Linux Victoria Town Hall Meeting January
