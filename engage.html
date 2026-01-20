@@ -8,66 +8,76 @@ layout: layout.html
     <div class="container">
         <div class="text-center text-md-start bg-body-tertiary px-5 py-4 rounded-3 shadow-sm">
             <h2 class="mb-3 text-primary">Engage with Linux Victoria</h2>
-                    <p class="text-secondary small mb-2">Stay tuned with selected topics or express your interest in volunteering or advising us along the way</p>
-            <form class="needs-validation col-md-6" name="VolunteerForm" method="POST"
-                action="/.netlify/functions/createJiraIssue" id="VolunteerForm" novalidate>
+            <p class="text-secondary small mb-2">Stay tuned with selected topics or express your interest in volunteering or advising us along the way</p>
+            
+            <form class="needs-validation col-md-6" name="VolunteerForm" method="POST" 
+                data-netlify="true" netlify-honeypot="bot-field" id="VolunteerForm" novalidate>
+                
+                <!-- Hidden input for form name -->
+                <input type="hidden" name="form-name" value="VolunteerForm">
+                
+                <!-- Honeypot field for spam prevention -->
+                <p style="display: none;">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </p>
+
                 <div class="mb-3">
                     <label for="name" class="form-label">Full Name</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
+                    <input type="text" class="form-control" id="name" name="name">
                 </div>
 
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email Address</label>
+                    <label for="email" class="form-label">Email Address *</label>
                     <input type="email" class="form-control" id="email" name="email" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="skills" class="form-label">Interests & Skills</label>
-                    <textarea class="form-control" id="skills" name="skills" required></textarea>
+                    <textarea class="form-control" id="skills" name="skills"></textarea>
                 </div>
 
-                <!-- NEW: Support Areas (checkbox group) -->
+                <!-- Support Areas (checkbox group) -->
                 <fieldset class="mb-3">
-                    <!-- <legend class="form-label mb-2">Support Area</legend> -->
+                    <legend class="form-label mb-2">Support Areas</legend>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="sa-online" name="supportAreas"
+                        <input class="form-check-input" type="checkbox" id="sa-online" name="supportAreas[]"
                             value="Online event support">
                         <label class="form-check-label" for="sa-online">Online event support</label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="sa-admin" name="supportAreas"
+                        <input class="form-check-input" type="checkbox" id="sa-admin" name="supportAreas[]"
                             value="Admin support">
                         <label class="form-check-label" for="sa-admin">Admin support</label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="sa-tech" name="supportAreas"
+                        <input class="form-check-input" type="checkbox" id="sa-tech" name="supportAreas[]"
                             value="Linux & technical support">
                         <label class="form-check-label" for="sa-tech">Linux & technical support</label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="sa-summit" name="supportAreas"
+                        <input class="form-check-input" type="checkbox" id="sa-summit" name="supportAreas[]"
                             value="Linux Regional Summit">
                         <label class="form-check-label" for="sa-summit">Linux Regional Summit</label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="sa-mlai" name="supportAreas"
+                        <input class="form-check-input" type="checkbox" id="sa-mlai" name="supportAreas[]"
                             value="MLAI collab event">
                         <label class="form-check-label" for="sa-mlai">MLAI collab event</label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="sa-lai" name="supportAreas"
+                        <input class="form-check-input" type="checkbox" id="sa-lai" name="supportAreas[]"
                             value="Linux & AI events and documentation">
                         <label class="form-check-label" for="sa-lai">Linux & AI events and documentation</label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="sa-volunteer" name="supportAreas"
+                        <input class="form-check-input" type="checkbox" id="sa-volunteer" name="supportAreas[]"
                             value="Volunteer">
                         <label class="form-check-label" for="sa-volunteer">Volunteer</label>
                     </div>
@@ -163,7 +173,7 @@ layout: layout.html
       );
 
       document
-        .querySelectorAll('input[name="supportAreas"][type="checkbox"]')
+        .querySelectorAll('input[name="supportAreas[]"][type="checkbox"]')
         .forEach(cb => {
           const val = (cb.value || '').trim().toLowerCase();
           if (targets.has(val)) cb.checked = true;
