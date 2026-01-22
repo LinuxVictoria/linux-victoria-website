@@ -11,15 +11,6 @@
     "cta": "Read More"
   },
   {
-    "title": "Linux Victoria - Town Hall - February 2026",
-    "date": "2026-02-10",
-    "time": "19:00 to 21:00 AEST",
-    "location": "Hybrid (Online and In-person)",
-    "link": "/posts/2026-02_Town-Hall-February-2026",
-    "image": "/assets/images/linux-victoria-banner.webp",
-    "past": false
-  },
-  {
     "title": "Linux Collab with Canberra",
     "date": "2026-01-24",
     "time": "Time: 2:00PM to 5:00PM",
@@ -28,6 +19,15 @@
     "image": "/assets/images/linux-collab-canberra-jan-2026.webp",
     "past": false,
     "cta": "Read More"
+  },
+  {
+    "title": "Linux Victoria - Town Hall - February 2026",
+    "date": "2026-02-10",
+    "time": "19:00 to 21:00 AEST",
+    "location": "Hybrid (Online and In-person)",
+    "link": "/posts/2026-02_Town-Hall-February-2026",
+    "image": "/assets/images/linux-victoria-banner.webp",
+    "past": false
   },
   {
     "title": "LUV BBQ",
