@@ -7,8 +7,17 @@
     "join_link": "https://electronworkshop.com.au/goto/venue",
     "image": "/assets/images/luv-breakfast-eo-2026.webp",
     "link": "/posts/2026-01-22_Meet-LUV-EO2026",
-    "past": false,
+    "past": true,
     "cta": "Read More"
+  },
+  {
+    "title": "Linux Victoria - Town Hall - February 2026",
+    "date": "2026-02-10",
+    "time": "19:00 to 21:00 AEST",
+    "location": "Hybrid (Online and In-person)",
+    "link": "/posts/2026-02_Town-Hall-February-2026",
+    "image": "/assets/images/linux-victoria-banner.webp",
+    "past": false
   },
   {
     "title": "Linux Collab with Canberra",
