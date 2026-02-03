@@ -12,12 +12,13 @@ image: "/assets/images/LAIT_night_banner.png"
 # LAIT Night Chats: Linux & AI Tuesday Conversations! 
 
 
-We're excited to announce **LAIT Night Chats** - a new weekly gathering for anyone curious about the intersection of Linux and Artificial Intelligence. Whether you're running local LLMs on your home server, exploring AI-powered system administration, or just fascinated by where open-source meets machine learning, these conversations are for you.
+Join us for the second round of **LAIT Night Chats** - a weekly gathering for anyone curious about the intersection of Linux and Artificial Intelligence. Whether you're running local LLMs on your home server, exploring AI-powered system administration, or just fascinated by where open-source meets machine learning, these conversations are for you.
 
 ## 🗓️ Next Event
 
-As season 1 has closed at the end of September, we are planning for a come back in the new year (2026).   
-[Read more, share your thoughts, be part of the team!](/posts/lait-night-chat-linux-and-ai-season-1)
+- Date: 2025-02-03
+- RSVP (optional) on [Meetup](https://www.meetup.com/linux-users-of-victoria/events/312534955/)
+- Location: [evenue](https://electronworkshop.com.au/goto/venue)
 
 
 ## What Are LAIT Night Chats?
