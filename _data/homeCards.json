@@ -7,9 +7,18 @@
     "join_link": "",
     "link": "/posts/2026-01-31_Penguin-Picnic",
     "image": "/assets/images/luv-bbq-2026.webp",
-    "past": false,
+    "past": true,
     "cta": "Read More",
     "featured": true
+  },
+  {
+    "title": "LAIT Night Chats - Season 2",
+    "date": "2025-02-03",
+    "location": "Online (evenue)",
+    "link": "/posts/lait-night-chat-linux-and-ai",
+    "join_link": "https://electronworkshop.com.au/goto/venue",
+    "image": "/assets/images/LAIT_night_banner.webp",
+    "past": false
   },
   {
     "title": "Docker vs Podman et al",
