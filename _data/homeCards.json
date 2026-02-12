@@ -1,5 +1,17 @@
 [
   {
+    "title": "Let's Hello World: n8n",
+    "date": "2026-02-15",
+    "time": "Time: 12PM to 2PM AEST",
+    "location": "In Person: Inspire9, Richmond \n Online: Electron Workshop eVenue",
+    "join_link": "",
+    "link": "/posts/2026-02-15_Lets-Hello-World-n8n",
+    "image": "/assets/images/lhw-feb-2026.webp",
+    "past": false,
+    "cta": "Read More",
+    "featured": false
+  },
+  {
     "title": "Penguin Picnic",
     "date": "2026-01-31",
     "time": "Time: from 11am onwards",
@@ -27,7 +39,7 @@
     "location": "Hybrid (Online and In-person)",
     "link": "/posts/2026-02_Town-Hall-February-2026",
     "image": "/assets/images/linux-victoria-banner.webp",
-    "past": false,
+    "past": true,
     "featured": true
   },
   {
