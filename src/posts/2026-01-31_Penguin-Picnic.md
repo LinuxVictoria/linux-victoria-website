@@ -2,12 +2,7 @@
 title: "Penguin Picnic 2026"
 description: Join LUV for our yearly barbecue! The BBQ will be held 31st January at Yarra Bank Reserve.
 image: /assets/images/luv-bbq-2026.webp
-preview_image: "https://linuxvictoria.org/assets/images/luv-bbq-2026.webp"
-tags: ["Upcoming", "Event", "2026", "In-Person"]
-eventDate: 2026-01-31
-startTime: 11:00 AM
-endTime: 4:00 PM
-location: Yarra Bank Reserve, 44 Creswick St, Hawthorn VIC 3122
+postDate: 2026-01-31
 ---
 
 # {{title}}

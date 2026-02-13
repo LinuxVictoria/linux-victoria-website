@@ -1,6 +1,6 @@
-<section class="bg-body mt-2 mt-md-4">
-
-<div class="text-center text-md-start bg-body-tertiary px-5 py-4 rounded-3 shadow-sm border border-primary border-opacity-25 shadow-sm mb-4 col-md-6">
+<section class="bg-body">
+{% set colClass = formColClass if formColClass else "col-lg-6" %}
+<div class="text-center text-md-start bg-body-tertiary px-5 py-4 rounded-3 shadow-sm border border-primary border-opacity-25 shadow-sm {{ colClass }}">
 <h2 class="mb-3 text-primary">{{ formTitle }}</h2>
 <p class="text-muted small mb-3">{{ formDescription }}</p>
 <form class="needs-validation" 

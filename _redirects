@@ -1,6 +1,6 @@
 /posts/2025-08-05_Town-Hall-Meeting-August  /posts/2025-08-12_Town-Hall-Meeting-August  301
 /linux-regional-discourse   /posts/2025-08-25_linux_regional_summit/#linux-regional-discourse   301!
-/volunteer-form*   /engage   301!
+/volunteer-form*   /contact   301!
 /posts/2025-05-06_Town-Hall-Meeting  /posts/2025-05-06_Town-Hall-Meeting-May  301!
 /posts/2025-05-06_Town-Hall-May  /posts/2025-05-06_Town-Hall-Meeting-May  301!
 /posts/2025-08-25_linux_regional_summit*  /posts/2025-08-25_Linux-Regional-Summit  301!
@@ -30,6 +30,7 @@
 /posts/2026-01-31_Penguin-Picnic   /events/2026-01-31_Penguin-Picnic   301!
 /posts/2026-02_Town-Hall-February-2026   /events/2026-02-10_Town-Hall-February-2026   301!
 
-/installfests/   /installfest/   301!
+/installfest/   /installfests/   301!
 /events-and-posts/   /events/   301!
-/linux-distributions/   /working-groups/   301!
+/linux-distributions/   /installfests/   301!
+/engage/   /contact/   301!

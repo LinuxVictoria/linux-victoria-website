@@ -2,7 +2,7 @@
 title: End of Year Recap 2025 - Linux Victoria 
 description: As the year is closing, let's recap what Linux Victoria and LUV has been up to as well as the exciting plans brewing for 2026!
 tags: ["Report", "2025"]
-postDate: 2026-12-30
+postDate: 2025-12-30
 image: "/assets/images/linux-victoria-banner.webp"
 ---
 
