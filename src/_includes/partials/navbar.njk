@@ -1,0 +1,73 @@
+<nav class="navbar shadow-sm sticky-top bg-body" id="navbar-main">
+<div class="container-xl flex-row flex-sm-column flex-lg-row">
+<a class="navbar-brand d-flex align-items-center gap-2" href="/">
+<img src="{{ site.navbarlogo }}" alt="{{site.title}}" width="239" height="58" class="rounded d-none d-sm-inline"/>
+<img src="{{ site.navbarlogo }}" alt="{{site.title}}" width="125" height="35" class="rounded d-inline d-sm-none"/>
+<div class=" d-none d-sm-flex flex-column justify-content-center ms-0 ms-sm-2">
+<span class="h4 mb-0 fw-semibold text-secondary">{{ site.title }}</span>
+<span class="h5 text-secondary mb-0">{{ site.subtitle }}</span>
+</div>
+</a>
+
+<div class="d-flex flex-row-reverse">
+<button
+class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#nav"
+aria-controls="nav"
+aria-expanded="false"
+aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="d-flex gap-md-2 pe-md-2">
+<button class="btn btn-outline-primary border-0 rounded-3 fs-5 fw-bold " onclick="openSearch()">
+<i class="bi bi-search"></i> <span class="d-none d-sm-inline ms-2">Search</span>
+</button>
+<a class="btn btn-outline-primary border-0 rounded-3 fs-5 fw-bold"   id="linux-support-navbar-call"
+href="/linux-support">
+<i class="bi bi-telephone"></i><span class="d-none d-sm-inline ms-2">Linux Support</span>
+</a>
+</div>
+</div>
+
+<div id="nav" class="collapse navbar-collapse">
+<ul class="navbar-nav ms-auto flex-column flex-md-row justify-content-md-end">
+{% for item in navbar %}
+<li class="nav-item">
+<a class="nav-link{% if page.url == item.href %} active{% endif %}" href="{{ item.href }}">
+{{ item.title }}
+</a>
+</li>
+{% endfor %}
+</ul>
+</div>
+</div>
+</nav>
+<!-- Search Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-content border-0 shadow-lg">
+<div class="modal-header border-0 pb-0">
+<h5 class="modal-title text-primary fw-semibold" id="searchModalLabel">
+<i class="bi bi-search me-2"></i>Search Events & Content
+</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body pt-2">
+<div class="mb-3">
+<input
+type="text"
+class="form-control form-control-lg border-primary"
+id="searchInput"
+placeholder="Search events, tutorials, discussions..."
+oninput="performSearch()"/>
+</div>
+<div
+id="searchResults" class="search-results" style="max-height: 400px; overflow-y: auto"><!-- Results will appear here -->
+</div>
+</div>
+</div>
+</div>
+</div>

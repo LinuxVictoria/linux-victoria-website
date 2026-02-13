@@ -1,0 +1,30 @@
+{% if initiatives and initiatives | length > 0 %}
+<div class="initiatives-wrapper position-relative">
+<div class="row g-4">
+{% for initiative in initiatives %}
+<div class="col-12 col-md-6 col-lg-3">
+<div class="card border-primary border-opacity-25 shadow-sm border-primary-hover h-100 initiative-card position-relative">
+{% if initiative.image %}
+<div class="card-img-top overflow-hidden" style="height: 200px;">
+<img src="{{ initiative.image }}" class="img-fluid w-100 h-100 object-fit-cover" alt="" style="transition: transform 0.3s ease;">
+</div>
+{% endif %}
+<div class="card-body d-flex flex-column">
+<h5 class="card-title text-dark mb-3">{{ initiative.title }}</h5>
+{% if initiative.description %}
+<p class="text-muted mb-3">{{ initiative.description | safe }}</p>
+{% endif %}
+<div class="mt-auto">
+<a class="btn btn-primary stretched-link" href="{{ initiative.link }}">
+<i class="bi bi-arrow-right me-2"></i>{{ initiative.cta or "Learn More" }}
+</a>
+</div>
+</div>
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+{% else %}
+<p class="text-muted">No initiatives available at this time.</p>
+{% endif %}

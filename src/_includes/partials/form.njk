@@ -1,0 +1,74 @@
+<section class="bg-body mt-2 mt-md-4">
+
+<div class="text-center text-md-start bg-body-tertiary px-5 py-4 rounded-3 shadow-sm border border-primary border-opacity-25 shadow-sm mb-4 col-md-6">
+<h2 class="mb-3 text-primary">{{ formTitle }}</h2>
+<p class="text-muted small mb-3">{{ formDescription }}</p>
+<form class="needs-validation" 
+name="{{ formName }}" 
+id="{{ formName }}" 
+method="post" 
+netlify 
+novalidate>
+{# Loop through fields defined in front matter #}
+{% for field in formFields %}
+{% set fieldName = field.name if field is mapping else field %}
+{% set fieldType = field.type if field is mapping and field.type else ("email" if fieldName == "email" else "text") %}
+<div class="mb-3">
+<label for="{{ formName }}{{ fieldName | capitalize }}" class="form-label">
+{{ fieldName | capitalize }}
+</label>
+{% if fieldName == "message" %}
+<textarea class="form-control" 
+id="{{ formName }}{{ fieldName | capitalize }}" 
+name="{{ fieldName }}" 
+rows="4" 
+required></textarea>
+<div class="invalid-feedback">Please enter your {{ fieldName }}.</div>
+{% else %}
+<input type="{{ fieldType }}" 
+class="form-control" 
+id="{{ formName }}{{ fieldName | capitalize }}" 
+name="{{ fieldName }}" 
+required>
+<div class="invalid-feedback">Please enter a valid {{ fieldName }}.</div>
+{% endif %}
+</div>
+{% endfor %}
+<button type="submit" class="btn btn-outline-primary">Send Message</button>
+</form>
+</div>
+</section>
+{# --- Bootstrap validation --- #}
+<script>
+(() => {
+'use strict';
+const forms = document.querySelectorAll('.needs-validation');
+Array.from(forms).forEach(form => {
+form.addEventListener('submit', (event) => {
+if (!form.checkValidity()) {
+event.preventDefault();
+event.stopPropagation();
+}
+form.classList.add('was-validated');
+}, false);
+});
+})();
+</script>
+{# --- Prefill fields from URL params --- #}
+<script>
+(function () {
+const params = new URLSearchParams(window.location.search);
+const setFieldFromParams = (selector, keys) => {
+const el = document.querySelector(selector);
+if (!el) return;
+for (const k of keys) {
+const v = params.get(k);
+if (v !== null && v !== undefined && v !== "") { el.value = v; return; }
+}
+};
+{% for field in formFields %}
+{% set fieldName = field.name if field is mapping else field %}
+setFieldFromParams('#{{ formName }}{{ fieldName | capitalize }}', ['{{ fieldName }}']);
+{% endfor %}
+})();
+</script>

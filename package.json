@@ -1,11 +1,19 @@
 {
-  "devDependencies": {
-    "netlify-cli": "^19.1.7"
+  "name": "space-club-template",
+  "version": "1.0.1",
+  "description": "A flexible Eleventy-based static site template that’s easy to edit, easy to deploy, and easy to take anywhere.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx @11ty/eleventy && npx pagefind --site _site",
+    "start": "npx @11ty/eleventy --serve"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "dayjs": "^1.11.14",
-    "eleventy-plugin-redirects": "^1.0.0",
-    "luxon": "^3.7.1",
-    "markdown-it-wikilinks": "^1.4.0"
+    "@11ty/eleventy": "^3.1.2",
+    "dayjs": "^1.11.18",
+    "pagefind": "^1.4.0"
   }
 }

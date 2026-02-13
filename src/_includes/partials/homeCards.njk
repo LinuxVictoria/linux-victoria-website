@@ -1,0 +1,19 @@
+<section>
+<div class="d-grid gap-5">
+<div>
+{% set initiatives = initiatives %}
+{% include "partials/initiativesList.njk" %}
+</div>
+<div>
+<h2>Upcoming Events</h2>
+{% set type = "previewUpcoming" %}
+{% include "partials/eventsList.njk" %}
+</div>
+<div>
+<h2>Latest Posts</h2>
+{% set type = "preview" %}
+{% include "partials/postsList.njk" %}
+</div>
+</div>
+<div>
+</section>

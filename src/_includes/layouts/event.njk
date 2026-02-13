@@ -1,0 +1,21 @@
+---
+layout: base.njk
+---
+<div class="h-100 card card-body p-4 border-primary border-opacity-50">
+  <div>
+    <h1>{{title}}</h1>
+
+    {% if not hideEventDetails %}
+      {% include "partials/event-details.njk" %}
+    {% endif %}
+
+    {{ content | safe }}
+  </div>
+  <div class="d-flex justify-content-center gap-3 my-4">
+    {% include "partials/btn.njk" %}
+    <a href="/events/" class="btn btn-outline-primary">
+      <i class="bi bi-calendar me-2"></i>All Events
+    </a>
+  </div>
+</div>
+

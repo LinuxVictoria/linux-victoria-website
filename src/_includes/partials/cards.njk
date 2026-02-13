@@ -1,0 +1,50 @@
+{% if cards and cards | length > 0 %}
+<div class="row row-gap-3">
+{% for card in cards %}
+<div class="{{ card.colClass or cardsColClass or "col-12 col-sm-6" }} pb-4">
+<article
+class="hover-border-primary card bg-body-tertiary rounded-3 shadow-sm border-primary border-opacity-25 overflow-hidden h-100 position-relative">
+<div class="card-body {% if card.qrCode %}text-center{% else %}d-flex flex-column{% endif %}">
+<!-- Title -->
+{% if card.qrCode %}
+<a href="{{ card.ctaLink }}" target="_blank" class="text-decoration-none">
+<h5 class="card-title text-primary fw-semibold">{{ card.title }}</h5>
+</a>
+{% else %}
+<h3 class="card-title text-primary mb-3 lh-base{% if card.ctaIcon %} d-flex align-items-center{% endif %}">
+{{ card.title }}
+</h3>
+{% endif %}
+<!-- QR Code (if present) -->
+{% if card.qrCode %}
+<div class="d-flex justify-content-center mb-3">
+<img src="{{ card.qrCode }}" alt="QR Code" style="width: 150px; height: 150px;">
+</div>
+{% endif %}
+<!-- Description -->
+{% if card.description %}
+<div class="text-muted mb-4">
+{{ card.description | safe }}
+</div>
+{% endif %}
+<!-- Spacer to push button to bottom (only for non-QR cards) -->
+{% if not card.qrCode %}
+<div class="flex-grow-1"></div>
+{% endif %}
+<!-- Action Button (only for non-QR cards with CTA) -->
+{% if card.ctaLink and card.ctaText and not card.qrCode %}
+<div class="mt-3">
+<a class="btn btn-primary stretched-link" href="{{ card.ctaLink }}" target="_blank">
+{% if card.ctaIcon %}<i class="bi {{ card.ctaIcon }} me-2"></i>{% endif %}
+{{ card.ctaText }}
+</a>
+</div>
+{% endif %}
+</div>
+</article>
+</div>
+{% endfor %}
+</div>
+{% else %}
+<p class="text-muted">No cards available at this time.</p>
+{% endif %}

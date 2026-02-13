@@ -1,0 +1,7 @@
+_site/
+.netlify
+.netlify/*
+node_modules/
+package-lock.json
+posts/.obsidian/
+.env

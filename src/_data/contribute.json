@@ -1,0 +1,14 @@
+[
+  {
+    "title": "🎤 Speak at Events",
+    "description": "<p>Share your knowledge and experiences with the community. We're always looking for speakers for:</p><ul class='mb-0'><li>Town Hall meetings</li><li>Technical workshops</li><li>LAIT Night Chat sessions</li><li>Special interest group meetups</li></ul>"
+  },
+  {
+    "title": "🤝 Volunteer at Install Fests",
+    "description": "<p>Help newcomers discover Linux by:</p><ul class='mb-0'><li>Assisting with Linux installations</li><li>Providing technical support</li><li>Testing different distributions</li><li>Organizing and coordinating events</li></ul>"
+  },
+  {
+    "title": "👥 Join Our Team",
+    "description": "<p>Interested in taking on a more active role? We have various positions available:</p><ul class='mb-0'><li>Event organizers</li><li>Special Interest Group coordinators</li><li>Social media managers</li><li>Website maintainers</li><li>Community moderators</li></ul>"
+  }
+]
