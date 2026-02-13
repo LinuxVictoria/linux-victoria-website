@@ -36,7 +36,7 @@ No prior experience required. If you have been meaning to try n8n but have not m
 Bring a laptop and curiosity.
 
 
-Time: from 12PM to 2PM   
-Location: Inspire9, Level 1/41-43 Stewart St, Richmond VIC 3121
-Online: electronworkshop.com.au/goto/venue
-Map: <https://maps.app.goo.gl/EUvU7xmJdGPqGCYx7>
+Time: from 11AM to 3PM   
+Location: Room GR03, Melbourne Business School   
+Online: electronworkshop.com.au/goto/venue    
+Map: <https://maps.app.goo.gl/ww9wb1pHpvLRkAt99>
