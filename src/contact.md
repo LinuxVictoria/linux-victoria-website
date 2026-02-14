@@ -66,22 +66,30 @@ Interested in taking on a more active role? We have various positions available:
             
 ### Contact Details
 
-##### Email
-[team@linuxvictoria.org](mailto:team@linuxvictoria.org)
+#### Email addresses
+General inqueries   
+<team@linuxvictoria.org>
 
-##### LinkedIn
+Alexar Pendashteh / President   
+<president@linuxvictoria.org>
+
+Sophie Allen / Treasurer   
+<team@linuxvictoria.org>
+
+
+#### LinkedIn
 <https://www.linkedin.com/company/linux-victoria>
 
-##### Telegram
+#### Telegram
 <https://t.me/linuxvictoria>
 
-##### Town Hall Meetings
+#### Town Hall Meetings
 [View upcoming meetings](/events)
 
-##### Mailing List
+#### Mailing List
 <https://lists.luv.asn.au/mailman/listinfo/luv-main>
 
-##### GitHub
+#### GitHub
 <https://github.com/linuxvictoria>
         </div>
     </div>

@@ -14,26 +14,3 @@ Alexar Pendashteh / President
 Sophie Allen / Treasuerer   
 <team@linuxvictoria.org>
 
-## Initatives
-
-### Workshop
-Point of Contact: SimonC
-
-### Linux & AI
-Point of Contact: 
-- Alexar Pendashteh (Point of Contact)
-- Sophie Allen
-- Leo
-
-### Linux & Games
-
-### Distro
-
-
-## Active Alumni & Supporters
-
-- Terry Kemp
-- Brian Khuu
-- Les Kitchen
-- Andrew Pam
-
