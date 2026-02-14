@@ -8,7 +8,7 @@ eventDate: 2026-01-24
 startTime: 2:00 PM
 endTime: 5:00 PM
 location: Dissent Cafe and Bar, 181 City Walk, Canberra
-recapPost: /posts/2026-01-24_Linux-Collab-Canberra/
+recapPost: /posts/2026-01-25_Linux-Collab-Canberra/
 ---
 
 # {{title}}
