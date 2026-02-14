@@ -1,0 +1,92 @@
+{% if type == "upcoming" %}
+{% set events = collections.upcomingEvents %}
+{% elif type == "past" %}
+{% set events = collections.pastEvents %}
+{% elif type == "preview" %}
+{# Preview combined past and upcoming #}
+{% if excludeFeatured %}
+{% set events = collections.previewEventsCombined %}
+{% else %}
+{% set events = collections.previewEventsCombinedAll %}
+{% endif %}
+{% elif type == "previewPast" %}
+{# Preview past only #}
+{% if excludeFeatured %}
+{% set events = collections.previewPastEvents %}
+{% else %}
+{% set events = collections.previewPastEventsAll %}
+{% endif %}
+{% elif type == "previewUpcoming" %}
+{# Preview upcoming only #}
+{% if excludeFeatured %}
+{% set events = collections.previewUpcomingEvents %}
+{% else %}
+{% set events = collections.previewUpcomingEventsAll %}
+{% endif %}
+{% else %}
+{% set events = collections.events %}
+{% endif %}
+<!-- DEBUG: type={{ type }}, events={{ events | length }}, upcoming={{ collections.upcomingEvents | length }}, past={{ collections.pastEvents | length }}, all={{ collections.events | length }} -->
+{% if events and events | length > 0 %}
+<div class="row g-4">
+{% for event in events %}
+<div class="col-md-6 col-lg-4">
+<div class="card border-primary border-opacity-25 shadow-sm border-primary-hover h-100 overflow-hidden">
+{% if event.data.image %}
+<div class="card-img-top overflow-hidden" style="height: 200px;">
+<img src="{{ event.data.image }}" class="img-fluid w-100 h-100 object-fit-cover" alt="" style="transition: transform 0.3s ease;">
+</div>
+{% endif %}
+<div class="card-body d-flex flex-column">
+<div class="d-flex align-items-center justify-content-between mb-2">
+<h4 class="mb-0">{{ event.data.title }}</h4>
+</div>
+{% if event.data.description %}
+<p class="mb-3">{{ event.data.description }}</p>
+{% endif %}
+<div class="mb-3">
+{% if event.data.eventDate %}
+<div class="d-flex align-items-center gap-2 mb-2">
+<i class="bi bi-calendar3" aria-hidden="true"></i>
+<span>{{ event.data.eventDate | formatDate }}</span>
+</div>
+{% endif %}
+{% if event.data.startTime or event.data.endTime %}
+<div class="d-flex align-items-center gap-2 mb-2">
+<i class="bi bi-clock" aria-hidden="true"></i>
+<span>
+{%- if event.data.startTime -%}{{ event.data.startTime }}{%- endif -%}
+{%- if event.data.startTime and event.data.endTime %} - {% endif -%}
+{%- if event.data.endTime -%}{{ event.data.endTime }}{%- endif -%}
+</span>
+</div>
+{% endif %}
+{% if event.data.location %}
+<div class="d-flex gap-2 mb-2 text-preline">
+<i class="bi bi-geo-alt" aria-hidden="true"></i>
+<span>{{ event.data.location }}</span>
+</div>
+{% endif %}
+</div>
+<div class="mt-auto">
+<a href="{{ event.data.permalink or event.url }}" class="btn btn-primary stretched-link">Learn more</a>
+</div>
+</div>
+</div>
+</div>
+{% endfor %}
+</div>
+{% if type == "preview" or type == "previewPast" or type == "previewUpcoming" %}
+<div class="text-center mt-4">
+<p class="text-muted mb-3">Showing {{ events | length }} of {{ collections.events | length }} events</p>
+<a href="/events/" class="btn btn-outline-primary">
+<i class="bi bi-arrow-right me-2"></i>View All Events
+</a>
+</div>
+{% endif %}
+{% else %}
+<div class="alert alert-info" role="alert">
+<i class="bi bi-info-circle me-2" aria-hidden="true"></i>
+No events at this time. Check back soon!
+</div>
+{% endif %}

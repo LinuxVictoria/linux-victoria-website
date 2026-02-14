@@ -1,0 +1,22 @@
+[
+  {
+    "title": "LinkedIn",
+    "ctaLink": "https://www.linkedin.com/company/linuxvictoria",
+    "qrCode": "/assets/images/qr/linkedin.svg"
+  },
+  {
+    "title": "Meetup",
+    "ctaLink": "https://www.meetup.com/linux-users-of-victoria/",
+    "qrCode": "/assets/images/qr/meetup.svg"
+  },
+  {
+    "title": "Telegram",
+    "ctaLink": "https://t.me/linuxvictoria",
+    "qrCode": "/assets/images/qr/telegram.svg"
+  },
+  {
+    "title": "Email",
+    "ctaLink": "mailto:team@linuxvictoria.org",
+    "qrCode": "/assets/images/qr/email.svg"
+  }
+]

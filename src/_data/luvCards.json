@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Meetup",
+    "description": "Find and join our upcoming Linux meetups, workshops, and community events.",
+    "ctaIcon": "bi-calendar-event",
+    "ctaLink": "https://www.meetup.com/linux-users-of-victoria/",
+    "ctaText": "View Meetup Page"
+  },
+  {
+    "title": "Mailing Lists",
+    "description": "Join our community discussions and stay updated with announcements through our mailing lists.",
+    "ctaIcon": "bi-envelope",
+    "ctaLink": "https://lists.luv.asn.au/mailman3/postorius/lists/",
+    "ctaText": "Access Mailing Lists"
+  },
+  {
+    "title": "Planet LUV",
+    "description": "A collection of blogs from Linux users across Australia, sharing insights, tutorials, and experiences from the Australian Linux community.",
+    "ctaIcon": "bi-globe",
+    "ctaLink": "https://planet.luv.asn.au/",
+    "ctaText": "Visit Planet LUV"
+  }
+]

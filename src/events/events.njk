@@ -1,0 +1,25 @@
+---
+layout: base.njk
+title: Events
+description: View our upcoming and past events.
+permalink: "/events/"
+---
+<div>
+
+    <div class="mb-5">
+        <h1>Upcoming Events</h1>
+        {% set type = "upcoming" %}
+        {% include "partials/eventsList.njk" %}
+    </div>
+
+    <div class="mb-5">
+        <h1>Past Events</h1>
+        {% set type = "past" %}
+        {% include "partials/eventsList.njk" %}
+    </div>
+
+    <div class="text-center my-4">
+        {% include "partials/btn.njk" %}
+    </div>
+
+</div>

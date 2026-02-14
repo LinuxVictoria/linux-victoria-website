@@ -1,0 +1,208 @@
+{# 
+All-images gallery - shows images from all posts/events with gallery property.
+Set galleryLimit to a number to show only that many images (for preview mode).
+Set galleryLimit = 0 or don't set it to show all images.
+#}
+
+{% set allEntries = collections.consolidatedGalleries %}
+
+{# Build a flat list of all images with metadata #}
+{% set allImages = [] %}
+{% for entry in allEntries %}
+{% for image in entry.images %}
+{% set imageData = {
+src: "/" + entry.gallery + "/" + image,
+gallery: entry.gallery,
+filename: image,
+pageTitle: entry.pageTitle,
+pageUrl: entry.url,
+type: entry.type
+} %}
+{% set allImages = (allImages.push(imageData), allImages) %}
+{% endfor %}
+{% endfor %}
+
+{% if galleryLimit and galleryLimit > 0 %}
+{% set displayImages = allImages.slice(0, galleryLimit) %}
+{% else %}
+{% set displayImages = allImages %}
+{% endif %}
+
+{% if displayImages and displayImages | length > 0 %}
+<style>
+.gallery-all-overlay {
+background: rgba(0, 0, 0, 0.9);
+backdrop-filter: blur(5px);
+}
+.gallery-all-nav-btn {
+background: rgba(255, 255, 255, 0.2);
+border: 1px solid rgba(255, 255, 255, 0.3);
+transition: all 0.3s ease;
+}
+.gallery-all-nav-btn:hover {
+background: rgba(255, 255, 255, 0.3);
+transform: scale(1.1);
+}
+.gallery-all-nav-btn:disabled {
+opacity: 0.3;
+cursor: not-allowed;
+}
+.gallery-all-thumbnail {
+transition: transform 0.2s ease;
+cursor: pointer;
+height: 120px;
+object-fit: cover;
+}
+.gallery-all-thumbnail:hover {
+transform: scale(1.05);
+}
+.gallery-all-main-image {
+max-height: 70vh;
+max-width: 90vw;
+object-fit: contain;
+}
+</style>
+
+<div class="gallery">
+<div class="row g-3" id="gallery-all-grid">
+{% for img in displayImages %}
+<div class="col-6 col-sm-4 col-md-3 col-lg-2">
+<div class="card border-0 shadow-sm">
+<img src="{{ img.src }}" 
+class="card-img gallery-all-thumbnail" 
+alt="Gallery image: {{ img.filename | replace('-', ' ') | replace('_', ' ') }}"
+data-index="{{ loop.index0 }}"
+data-gallery-all="true">
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+
+{% if galleryLimit and galleryLimit > 0 and allImages | length > galleryLimit %}
+<div class="text-center mt-4">
+<p class="text-muted mb-3">Showing {{ displayImages | length }} of {{ allImages | length }} photos</p>
+<a href="/gallery/" class="btn btn-outline-primary">
+<i class="bi bi-images me-2"></i>View All Photos
+</a>
+</div>
+{% endif %}
+
+<!-- All-Images Gallery Lightbox Modal -->
+<div class="modal fade" id="galleryAllModal" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-xl modal-dialog-centered">
+<div class="modal-content bg-transparent border-0">
+<div class="modal-header border-0 position-absolute top-0 end-0 z-3">
+<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body p-0 d-flex flex-column align-items-center justify-content-center position-relative gallery-all-overlay" style="min-height: 80vh;">
+<!-- Navigation buttons -->
+<button class="btn gallery-all-nav-btn position-absolute start-0 top-50 translate-middle-y ms-3 z-2" 
+id="galleryAllPrevBtn" style="width: 50px; height: 50px;">
+<i class="bi bi-chevron-left text-white fs-4"></i>
+<span class="visually-hidden">Previous image</span>
+</button>
+
+<button class="btn gallery-all-nav-btn position-absolute end-0 top-50 translate-middle-y me-3 z-2" 
+id="galleryAllNextBtn" style="width: 50px; height: 50px;">
+<i class="bi bi-chevron-right text-white fs-4"></i>
+<span class="visually-hidden">Next image</span>
+</button>
+
+<!-- Main image -->
+<img id="galleryAllModalImage" class="gallery-all-main-image rounded" alt="Gallery image">
+
+<!-- Title + link + counter bar at bottom -->
+<div class="position-absolute bottom-0 start-50 translate-middle-x mb-3 text-center">
+<div id="galleryAllPageInfo" class="mb-2">
+<a id="galleryAllPageLink" href="#" class="btn btn-sm btn-light">
+<i class="bi bi-box-arrow-up-right me-1"></i>
+<span id="galleryAllPageTitle"></span>
+</a>
+</div>
+<span class="badge bg-dark bg-opacity-75 text-white px-3 py-2" id="galleryAllImageCounter">
+1 / {{ displayImages | length }}
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const allImages = {{ displayImages | dump | safe }};
+
+const modal = new bootstrap.Modal(document.getElementById('galleryAllModal'));
+const modalImage = document.getElementById('galleryAllModalImage');
+const imageCounter = document.getElementById('galleryAllImageCounter');
+const prevBtn = document.getElementById('galleryAllPrevBtn');
+const nextBtn = document.getElementById('galleryAllNextBtn');
+const pageTitle = document.getElementById('galleryAllPageTitle');
+const pageLink = document.getElementById('galleryAllPageLink');
+
+let currentImageIndex = 0;
+
+function showImage(index) {
+const img = allImages[index];
+if (img) {
+modalImage.src = img.src;
+modalImage.alt = 'Gallery image: ' + img.filename.split('.')[0].replace(/[-_]/g, ' ');
+imageCounter.textContent = (index + 1) + ' / ' + allImages.length;
+prevBtn.disabled = index === 0;
+nextBtn.disabled = index === allImages.length - 1;
+
+// Show title and link
+pageTitle.textContent = img.pageTitle;
+pageLink.href = img.pageUrl;
+}
+}
+
+function showPrevious() {
+if (currentImageIndex > 0) {
+currentImageIndex--;
+showImage(currentImageIndex);
+}
+}
+
+function showNext() {
+if (currentImageIndex < allImages.length - 1) {
+currentImageIndex++;
+showImage(currentImageIndex);
+}
+}
+
+document.querySelectorAll('[data-gallery-all="true"]').forEach(thumb => {
+thumb.addEventListener('click', function() {
+currentImageIndex = parseInt(this.dataset.index);
+showImage(currentImageIndex);
+modal.show();
+});
+});
+
+prevBtn.addEventListener('click', showPrevious);
+nextBtn.addEventListener('click', showNext);
+
+const modalElement = document.getElementById('galleryAllModal');
+modalElement.addEventListener('shown.bs.modal', function() {
+document.addEventListener('keydown', handleKeydown);
+});
+modalElement.addEventListener('hidden.bs.modal', function() {
+document.removeEventListener('keydown', handleKeydown);
+});
+
+function handleKeydown(e) {
+if (modalElement.classList.contains('show')) {
+if (e.key === 'ArrowLeft') showPrevious();
+else if (e.key === 'ArrowRight') showNext();
+else if (e.key === 'Escape') modal.hide();
+}
+}
+});
+</script>
+{% else %}
+<div class="alert alert-info" role="alert">
+<i class="bi bi-images me-2" aria-hidden="true"></i>
+No gallery images found.
+</div>
+{% endif %}

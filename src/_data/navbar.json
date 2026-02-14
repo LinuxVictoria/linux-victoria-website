@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Contact",
+    "href": "/contact"
+  },
+  {
+    "title": "LUV",
+    "href": "/luv"
+  },
+  {
+    "title": "Events",
+    "href": "/events"
+  },
+  {
+    "title": "Posts",
+    "href": "/posts"
+  },
+  {
+    "title": "Newsletter",
+    "href": "/newsletter"
+  },
+  {
+    "title": "Gallery",
+    "href": "/gallery"
+  }
+]

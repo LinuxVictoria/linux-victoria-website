@@ -1,0 +1,11 @@
+{
+  "title": "Linux Victoria",
+  "description": "Linux Victoria is your ultimate resource for Linux events, and community support in the Victoria region. Learn about Linux distributions, open-source software, and best practices. Join our local Linux community to stay updated and enhance your skills with expert resources and networking opportunities.",
+  "subtitle": "Supporting Linux in Victoria since 1993",
+  "logo": "/assets/images/logo-lv.svg",
+  "navbarlogo": "/assets/images/luv-lv-logo.png",
+  "favicon": "/assets/images/favicon-lv.ico",
+  "baseUrl": "/",
+  "timezone": "Australia/Sydney",
+  "dateFormat": "dddd, Do MMMM YYYY"
+}

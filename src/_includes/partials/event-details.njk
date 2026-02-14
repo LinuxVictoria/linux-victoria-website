@@ -1,0 +1,23 @@
+<div class="mb-3">
+    {% if eventDate %}
+        <div class="d-flex align-items-center gap-2 mb-2">
+            <i class="bi bi-calendar3" aria-hidden="true"></i>
+            <span>{{ eventDate | formatDate }}</span>
+        </div>
+    {% endif %}
+    
+    {% if startTime or endTime %}
+        <div class="d-flex align-items-center gap-2 mb-2">
+            <i class="bi bi-clock" aria-hidden="true"></i>
+            <span>{% if startTime %}{{ startTime }}{% endif %}{% if startTime and endTime %} - {% endif %} {% if endTime %}{{ endTime }}{% endif %}
+            </span>
+        </div>
+    {% endif %}
+    
+    {% if location %}
+        <div class="d-flex text-preline gap-2 mb-2">
+            <i class="bi bi-geo-alt" aria-hidden="true"></i>
+            <span>{{ location }}</span>
+        </div>
+    {% endif %}
+</div>

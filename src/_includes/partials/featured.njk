@@ -1,0 +1,49 @@
+{% set featuredItems = collections.featuredEvents | concat(collections.featuredPosts) %}
+{% if featuredItems and featuredItems | length > 0 %}
+<div class="row g-4">
+{% for item in featuredItems %}
+<div class="col-12 col-md-6">
+<div class="card border-secondary-hover border-secondary border-opacity-25 shadow-sm h-100 overflow-hidden">
+{% if item.data.image %}
+<div class="card-img-top overflow-hidden" style="height: 220px;">
+<img src="{{ item.data.image }}" class="img-fluid w-100 h-100 object-fit-cover" alt="">
+</div>
+{% endif %}
+<div class="card-body d-flex flex-column">
+<div class="d-flex justify-content-between align-items-center mb-2">
+<h4 class="mb-0 text-secondary">{{ item.data.title }}</h4>
+<span class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill px-3 py-2 small">
+{% if item.data.eventDate %}Event{% else %}Post{% endif %}
+</span>
+</div>
+{% if item.data.description %}
+<p class="mb-3 text-preline">{{ item.data.description }}</p>
+{% endif %}
+<div class="mb-3">
+{% if item.data.eventDate %}
+<div class="d-flex align-items-center gap-2 mb-2">
+<i class="bi bi-calendar3"></i>
+<span>{{ item.data.eventDate | formatDate }}</span>
+</div>
+{% elseif item.data.postDate %}
+<div class="d-flex align-items-center gap-2 mb-2">
+<i class="bi bi-calendar3"></i>
+<span>{{ item.data.postDate | formatDate('MMM Do, YYYY') }}</span>
+</div>
+{% endif %}
+</div>
+<div class="mt-auto">
+<a href="{{ item.data.permalink or item.url }}" class="btn btn-outline-secondary stretched-link">
+{% if item.data.eventDate %}View Event{% else %}Read Post{% endif %}
+</a>
+</div>
+</div>
+</div>
+</div>
+{% endfor %}
+</div>
+{% else %}
+<div class="alert alert-info">
+<i class="bi bi-info-circle me-2"></i> No featured items right now.
+</div>
+{% endif %}
