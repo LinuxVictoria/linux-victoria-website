@@ -2,29 +2,29 @@
   {
     "title": "Linux and AI",
     "description": "Explore the intersection of Linux and artificial intelligence through our weekly online discussions and online chat rooms.",
-    "image": "/assets/images/linux-and-ai-group.png",
+    "image": "/assets/images/linux-and-ai-group.webp",
     "link": "/events/lait-night-chat-linux-and-ai/",
-    "cta": "Learn More"
+    "cta": "Read More"
   },
   {
     "title": "Luma Calendar",
     "description": "View, and subscribe, to our Luma Calendar to stay updated on all our upcoming events, workshops, and community gatherings.",
-    "image": "/assets/images/luma-calendar-group.png",
+    "image": "/assets/images/luma-calendar-group.webp",
     "link": "https://lu.ma/linux-victoria",
     "cta": "Go to calendar"
   },
   {
     "title": "Install Fests",
     "description": "Install fests are back! Learn how to get notified about upcoming install fests, and how to get involved in helping out at them.",
-    "image": "/assets/images/installfest-group.png",
+    "image": "/assets/images/installfest-group.webp",
     "link": "/installfests/",
     "cta": "Read More"
   },
   {
-    "title": "Linux and Gaming Group",
-    "description": "Join our Linux and Gaming working group to explore the latest in gaming on Linux, share tips, and participate in gaming events.",
-    "image": "/assets/images/linux&games-group.png",
-    "link": "/working-groups/",
-    "cta": "Learn More"
+    "title": "Host Your Own Catchup",
+    "description": "Want to host a discussion, meetup, or community event? You can! We'll help you get listed on the Linux Victoria calendar.",
+    "image": "/assets/images/host-a-catchup.webp",
+    "link": "/contact/#host-your-own-event",
+    "cta": "How to get started"
   }
 ]

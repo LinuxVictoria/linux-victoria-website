@@ -6,25 +6,38 @@ image: "/assets/images/lhw-feb-2026.png"
 eventDate: 2026-02-15
 startTime: 2:00 PM
 endTime: 4:00 PM
-location: "In-person: Inspire9, Richmond \n Online: Electron eVenue"
+location: "In-person: Room GR03, Melbourne Business School \n Online: Electron eVenue"
 ---
 
+## About the Event
 
-## Key Discussion Points
+Let’s Hello World is a simple idea. We pick an open source tool and begin.
 
-- February in East Gippsland
-- February Regional Meeting: East Gippsland
-- Canberra Linux Collab report
-- March Quarterly Meeting
-- Linux & Games
-- Linux & AI
+Not a deep dive. Not a polished workshop. Just a focused session to install it, try it, and build something small together.
 
-Link to join:
-[https://electronworkshop.com.au/goto/venue](https://electronworkshop.com.au/goto/venue)  
-We use a self-hosted Big Blue Button instance (aka BBB) for this meeting, managed by Electron Workshop and hosted by Serversaurus.
+The goal is to get past the hardest step: beginning.
 
-### Schedule
 
-- 19:00 Meet and greet
-- 19:30 Opening
-- 21:30 Closure
+### n8n
+
+n8n is an open source workflow automation tool that lets you connect services, APIs, and scripts into repeatable workflows.
+
+During this session we will:
+- Run n8n locally
+- Explore the interface
+- Build a basic workflow
+- Connect to at least one real service
+
+No prior experience required. If you have been meaning to try n8n but have not made the time, this is your chance.
+
+Bring a laptop and curiosity.
+
+
+**Time**: from 1PM to 3PM   
+**Online**: <https://electronworkshop.com.au/goto/venue>    
+
+**Location**: Room GR03, Melbourne Business School   
+**Map**: <https://maps.app.goo.gl/ww9wb1pHpvLRkAt99>
+
+
+[RSPV on Luma](https://luma.com/qsx7qmcg?utm_source=lv-web)

@@ -7,6 +7,7 @@ eventDate: 2026-02-10
 startTime: 7:00 PM
 endTime: 9:00 PM
 location: "In-person: Inspire9, Richmond \n Online: Electron eVenue"
+recapPost: /posts/2026-02-11_Town-Hall-February-2026/
 ---
 
 ## Linux Victoria Town Hall Februrary 2026

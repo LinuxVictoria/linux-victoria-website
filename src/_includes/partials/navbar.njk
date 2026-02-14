@@ -36,7 +36,7 @@ href="/linux-support">
 <ul class="navbar-nav ms-auto flex-column flex-md-row justify-content-md-end">
 {% for item in navbar %}
 <li class="nav-item">
-<a class="nav-link{% if page.url == item.href %} active{% endif %}" href="{{ item.href }}">
+<a class="fs-5 fw-semibold nav-link px-2 px-sm-3 rounded-3{% if page.url == item.href %} active{% endif %}" href="{{ item.href }}">
 {{ item.title }}
 </a>
 </li>

@@ -7,7 +7,7 @@ location: Electron eVenue
 tags: ["Upcoming", "AI"]
 description: "Join us for weekly informal discussions exploring the intersection of Linux and AI. Every Tuesday night, technologists gather to share knowledge, collaborate, and build community."
 preview_image: "http://linuxvictoria.org/assets/images/LAIT_night_banner.png"
-image: "/assets/images/LAIT_night_banner.png"
+image: "/assets/images/lait-17-02-26.webp"
 ---
 
 Join us for the second round of **LAIT Night Chats** : a weekly gathering for anyone curious about the intersection of Linux and Artificial Intelligence. Whether you're running local LLMs on your home server, exploring AI-powered system administration, or just fascinated by where open-source meets machine learning, these conversations are for you.

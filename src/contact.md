@@ -97,4 +97,49 @@ Sophie Allen / Treasurer
 
 ---
 
+<a id="host-your-own-event"></a>
+
+## Host Your Own Event
+
+While Linux Victoria organises, runs and hosts events, we encourage **all community members** to host their own catchups, discussions or meetups. Whether it's a chat about your favourite distro, a workshop on a tool you love, or just a casual hangout, you can make it happen!
+
+### Getting Listed on the Linux Victoria Calendar
+
+There are several ways to get your event visible to the community:
+
+#### Option 1: Luma (Easiest)
+1. Go to [lu.ma/linux-victoria](https://lu.ma/linux-victoria)
+2. Click **Submit Event** (you only need an email address)
+3. Fill in your event details and submit
+4. We'll receive a request and approve it
+5. Your event will appear on the Linux Victoria Calendar!
+
+#### Option 2: GitHub Website
+1. Go to the [Linux Victoria GitHub repository](https://github.com/linuxvictoria/linux-victoria-website)
+2. Copy `src/events/template.njk` and rename it to `YYYY-MM-DD_your-event-title.md`
+3. Fill in the frontmatter: `title`, `description`, `eventDate`, `startTime`, `endTime`, `location`
+4. Write your event details in the body using Markdown
+5. Create a Pull Request
+6. Once merged, your event appears on the website!
+
+#### Option 3: Meetup
+Reach out to us and we can add your event to our Meetup group.
+
+### Need Help?
+
+Contact us at <team@linuxvictoria.org> if you need assistance, including:
+- **Graphics**: event images, logos, promotional material
+- **Venues**: finding a space for your in-person event
+- **Listing**: getting your event on the website, Luma, and Meetup
+
+### Online Events
+
+For online events, **Electron Workshop** sponsors video conferencing.
+
+You can use **electronworkshop/goto/venue** for your online catchup, discussion, or event.
+
+The main thing is that **you're able to be there and host**, whether online or in person. We can help handle the rest!
+
+---
+
 Every contribution, no matter how small, helps strengthen our community. We look forward to hearing from you!

@@ -7,6 +7,8 @@ const timezone = require('dayjs/plugin/timezone');
 const customParseFormat = require('dayjs/plugin/customParseFormat');
 const fs = require('fs');
 const path = require('path');
+const markdownIt = require('markdown-it');
+const md = markdownIt({ html: true, linkify: true });
 
 dayjs.extend(advancedFormat);
 dayjs.extend(isSameOrAfter);
@@ -84,6 +86,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
+
+  // Make README.md available as global data for the under-the-hood page
+  eleventyConfig.addGlobalData('readmeContent', function() {
+    return fs.readFileSync('./README.md', 'utf8');
+  });
 
   // Gallery images reader
   eleventyConfig.addGlobalData('galleries', function() {
@@ -410,6 +417,11 @@ module.exports = function (eleventyConfig) {
   // JSON stringify filter
   eleventyConfig.addFilter("jsonify", function(value) {
     return JSON.stringify(value);
+  });
+
+  // Markdown filter for rendering README content
+  eleventyConfig.addFilter("markdown", function(content) {
+    return md.render(content);
   });
 
   return {

@@ -9,6 +9,10 @@ layout: base.njk
     <br>
     {{ content | safe }}
 
+    {%- if eventPage %}
+    <p class="mt-4">Go to <a href="{{eventPage}}">event page</a></p>
+    {%- endif %}
+
     {%- if gallery and not (content | hasGallery) %}
     {% set path = gallery | stripLeadingSlash %}
     {% include "partials/gallery.njk" %}
