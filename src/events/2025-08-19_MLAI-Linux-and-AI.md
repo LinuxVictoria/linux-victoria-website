@@ -2,15 +2,13 @@
 title: Linux and AI -- Linux Victoria in collaboration with MLAI Melbourne
 description: DeepSeek rattled NVIDIA's stock and reminded many of us just how much you can gain from running an LLM locally—especially for those who still hadn't tried Meta's llama.
 preview_image: "http://linuxvictoria.org/assets/images/MLAI_Linux-Victoria_Collab_2025-08-19.png"
+image: "http://linuxvictoria.org/assets/images/MLAI_Linux-Victoria_Collab_2025-08-19.png"
 tags: ["Event", "AI", "2025"]
 eventDate: 2025-08-19
 startTime: 6:00 PM
 endTime: 8:00 PM
 location: 912 Collins St, Docklands, VIC
 ---
-
-<img src="/assets/images/MLAI_Linux-Victoria_Collab_2025-08-19.png" alt="MLAI and Linux Victoria" style="width: 100%;" class="rounded mt-3 d-block d-md-none" />
-<img src="/assets/images/MLAI_Linux-Victoria_Collab_2025-08-19.png" alt="MLAI and Linux Victoria" style="width: 50%;" class="rounded mt-3 d-none d-md-block" />
 
 # Linux & AI -- Linux Victoria in collaboration with MLAI Melbourne
 

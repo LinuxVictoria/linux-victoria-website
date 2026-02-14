@@ -327,6 +327,32 @@ module.exports = function (eleventyConfig) {
       .slice(0, 3);
   });
 
+  // Consolidated galleries - all events and posts with gallery property, sorted by date (most recent first)
+  eleventyConfig.addCollection("consolidatedGalleries", function (collectionApi) {
+    const events = collectionApi.getFilteredByGlob("src/events/*.md")
+      .filter(e => e.data.gallery)
+      .map(e => ({
+        date: new Date(e.data.eventDate),
+        type: 'event',
+        pageTitle: e.data.title,
+        gallery: e.data.gallery,
+        url: e.url
+      }));
+    
+    const posts = collectionApi.getFilteredByGlob("src/posts/*.md")
+      .filter(p => p.data.gallery)
+      .map(p => ({
+        date: new Date(p.data.postDate),
+        type: 'post',
+        pageTitle: p.data.title,
+        gallery: p.data.gallery,
+        url: p.url
+      }));
+    
+    return [...events, ...posts]
+      .sort((a, b) => b.date - a.date);
+  });
+
   // Date formatting filter - uses site.json dateFormat as default
   eleventyConfig.addFilter("formatDate", function (dateInput, format) {
     if (!dateInput) return '';
@@ -346,6 +372,16 @@ module.exports = function (eleventyConfig) {
     if (!Array.isArray(arr1)) arr1 = [];
     if (!Array.isArray(arr2)) arr2 = [];
     return arr1.concat(arr2);
+  });
+
+  // Check if rendered content already contains a manually placed gallery
+  eleventyConfig.addFilter("hasGallery", function(content) {
+    return content && content.includes('<div class="gallery">');
+  });
+
+  // Strip leading slash from a path
+  eleventyConfig.addFilter("stripLeadingSlash", function(str) {
+    return str ? str.replace(/^\//, '') : str;
   });
 
   // JSON stringify filter

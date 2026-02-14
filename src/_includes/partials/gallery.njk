@@ -1,0 +1,191 @@
+{% if not path %}
+{% set path = "assets/uploads" %}
+{% endif %}
+
+{% if not filterPrefix %}
+{% set filterPrefix = null %}
+{% endif %}
+
+{# Scan the gallery directory for images, optionally filtering by prefix #}
+{% set galleryImages = galleries.scan(path, filterPrefix) %}
+
+{% if galleryImages and galleryImages | length > 0 %}
+<style>
+.gallery-overlay {
+background: rgba(0, 0, 0, 0.9);
+backdrop-filter: blur(5px);
+}
+
+.gallery-nav-btn {
+background: rgba(255, 255, 255, 0.2);
+border: 1px solid rgba(255, 255, 255, 0.3);
+transition: all 0.3s ease;
+}
+
+.gallery-nav-btn:hover {
+background: rgba(255, 255, 255, 0.3);
+transform: scale(1.1);
+}
+
+.gallery-nav-btn:disabled {
+opacity: 0.3;
+cursor: not-allowed;
+}
+
+.gallery-thumbnail {
+transition: transform 0.2s ease;
+cursor: pointer;
+height: 120px;
+object-fit: cover;
+}
+
+.gallery-thumbnail:hover {
+transform: scale(1.05);
+}
+
+.gallery-main-image {
+max-height: 80vh;
+max-width: 90vw;
+object-fit: contain;
+}
+</style>
+
+<div class="gallery">
+<div class="row g-3" id="gallery-grid-{{ path | replace('/', '-') }}">
+{% for image in galleryImages %}
+<div class="col-6 col-sm-4 col-md-3 col-lg-2">
+<div class="card border-0 shadow-sm">
+<img src="/{{ path }}/{{ image }}" 
+class="card-img gallery-thumbnail" 
+alt="Gallery image: {{ image | replace('-', ' ') | replace('_', ' ') }}"
+data-index="{{ loop.index0 }}"
+data-gallery="{{ path }}">
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+
+<!-- Gallery Lightbox Modal -->
+<div class="modal fade" id="galleryModal-{{ path | replace('/', '-') }}" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-xl modal-dialog-centered">
+<div class="modal-content bg-transparent border-0">
+<div class="modal-header border-0 position-absolute top-0 end-0 z-3">
+<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body p-0 d-flex align-items-center justify-content-center position-relative gallery-overlay" style="min-height: 80vh;">
+<!-- Navigation buttons -->
+<button class="btn gallery-nav-btn position-absolute start-0 top-50 translate-middle-y ms-3 z-2" 
+id="prevBtn-{{ path | replace('/', '-') }}" style="width: 50px; height: 50px;">
+<i class="bi bi-chevron-left text-white fs-4"></i>
+<span class="visually-hidden">Previous image</span>
+</button>
+
+<button class="btn gallery-nav-btn position-absolute end-0 top-50 translate-middle-y me-3 z-2" 
+id="nextBtn-{{ path | replace('/', '-') }}" style="width: 50px; height: 50px;">
+<i class="bi bi-chevron-right text-white fs-4"></i>
+<span class="visually-hidden">Next image</span>
+</button>
+
+<!-- Main image -->
+<img id="modalImage-{{ path | replace('/', '-') }}" class="gallery-main-image rounded" alt="Gallery image">
+
+<!-- Image counter -->
+<div class="position-absolute bottom-0 start-50 translate-middle-x mb-3">
+<span class="badge bg-dark bg-opacity-75 text-white px-3 py-2" id="imageCounter-{{ path | replace('/', '-') }}">
+1 / {{ galleryImages | length }}
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const galleryId = '{{ path | replace('/', '-') }}';
+const galleryPath = '{{ path }}';
+const galleryImages = {{ galleryImages | dump | safe }};
+
+const galleryGrid = document.getElementById('gallery-grid-' + galleryId);
+const modal = new bootstrap.Modal(document.getElementById('galleryModal-' + galleryId));
+const modalImage = document.getElementById('modalImage-' + galleryId);
+const imageCounter = document.getElementById('imageCounter-' + galleryId);
+const prevBtn = document.getElementById('prevBtn-' + galleryId);
+const nextBtn = document.getElementById('nextBtn-' + galleryId);
+
+let currentImageIndex = 0;
+
+// Function to show image in modal
+function showImage(index) {
+if (galleryImages[index]) {
+modalImage.src = '/' + galleryPath + '/' + galleryImages[index];
+modalImage.alt = 'Gallery image: ' + galleryImages[index].split('.')[0].replace(/[-_]/g, ' ');
+imageCounter.textContent = (index + 1) + ' / ' + galleryImages.length;
+
+// Update navigation button states
+prevBtn.disabled = index === 0;
+nextBtn.disabled = index === galleryImages.length - 1;
+}
+}
+
+// Navigation functions
+function showPrevious() {
+if (currentImageIndex > 0) {
+currentImageIndex--;
+showImage(currentImageIndex);
+}
+}
+
+function showNext() {
+if (currentImageIndex < galleryImages.length - 1) {
+currentImageIndex++;
+showImage(currentImageIndex);
+}
+}
+
+// Add click listeners to thumbnails
+document.querySelectorAll('[data-gallery="' + galleryPath + '"]').forEach(thumb => {
+thumb.addEventListener('click', function() {
+currentImageIndex = parseInt(this.dataset.index);
+showImage(currentImageIndex);
+modal.show();
+});
+});
+
+// Event listeners
+prevBtn.addEventListener('click', showPrevious);
+nextBtn.addEventListener('click', showNext);
+
+// Keyboard navigation
+const modalElement = document.getElementById('galleryModal-' + galleryId);
+modalElement.addEventListener('shown.bs.modal', function() {
+document.addEventListener('keydown', handleKeydown);
+});
+
+modalElement.addEventListener('hidden.bs.modal', function() {
+document.removeEventListener('keydown', handleKeydown);
+});
+
+function handleKeydown(e) {
+if (modalElement.classList.contains('show')) {
+if (e.key === 'ArrowLeft') {
+showPrevious();
+} else if (e.key === 'ArrowRight') {
+showNext();
+} else if (e.key === 'Escape') {
+modal.hide();
+}
+}
+}
+});
+</script>
+{% else %}
+<script>
+console.log('No images found in /{{ path }}');
+</script>
+<div class="alert alert-info" role="alert">
+<i class="bi bi-images me-2" aria-hidden="true"></i>
+No images found in this gallery.
+</div>
+{% endif %}

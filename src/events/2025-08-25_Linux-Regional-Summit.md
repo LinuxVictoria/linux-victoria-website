@@ -9,37 +9,35 @@ endTime: 5:00 PM
 location: Morwell Innovation Centre, Morwell, Victoria
 ---
 
+### Details
+You can now find the full program on <https://linuxvictoria.org/linux-regional-summit>
 
-## Linux Regional Summit Gippsland 2025
+<br>
+<a id="travel"></a>
 
-**Monday, August 25th, 2025**  
-**Morwell Innovation Centre, Morwell, Victoria (Hybrid)**  
-  
-### Thank you to everyone that joined us in Gippsland!
+### Travel Facilities
+Those who are interested in attending Linux Regional Summit in person, we have facilitated pick up from Morwell Station in two rounds and drop off at the end.
 
-What a special day filled with great conversations about the importance of open source in regional Australia. 
+Leave Southern Cross station at 8:26am on Traralgon Line and get off at Morwell Station. Pick up at Morwell Station at 10:45pm
 
-We’d like to give a heartfelt thank you to our incredible speakers and showcasers:
+Leave Southern Cross station with 11:23am Traralgon Service and get off at Morwell Station. Pick up from Morwell Station at 1:45pm.
 
-- **Brock** delivered an informative, step-by-step demonstration of installing and using OpenSUSE, showing just how accessible Linux can be for newcomers and seasoned users alike.
-    
-- **Marty from Serversaurus** shared valuable insights on the importance and many benefits of Linux and open source software to business.
-    
-- **Andrew** joined us online to showcase how to locally use the open source LLM OLlama to code scripts and use for a variety task all on your own machine.
-    
-- **Kiki** also joined online to share a discussion on exploring how internet governance and open source principles build inclusive digital communities.
-    
+Drop off to Morwell Station at 5:15pm for catching the 5:28pm service for arrival at Southern Cross at 7:48pm.
 
-We also extend our thanks to:
+<br>
+<a id="linux-regional-discourse"></a>
 
-- **Serversaurus**  for their generous sponsorship
-    
-- **Morwell Innovation Centre**  for hosting us in such a fantastic venue
-    
-- **Cait from Gippsland Tech School**  for a fascinating tour showcasing the next generation of innovators in our region.
+### Linux Regional Discourse
+Due to many requests for joining online, we have restructured the afternoon program into a hybrid session.
 
-As always, it was wonderful to meet newcomers and reconnect with familiar faces, many attending in person for the first time!
+The session will run from 2pm to 4pm and will be available to join online.
 
-We look forward to welcoming you back next year as we celebrate Linux’s landmark **35th Birthday** 🐧
+To stay tuned sign up on meetup <https://www.meetup.com/linux-users-of-victoria/events/310676900/>
 
 
+<br>
+<a id="subscribe"></a>
+
+### Stay Tuned
+
+To receive updates about the development of this topic register your interest on [https://linuxvictoria.org/engage/](/engage/)
