@@ -1,0 +1,39 @@
+
+<style>
+  #mauticform_linuxvictorianewsletterform_email .form-label {
+    display: none;
+  }
+  #mauticform_linuxvictorianewsletterform_email {
+    width: 100%;
+  }
+  @media (min-width: 768px) {
+    #mauticform_linuxvictorianewsletterform_email {
+      width: 50%;
+    }
+  }
+  #mauticform_linuxvictorianewsletterform .mauticform-page-wrapper {
+    display: flex !important;
+    justify-content: center;
+    flex-direction: column;
+  }
+  @media (min-width: 768px) {
+    #mauticform_linuxvictorianewsletterform .mauticform-page-wrapper {
+      flex-direction: row;
+      gap: 1rem;
+    }
+  }
+</style>
+
+<div class="row mb-5 px-3">
+<div class="text-primary text-center col-12 bg-light rounded-3 p-4 pb-3 shadow">
+<h2 class="mb-3 fs-3 fw-semibold">Subscribe to Our Newsletter</h2>
+<script type="text/javascript"
+src="//engage.electronworkshop.com.au/form/generate.js?id=1"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var emailInput = document.querySelector('#mauticform_linuxvictorianewsletterform_email input[type="email"]');
+    if (emailInput) emailInput.placeholder = 'Email address';
+  });
+</script>
+</div>
+</div>
