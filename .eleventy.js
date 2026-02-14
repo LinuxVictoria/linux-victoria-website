@@ -328,26 +328,48 @@ module.exports = function (eleventyConfig) {
   });
 
   // Consolidated galleries - all events and posts with gallery property, sorted by date (most recent first)
+  // Each entry includes scanned image filenames for use in the all-images gallery
   eleventyConfig.addCollection("consolidatedGalleries", function (collectionApi) {
+    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'];
+
+    function scanDir(dirPath) {
+      const cleanPath = dirPath.replace(/^\//, '');
+      const fullPath = path.join(__dirname, 'src', cleanPath);
+      try {
+        if (!fs.existsSync(fullPath)) return [];
+        return fs.readdirSync(fullPath)
+          .filter(f => imageExtensions.includes(path.extname(f).toLowerCase()))
+          .sort();
+      } catch { return []; }
+    }
+
     const events = collectionApi.getFilteredByGlob("src/events/*.md")
       .filter(e => e.data.gallery)
-      .map(e => ({
-        date: new Date(e.data.eventDate),
-        type: 'event',
-        pageTitle: e.data.title,
-        gallery: e.data.gallery,
-        url: e.url
-      }));
+      .map(e => {
+        const galleryPath = e.data.gallery.replace(/^\//, '');
+        return {
+          date: new Date(e.data.eventDate),
+          type: 'event',
+          pageTitle: e.data.title,
+          gallery: galleryPath,
+          url: e.url,
+          images: scanDir(galleryPath)
+        };
+      });
     
     const posts = collectionApi.getFilteredByGlob("src/posts/*.md")
       .filter(p => p.data.gallery)
-      .map(p => ({
-        date: new Date(p.data.postDate),
-        type: 'post',
-        pageTitle: p.data.title,
-        gallery: p.data.gallery,
-        url: p.url
-      }));
+      .map(p => {
+        const galleryPath = p.data.gallery.replace(/^\//, '');
+        return {
+          date: new Date(p.data.postDate),
+          type: 'post',
+          pageTitle: p.data.title,
+          gallery: galleryPath,
+          url: p.url,
+          images: scanDir(galleryPath)
+        };
+      });
     
     return [...events, ...posts]
       .sort((a, b) => b.date - a.date);
