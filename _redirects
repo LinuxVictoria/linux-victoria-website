@@ -1,6 +1,6 @@
 /posts/2025-08-05_Town-Hall-Meeting-August  /posts/2025-08-12_Town-Hall-Meeting-August  301
 /linux-regional-discourse   /posts/2025-08-25_linux_regional_summit/#linux-regional-discourse   301!
-/volunteer-form*   /contact   301!
+/volunteer-form*   /engage   301!
 /posts/2025-05-06_Town-Hall-Meeting  /posts/2025-05-06_Town-Hall-Meeting-May  301!
 /posts/2025-05-06_Town-Hall-May  /posts/2025-05-06_Town-Hall-Meeting-May  301!
 /posts/2025-08-25_linux_regional_summit*  /posts/2025-08-25_Linux-Regional-Summit  301!
@@ -10,28 +10,3 @@
 /posts/2026-01-31_LUV-BBQ   /posts/2026-01-31_Penguin-Picnic   301!
 /posts/2026-01-31_luv-bbq   /posts/2026-01-31_Penguin-Picnic   301!
 /posts/2026-01-31_luv-bbq/   /posts/2026-01-31_Penguin-Picnic   301!
-
-# Event redirects from /posts/ to /events/
-/posts/2025-05-06_Town-Hall-Meeting-May   /events/2025-05-06_Town-Hall-Meeting-May   301!
-/posts/2025-06-03_Town-Hall-Meeting-June   /events/2025-06-03_Town-Hall-Meeting-June   301!
-/posts/2025-07-01_Town-Hall-Meeting-July   /events/2025-07-01_Town-Hall-Meeting-July   301!
-/posts/2025-08-12_Town-Hall-Meeting-August   /events/2025-08-12_Town-Hall-Meeting-August   301!
-/posts/2025-08-19_MLAI-Linux-and-AI   /events/2025-08-19_MLAI-Linux-and-AI   301!
-/posts/2025-08-25_Linux-Regional-Discourse   /events/2025-08-25_Linux-Regional-Discourse   301!
-/posts/2025-08-25_Linux-Regional-Summit   /events/2025-08-25_Linux-Regional-Summit   301!
-/posts/2025-09-09_Town-Hall-Meeting-September   /events/2025-09-09_Town-Hall-Meeting-September   301!
-/posts/2025-10-14_Town-Hall-Meeting-October   /events/2025-10-14_Town-Hall-Meeting-October   301!
-/posts/2025-11-11_Town-Hall-Meeting-November   /events/2025-11-11_Town-Hall-Meeting-November   301!
-/posts/2025-12-07_AGM-and-Christmas-Party   /events/2025-12-07_AGM-and-Christmas-Party   301!
-/posts/2025-12-21_create-a-website-you-fully-own   /events/2025-12-21_create-a-website-you-fully-own   301!
-/posts/2026-01-13_Town-Hall-Meeting-January   /events/2026-01-13_Town-Hall-Meeting-January   301!
-/posts/2026-01-22_Meet-LUV-EO2026   /events/2026-01-22_Meet-LUV-EO2026   301!
-/posts/2026-01-24_Linux-Collab-Canberra   /events/2026-01-24_Linux-Collab-Canberra   301!
-/posts/2026-01-31_Penguin-Picnic   /events/2026-01-31_Penguin-Picnic   301!
-/posts/2026-02_Town-Hall-February-2026   /events/2026-02-10_Town-Hall-February-2026   301!
-/posts/lait-night-chat-linux-and-ai/   /events/lait-night-chat-linux-and-ai/
-
-/installfest/   /installfests/   301!
-/events-and-posts/   /events/   301!
-/linux-distributions/   /installfests/   301!
-/engage/   /contact/   301!
