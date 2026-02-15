@@ -41,12 +41,13 @@ Bring a laptop and curiosity.
 **Location**: Room GR03, Melbourne Business School   
 **Map**: <https://maps.app.goo.gl/ww9wb1pHpvLRkAt99>
 
+<a id="tools"></a>
 
 [RSPV on Luma](https://luma.com/qsx7qmcg?utm_source=lv-web)
 
+
 <br>
 <br>
-<a id="tools"></a>
 
 # Tools
 
