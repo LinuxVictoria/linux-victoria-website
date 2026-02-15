@@ -1,0 +1,113 @@
+name: Notify Telegram on PR, Issue, and Comment Events
+
+on:
+  pull_request:
+    types: [opened, closed]
+  issues:
+    types: [opened, closed]
+  issue_comment:
+    types: [created, edited]   # <- include edited so we can act only on edited Netlify comments
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Telegram Message
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
+          EVENT_NAME: ${{ github.event_name }}
+          ACTION: ${{ github.event.action }}
+          IS_MERGED: ${{ github.event.pull_request.merged }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          COMMENT_AUTHOR: ${{ github.event.comment.user.login }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+          COMMENT_URL: ${{ github.event.comment.html_url }}
+        run: |
+          echo "🔍 GitHub Event: $EVENT_NAME"
+          echo "🔍 Action: $ACTION"
+
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            echo "🛠️ Handling a pull request event"
+            echo "PR Title: $PR_TITLE"
+            echo "PR Author: $PR_AUTHOR"
+            echo "PR URL: $PR_URL"
+            echo "Is Merged: $IS_MERGED"
+
+            if [ "$IS_MERGED" = "true" ]; then
+              TEXT="✅ *PR Merged!* by $PR_AUTHOR: *$PR_TITLE*%0ALink: $PR_URL"
+            else
+              TEXT="🆕 *New PR* by $PR_AUTHOR: *$PR_TITLE*%0ALink: $PR_URL"
+            fi
+
+          elif [ "$EVENT_NAME" = "issues" ]; then
+            echo "📌 Handling an issue event"
+            echo "Issue Title: $ISSUE_TITLE"
+            echo "Issue Author: $ISSUE_AUTHOR"
+            echo "Issue URL: $ISSUE_URL"
+
+            if [ "$ACTION" = "opened" ]; then
+              TEXT="📝 *New Issue* by $ISSUE_AUTHOR: *$ISSUE_TITLE*%0ALink: $ISSUE_URL"
+            elif [ "$ACTION" = "closed" ]; then
+              TEXT="✅ *Issue Closed* by $ISSUE_AUTHOR: *$ISSUE_TITLE*%0ALink: $ISSUE_URL"
+            else
+              echo "⚠️ Unsupported issue action: $ACTION"
+              exit 0
+            fi
+
+          elif [ "$EVENT_NAME" = "issue_comment" ]; then
+            echo "💬 Handling an issue comment"
+            echo "Comment Author: $COMMENT_AUTHOR"
+            echo "Comment URL: $COMMENT_URL"
+            echo "Comment Body: $COMMENT_BODY"
+
+            # Special handling for Netlify bot comments
+            if [ "$COMMENT_AUTHOR" = "netlify[bot]" ]; then
+              echo "🤖 Detected Netlify bot comment"
+              if [ "$ACTION" != "edited" ]; then
+                echo "⏭️ Netlify comment is not edited yet — skipping Telegram notification."
+                exit 0
+              fi
+
+              # Only notify if the edited body contains EXACT 'Deploy Preview'
+              if echo "$COMMENT_BODY" | grep -q 'Deploy Preview'; then
+                # Optional: try to extract first URL, fallback to the comment URL
+                PREVIEW_URL=$(echo "$COMMENT_BODY" | grep -Eo 'https?://[^ )]+' | head -n1)
+                TEXT="🚀 *Netlify Deploy Preview*%0ALink: ${PREVIEW_URL:-$COMMENT_URL}"
+                echo "✅ Netlify edited comment contains 'Deploy Preview' — will send."
+              else
+                echo "⏭️ Edited Netlify comment does not contain 'Deploy Preview' — skipping."
+                exit 0
+              fi
+
+            else
+              # Non-Netlify comments: always send
+              SHORT_BODY=$(echo "$COMMENT_BODY" | head -c 200)
+              TEXT="💬 *New Comment* by $COMMENT_AUTHOR on an issue:%0A${SHORT_BODY}%0ALink: $COMMENT_URL"
+            fi
+
+          else
+            echo "⚠️ Unsupported event: $EVENT_NAME"
+            exit 1
+          fi
+
+          # Only add message_thread_id if provided (i.e., group has topics)
+          THREAD_ARG=""
+          if [ -n "$TELEGRAM_THREAD_ID" ]; then
+            THREAD_ARG="-d message_thread_id=$TELEGRAM_THREAD_ID"
+          fi
+
+          echo "📤 Sending message to Telegram topic: ${TELEGRAM_THREAD_ID:-(no topic)}"
+          RESPONSE=$(curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+            -d chat_id="$TELEGRAM_CHAT_ID" \
+            $THREAD_ARG \
+            -d text="$TEXT" \
+            -d parse_mode=Markdown)
+
+          echo "📨 Telegram API Response: $RESPONSE"
