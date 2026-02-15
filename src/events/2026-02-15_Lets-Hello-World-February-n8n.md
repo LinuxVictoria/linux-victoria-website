@@ -9,6 +9,8 @@ endTime: 4:00 PM
 location: "In-person: Room GR03, Melbourne Business School \n Online: Electron eVenue"
 ---
 
+**Go to [Tools](#tools)**
+
 ## About the Event
 
 Let’s Hello World is a simple idea. We pick an open source tool and begin.
@@ -41,3 +43,27 @@ Bring a laptop and curiosity.
 
 
 [RSPV on Luma](https://luma.com/qsx7qmcg?utm_source=lv-web)
+
+<br>
+<br>
+<a id="tools"></a>
+
+# Tools
+
+## n8n Documentation
+
+<https://docs.n8n.io/>
+
+<br>
+
+#### Self Hosted
+<https://docs.n8n.io/hosting/>
+
+###### npm   
+<https://docs.n8n.io/hosting/installation/npm/>
+
+<br>
+
+#### Not Self Hosted
+
+<https://app.n8n.cloud/register>
