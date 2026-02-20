@@ -1,22 +1,34 @@
 ---
 title: "LAIT Night Chats: Linux and AI Tuesday Conversations"
-eventDate: 2026-02-17
+eventDate: 2026-02-24
 startTime: 9:00 PM
 endTime: 10:00 PM
-location: Electron eVenue
-tags: ["Upcoming", "AI"]
+location: "<a href='https://electronworkshop.com.au/goto/venue'>Electron eVenue</a>"
 description: "Join us for weekly informal discussions exploring the intersection of Linux and AI. Every Tuesday night, technologists gather to share knowledge, collaborate, and build community."
-preview_image: "http://linuxvictoria.org/assets/images/LAIT_night_banner.png"
-image: "/assets/images/lait-17-02-26.webp"
+preview_image: "http://linuxvictoria.org/assets/images/lait-24-02-26.webp"
+image: "/assets/images/lait-24-02-26.webp"
+hideEventDetails: true
 ---
 
 Join us for the second round of **LAIT Night Chats** : a weekly gathering for anyone curious about the intersection of Linux and Artificial Intelligence. Whether you're running local LLMs on your home server, exploring AI-powered system administration, or just fascinated by where open-source meets machine learning, these conversations are for you.
 
 ## 🗓️ Next Event
 
-- Date: 2025-02-17
-- Location: [evenue](https://electronworkshop.com.au/goto/venue)
 
+{% include "partials/event-details.njk" %}
+
+---
+
+## Previous LAIT Nights
+
+### Season 2 (Current)
+- [February 17th](/posts/2026-02-17_LAIT-Night)
+
+### Season 1
+
+Read [LAIT Night Season 1 Recap](/posts/lait-night-chat-linux-and-ai-season-1)
+
+---
 
 ## What Are LAIT Night Chats?
 

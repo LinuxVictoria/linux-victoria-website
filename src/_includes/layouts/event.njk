@@ -2,29 +2,29 @@
 layout: base.njk
 ---
 <div class="h-100 card card-body p-4 border-primary border-opacity-50">
-  <div>
-    <h1>{{title}}</h1>
+<div>
+<h1>{{title}}</h1>
 
-    {% if not hideEventDetails %}
-      {% include "partials/event-details.njk" %}
-    {% endif %}
+{% if not hideEventDetails %}
+{% include "partials/event-details.njk" %}
+{% endif %}
 
-    {{ content | safe }}
+{{ content | safe }}
 
-    {%- if recapPost %}
-    <p class="mt-4">Read the <a href="{{recapPost}}">recap post</a>!</p>
-    {%- endif %}
+{%- if recapPost %}
+<p class="mt-4">Read the <a href="{{recapPost}}">recap post</a>!</p>
+{%- endif %}
 
-    {%- if gallery and not (content | hasGallery) %}
-    {% set path = gallery | stripLeadingSlash %}
-    {% include "partials/gallery.njk" %}
-    {%- endif %}
-  </div>
-  <div class="d-flex justify-content-center gap-3 my-4">
-    {% include "partials/btn.njk" %}
-    <a href="/events/" class="btn btn-outline-primary">
-      <i class="bi bi-calendar me-2"></i>All Events
-    </a>
-  </div>
+{%- if gallery and not (content | hasGallery) %}
+{% set path = gallery | stripLeadingSlash %}
+{% include "partials/gallery.njk" %}
+{%- endif %}
+</div>
+<div class="d-flex justify-content-center gap-3 my-4">
+{% include "partials/btn.njk" %}
+<a href="/events/" class="btn btn-outline-primary">
+<i class="bi bi-calendar me-2"></i>All Events
+</a>
+</div>
 </div>
 
