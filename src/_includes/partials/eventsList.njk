@@ -61,10 +61,10 @@
 </span>
 </div>
 {% endif %}
-{% if event.data.location %}
+{% if event.data.location | safe %}
 <div class="d-flex gap-2 mb-2 text-preline">
 <i class="bi bi-geo-alt" aria-hidden="true"></i>
-<span>{{ event.data.location }}</span>
+<span>{{ event.data.location | safe }}</span>
 </div>
 {% endif %}
 </div>
