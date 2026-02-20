@@ -16,7 +16,7 @@ About two thirds of attendees got n8n running on their own machines, which is a 
 
 A special thank you to Angie, who installed n8n on her machine, shared her hotspot and gave out her IP address so that others could connect to her instance. Watching workflows appear in real time as more people joined and started experimenting was genuinely fun. It turned into a really lovely shared experience.
 
-After the session wrapped up, some attendees stayed on to see a Japanese learning app connected to a local LLM running on Janai, which was built during the session. A nice bonus to end the day on.
+After the session wrapped up, some attendees stayed on to see a Japanese learning app ["Cynthy Chat"](https://github.com/pendashteh/cynthy-chat) connected to a local LLM running on Janai, which was built during the session. A nice bonus to end the day on.
 
 We are also putting together a set of n8n workflows to share with attendees to try out at their own pace. Keep an eye out for that.
 
