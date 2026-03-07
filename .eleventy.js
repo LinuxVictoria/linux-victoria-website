@@ -23,59 +23,86 @@ module.exports = function (eleventyConfig) {
   const SITE_TIMEZONE = siteData.timezone || 'Australia/Sydney';
   const DEFAULT_DATE_FORMAT = siteData.dateFormat || 'dddd, Do MMMM YYYY';
 
-  // Helper function to get event end date/time
+  // Helper: parse an event time string (e.g. "9:00 PM", "21:00") combined with a
+  // YYYY-MM-DD date string into a dayjs object in the site timezone.
+  function parseEventDateTime(dateStr, timeStr) {
+    if (!timeStr) return null;
+    const t = timeStr.toString().trim();
+    let combined;
+    if (t.includes(':')) {
+      // Formats like "9:00 PM", "21:00", "4:00PM"
+      combined = dayjs.tz(`${dateStr} ${t}`, SITE_TIMEZONE);
+    } else if (t.length === 3 || t.length === 4) {
+      // Formats like "400" or "1400" (24-hour without colon)
+      const padded = t.padStart(4, '0');
+      combined = dayjs.tz(`${dateStr} ${padded.slice(0, 2)}:${padded.slice(2)}`, SITE_TIMEZONE);
+    } else {
+      combined = dayjs.tz(`${dateStr} ${t}`, SITE_TIMEZONE);
+    }
+    return combined.isValid() ? combined : null;
+  }
+
+  // Helper function to get event end date/time (used to decide if an event is still upcoming).
+  // - Events with an endTime disappear 1 hour after that end time.
+  // - Events with no endTime (or no startTime) disappear at the end of the day in the
+  //   site timezone (i.e. they stay visible all day on eventDate and vanish at midnight).
   function getEventEndDateTime(event) {
     if (!event.data.eventDate) return null;
-    
+
     try {
-      // Try to parse the event date without timezone first
-      let eventDate = dayjs(event.data.eventDate);
-      
-      // If invalid date, return null
-      if (!eventDate.isValid()) {
+      const dateStr = dayjs(event.data.eventDate).format('YYYY-MM-DD');
+      const eventDateTz = dayjs.tz(dateStr, SITE_TIMEZONE);
+
+      if (!eventDateTz.isValid()) {
         console.warn(`Invalid eventDate for event: ${event.data.title || 'Unknown'} - ${event.data.eventDate}`);
         return null;
       }
-      
-      // If endTime is specified, use it
+
       if (event.data.endTime) {
-        try {
-          const timeStr = event.data.endTime.toString().trim();
-          let endTime;
-          
-          // Try parsing different formats
-          if (timeStr.includes(':')) {
-            // Format like "4:00PM", "16:00", "4:00 PM"
-            endTime = dayjs(`${eventDate.format('YYYY-MM-DD')} ${timeStr}`);
-          } else if (timeStr.length === 3 || timeStr.length === 4) {
-            // Format like "1400" or "400" (24-hour without colon)
-            const paddedTime = timeStr.padStart(4, '0');
-            const hours = paddedTime.slice(0, 2);
-            const minutes = paddedTime.slice(2);
-            endTime = dayjs(`${eventDate.format('YYYY-MM-DD')} ${hours}:${minutes}`);
-          } else {
-            // Fallback: try parsing as-is
-            endTime = dayjs(`${eventDate.format('YYYY-MM-DD')} ${timeStr}`);
-          }
-          
-          if (endTime.isValid()) {
-            return endTime;
-          } else {
-            console.warn(`Invalid endTime for event: ${event.data.title || 'Unknown'} - ${event.data.endTime}`);
-            return eventDate.endOf('day');
-          }
-        } catch (err) {
-          console.warn(`Error parsing endTime for event: ${event.data.title || 'Unknown'} - ${err.message}`);
-          return eventDate.endOf('day');
+        const endTime = parseEventDateTime(dateStr, event.data.endTime);
+        if (endTime) {
+          // Grace period: keep the event visible for 1 hour after it ends
+          return endTime.add(1, 'hour');
         }
+        console.warn(`Invalid endTime for event: ${event.data.title || 'Unknown'} - ${event.data.endTime}`);
       }
-      
-      // Default: event ends at midnight (end of day)
-      return eventDate.endOf('day');
+
+      // No endTime (or unparseable): vanish at midnight in the site timezone
+      return eventDateTz.endOf('day');
     } catch (err) {
       console.warn(`Error parsing date for event: ${event.data.title || 'Unknown'} - ${err.message}`);
       return null;
     }
+  }
+
+  // Helper: get event start date/time (used only for sorting same-day events).
+  // Falls back to start-of-day when no startTime is set.
+  function getEventStartDateTime(event) {
+    if (!event.data.eventDate) return null;
+    try {
+      const dateStr = dayjs(event.data.eventDate).format('YYYY-MM-DD');
+      if (event.data.startTime) {
+        const startTime = parseEventDateTime(dateStr, event.data.startTime);
+        if (startTime) return startTime;
+      }
+      return dayjs.tz(dateStr, SITE_TIMEZONE).startOf('day');
+    } catch (err) {
+      return null;
+    }
+  }
+
+  // Sort comparators that order by eventDate first, then by startTime on the same day.
+  function sortEventsAsc(a, b) {
+    const dateDiff = new Date(a.data.eventDate) - new Date(b.data.eventDate);
+    if (dateDiff !== 0) return dateDiff;
+    const startA = getEventStartDateTime(a);
+    const startB = getEventStartDateTime(b);
+    if (startA && startB) return startA.valueOf() - startB.valueOf();
+    return 0;
+  }
+
+  function sortEventsDesc(a, b) {
+    return sortEventsAsc(b, a);
   }
 
   //admin is left unprocessed and copied to site
@@ -148,7 +175,7 @@ module.exports = function (eleventyConfig) {
   // All events (sorted by date ascending)
   eleventyConfig.addCollection("events", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/events/*.md")
-      .sort((a, b) => new Date(a.data.eventDate) - new Date(b.data.eventDate));
+      .sort(sortEventsAsc);
   });
 
   eleventyConfig.addCollection("posts", function (collectionApi) {
@@ -164,7 +191,7 @@ module.exports = function (eleventyConfig) {
         const endDateTime = getEventEndDateTime(e);
         return endDateTime && endDateTime.isAfter(now);
       })
-      .sort((a, b) => new Date(a.data.eventDate) - new Date(b.data.eventDate));
+      .sort(sortEventsAsc);
   });
 
   // Past events (event has ended)
@@ -175,14 +202,14 @@ module.exports = function (eleventyConfig) {
         const endDateTime = getEventEndDateTime(e);
         return endDateTime && endDateTime.isSameOrBefore(now);
       })
-      .sort((a, b) => new Date(b.data.eventDate) - new Date(a.data.eventDate));
+      .sort(sortEventsDesc);
   });
 
   // Featured events
   eleventyConfig.addCollection("featuredEvents", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/events/*.md")
       .filter(e => e.data.featured === true)
-      .sort((a, b) => new Date(a.data.eventDate) - new Date(b.data.eventDate));
+      .sort(sortEventsAsc);
   });
 
   // Featured posts
@@ -202,7 +229,7 @@ module.exports = function (eleventyConfig) {
                endDateTime.isAfter(now) &&
                e.data.featured !== true;
       })
-      .sort((a, b) => new Date(a.data.eventDate) - new Date(b.data.eventDate))
+      .sort(sortEventsAsc)
       .slice(0, 3);
   });
 
@@ -214,7 +241,7 @@ module.exports = function (eleventyConfig) {
         const endDateTime = getEventEndDateTime(e);
         return endDateTime && endDateTime.isAfter(now);
       })
-      .sort((a, b) => new Date(a.data.eventDate) - new Date(b.data.eventDate))
+      .sort(sortEventsAsc)
       .slice(0, 3);
   });
 
@@ -229,7 +256,7 @@ module.exports = function (eleventyConfig) {
         const endDateTime = getEventEndDateTime(e);
         return endDateTime && endDateTime.isAfter(now);
       })
-      .sort((a, b) => new Date(a.data.eventDate) - new Date(b.data.eventDate))
+      .sort(sortEventsAsc)
       .slice(0, 2);
     
     const past = allEvents
@@ -237,7 +264,7 @@ module.exports = function (eleventyConfig) {
         const endDateTime = getEventEndDateTime(e);
         return endDateTime && endDateTime.isSameOrBefore(now);
       })
-      .sort((a, b) => new Date(b.data.eventDate) - new Date(a.data.eventDate))
+      .sort(sortEventsDesc)
       .slice(0, 1);
     
     return [...upcoming, ...past];
@@ -254,7 +281,7 @@ module.exports = function (eleventyConfig) {
         const endDateTime = getEventEndDateTime(e);
         return endDateTime && endDateTime.isAfter(now);
       })
-      .sort((a, b) => new Date(a.data.eventDate) - new Date(b.data.eventDate))
+      .sort(sortEventsAsc)
       .slice(0, 2);
     
     const past = allEvents
@@ -262,7 +289,7 @@ module.exports = function (eleventyConfig) {
         const endDateTime = getEventEndDateTime(e);
         return endDateTime && endDateTime.isSameOrBefore(now);
       })
-      .sort((a, b) => new Date(b.data.eventDate) - new Date(a.data.eventDate))
+      .sort(sortEventsDesc)
       .slice(0, 1);
     
     return [...upcoming, ...past];
@@ -278,7 +305,7 @@ module.exports = function (eleventyConfig) {
                endDateTime.isSameOrBefore(now) &&
                e.data.featured !== true;
       })
-      .sort((a, b) => new Date(b.data.eventDate) - new Date(a.data.eventDate))
+      .sort(sortEventsDesc)
       .slice(0, 3);
   });
 
@@ -290,7 +317,7 @@ module.exports = function (eleventyConfig) {
         const endDateTime = getEventEndDateTime(e);
         return endDateTime && endDateTime.isSameOrBefore(now);
       })
-      .sort((a, b) => new Date(b.data.eventDate) - new Date(a.data.eventDate))
+      .sort(sortEventsDesc)
       .slice(0, 3);
   });
 
@@ -304,7 +331,7 @@ module.exports = function (eleventyConfig) {
                endDateTime.isAfter(now) &&
                e.data.featured !== true;
       })
-      .sort((a, b) => new Date(a.data.eventDate) - new Date(b.data.eventDate))
+      .sort(sortEventsAsc)
       .slice(0, 3);
   });
 
@@ -316,7 +343,7 @@ module.exports = function (eleventyConfig) {
         const endDateTime = getEventEndDateTime(e);
         return endDateTime && endDateTime.isAfter(now);
       })
-      .sort((a, b) => new Date(a.data.eventDate) - new Date(b.data.eventDate))
+      .sort(sortEventsAsc)
       .slice(0, 3);
   });
 

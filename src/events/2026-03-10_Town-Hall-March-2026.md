@@ -1,23 +1,34 @@
 ---
-title: Open Data Tech Talk & Linux Town Hall March
-description: Join us for the Linux March Town Hall meeting. As Document Freedom Day is upcoming on March 25th, we are planning for the main meeting to be in person (hybrid) and to have a guest speaker on the topic of open data.
-tags: ["Town Hall", "2026", "Online"]
-image: "/assets/images/lth-march-26.png"
+title: Linux Town Hall March
+description: Join us for the Linux Town Hall March meeting. We'll be discussing upcoming Document Freedom Day and more.
+tags: ["Town Hall", "2026", "In-person", "Online"]
+image: "/assets/images/linux-town-hall-march-26.webp"
 eventDate: 2026-03-10
 startTime: 7:00 PM
 endTime: 9:00 PM
-location: "In-person: TBC \n Online: Electron eVenue"
+location: "In-person: Inspire9, Richmond \n Online: Electron eVenue"
 ---
-
-As Document Freedom Day is upcoming on March 25th, we are planning for the main meeting to be in person (hybrid) and to have a guest speaker on the topic of open data.
-
-More details to be announced closer to the event date.
 
 ## Key Discussion Points
 
+- Upcoming Document Freedom Day (March 25th)
 - TBC
 
-Link to join:
+
+### Getting to Inspire9 
+Maps Link for Inspire9:   
+<https://maps.app.goo.gl/eRMAXpBdmG1Ece4m9>
+
+#### Transport
+Train station is located right next to Inspire9.   
+Tram 70 is a short 2 minute walk.   
+There is 2hr parking on the street but very often there are no spots.   
+Inspire9 main entrance is wheelchair accessible.   
+
+When arriving, head for the AKM building.
+
+#### Online
+Link to join:   
 [https://electronworkshop.com.au/goto/venue](https://electronworkshop.com.au/goto/venue)  
 We use a self-hosted Big Blue Button instance (aka BBB) for this meeting, managed by Electron Workshop and hosted by Serversaurus.
 
