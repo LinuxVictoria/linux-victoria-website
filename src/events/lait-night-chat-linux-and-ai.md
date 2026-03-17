@@ -1,12 +1,12 @@
 ---
 title: "LAIT Night Chats: Linux and AI Tuesday Conversations"
-eventDate: 2026-03-10
+eventDate: 2026-03-17
 startTime: 9:00 PM
 endTime: 10:00 PM
 location: "<a href='https://electronworkshop.com.au/goto/venue'>Electron eVenue</a>"
 description: "Join us for weekly informal discussions exploring the intersection of Linux and AI. Every Tuesday night, technologists gather to share knowledge, collaborate, and build community."
-preview_image: "http://linuxvictoria.org/assets/images/lait-10-03-26.webp"
-image: "/assets/images/lait-10-03-26.webp"
+preview_image: "http://linuxvictoria.org/assets/images/lait-17-03-26.webp"
+image: "/assets/images/lait-17-03-26.webp"
 hideEventDetails: true
 ---
 
@@ -22,6 +22,7 @@ Join us for the second round of **LAIT Night Chats** : a weekly gathering for an
 ## Previous LAIT Nights
 
 ### Season 2 (Current)
+- March 10th
 - March 3rd
 - February 24th
 - [February 17th](/posts/2026-02-17_LAIT-Night)
