@@ -1,13 +1,13 @@
 ---
-title: Document (& Data) Freedom Day
+title: "Document (& Data) Freedom Day"
 description: Let's gather to learn and discuss the importance of open standards, free document formats. Join the meeting to listen in, to participate in the discussion or even present a lightning talk about a topic or technology you are passionate about.
 tags: ["2026", "In-person", "Online"]
-preview_image: "http://linuxvictoria.org/assets/images/dfd-2026.webp"
+preview_image: "https://linuxvictoria.org/assets/images/dfd-2026.webp"
 image: "/assets/images/dfd-2026.webp"
 eventDate: 2026-03-25
 startTime: 7:00 PM
 endTime: 9:00 PM
-location: "<b>In-person:</b> Inspire9 \n AKM Building Level 1/41-43 Stewart St, Richmond VIC 3121 \n <b>Online:</b> <a href='https://electronworkshop.com.au/goto/venue'>https://electronworkshop.com.au/goto/venue</a>"
+location: "In-person: Inspire9 \n AKM Building Level 1/41-43 Stewart St, Richmond VIC 3121 \n Online: https://electronworkshop.com.au/goto/venue"
 hideEventDetails: true
 ---
 
