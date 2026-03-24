@@ -54,6 +54,7 @@ We use a self-hosted Big Blue Button instance (aka BBB) for this meeting, manage
 
 ### Schedule
 
-- 19:00 Meet and greet
-- 19:30 Opening
-- 21:30 Closure
+- 18:00 Welcome, meet and greet
+- 18:30 Opening: What is Digital freedoms and Document (& Data) Freedom Day
+- 19:00 Lightning Talks, Discussions
+- 20:00 Closure (Stay for chats, networking)
