@@ -5,8 +5,8 @@ tags: ["2026", "In-person", "Online"]
 preview_image: "https://linuxvictoria.org/assets/images/dfd-2026.webp"
 image: "/assets/images/dfd-2026.webp"
 eventDate: 2026-03-25
-startTime: 7:00 PM
-endTime: 9:00 PM
+startTime: 6:00 PM
+endTime: 8:00 PM
 location: "In-person: Inspire9 \n AKM Building Level 1/41-43 Stewart St, Richmond VIC 3121 \n Online: https://electronworkshop.com.au/goto/venue"
 hideEventDetails: true
 ---
