@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/linuxvictoria/linux-victoria-logos-brand/main/Logo_Wide_Filled/Logo_Wide_Fill_Light.png">
+  <img alt="Linux Victoria" src="https://raw.githubusercontent.com/linuxvictoria/linux-victoria-logos-brand/main/Logo_Wide_Filled/Logo_Wide_Fill_Dark.png" width="400">
+</picture>
+
 # Linux Victoria Website
 
 The official website for Linux Victoria (LUV), built with [Eleventy](https://www.11ty.dev/), [Bootstrap](https://getbootstrap.com/), and [Pagefind](https://pagefind.app/).
