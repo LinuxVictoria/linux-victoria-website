@@ -12,6 +12,7 @@ location: "In-person: TBC \n Online: Electron eVenue"
 ## Key Discussion Points
 
 - Upcoming Hardware Freedom Day (April 18th)
+- Project Moonshine (Remote Displays for Linux Desktops): WIP report and demo
 - TBC
 
 
