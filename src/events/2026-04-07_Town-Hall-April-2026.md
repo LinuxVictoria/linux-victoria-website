@@ -5,7 +5,7 @@ tags: ["Town Hall", "2026", "In-person", "Online"]
 image: "/assets/images/linux-town-hall-april-26.webp"
 eventDate: 2026-04-7
 startTime: 7:00 PM
-endTime: 9:00 PM
+endTime: 8:30 PM
 location: "In-person: Inspire9 \n AKM Building Level 1/41-43 Stewart St, Richmond VIC \n Online: Electron eVenue"
 ---
 
@@ -13,7 +13,6 @@ location: "In-person: Inspire9 \n AKM Building Level 1/41-43 Stewart St, Richmon
 
 - Upcoming Hardware Freedom Day (April 18th)
 - Project Moonshine (Remote Displays for Linux Desktops): WIP report and demo
-- TBC
 
 ### Getting to Inspire9
 
@@ -41,4 +40,4 @@ We use a self-hosted Big Blue Button instance (aka BBB) for this meeting, manage
 
 - 19:00 Meet and greet
 - 19:30 Opening
-- 21:30 Closure
+- 20:30 Closure
