@@ -17,6 +17,7 @@ novalidate>
 {% if fieldType == "radio" and field.options %}
 <fieldset class="mb-3">
 <legend class="form-label">{{ fieldLabel }}</legend>
+<label for="{{ formName + fieldName + '1' }}" class="visually-hidden">{{ fieldLabel }}</label>
 {% for option in field.options %}
 {% set optionId = formName + fieldName + loop.index %}
 <div class="form-check">
