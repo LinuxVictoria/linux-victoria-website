@@ -6,7 +6,7 @@ image: "/assets/images/linux-town-hall-april-26.webp"
 eventDate: 2026-04-7
 startTime: 7:00 PM
 endTime: 9:00 PM
-location: "In-person: TBC \n Online: Electron eVenue"
+location: "In-person: Inspire9 \n AKM Building Level 1/41-43 Stewart St, Richmond VIC \n Online: Electron eVenue"
 ---
 
 ## Key Discussion Points
