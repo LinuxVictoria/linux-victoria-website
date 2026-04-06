@@ -2,7 +2,7 @@
 {% set colClass = formColClass if formColClass else "col-lg-6" %}
 <div class="text-center text-md-start bg-body-tertiary px-5 py-4 rounded-3 shadow-sm border border-primary border-opacity-25 shadow-sm {{ colClass }}">
 <h2 class="mb-3 text-primary">{{ formTitle }}</h2>
-<p class="text-muted small mb-3">{{ formDescription }}</p>
+{% if formDescription %}{% for para in formDescription.split('\n\n') %}{% if para.trim() %}<p class="text-muted small mb-3">{{ para.trim() }}</p>{% endif %}{% endfor %}{% endif %}
 <form class="needs-validation" 
 name="{{ formName }}" 
 id="{{ formName }}" 
@@ -13,28 +13,49 @@ novalidate>
 {% for field in formFields %}
 {% set fieldName = field.name if field is mapping else field %}
 {% set fieldType = field.type if field is mapping and field.type else ("email" if fieldName == "email" else "text") %}
+{% set fieldLabel = field.label if field is mapping and field.label else (fieldName | capitalize) %}
+{% if fieldType == "radio" and field.options %}
+<fieldset class="mb-3">
+<legend class="form-label">{{ fieldLabel }}</legend>
+<label for="{{ formName + fieldName + '1' }}" class="visually-hidden">{{ fieldLabel }}</label>
+{% for option in field.options %}
+{% set optionId = formName + fieldName + loop.index %}
+<div class="form-check">
+<input class="form-check-input"
+type="radio"
+name="{{ fieldName }}"
+id="{{ optionId }}"
+value="{{ option }}"
+{% if loop.first %}required{% endif %}>
+<label class="form-check-label" for="{{ optionId }}">{{ option }}</label>
+{% if loop.first %}<div class="invalid-feedback">Please select an option.</div>{% endif %}
+</div>
+{% endfor %}
+</fieldset>
+{% else %}
 <div class="mb-3">
 <label for="{{ formName }}{{ fieldName | capitalize }}" class="form-label">
-{{ fieldName | capitalize }}
+{{ fieldLabel }}
 </label>
-{% if fieldName == "message" %}
+{% if fieldName == "message" or fieldType == "textarea" %}
 <textarea class="form-control" 
 id="{{ formName }}{{ fieldName | capitalize }}" 
 name="{{ fieldName }}" 
-rows="4" 
+rows="{{ field.rows if field is mapping and field.rows else 4 }}" 
 required></textarea>
-<div class="invalid-feedback">Please enter your {{ fieldName }}.</div>
+<div class="invalid-feedback">Please enter your {{ fieldLabel | lower }}.</div>
 {% else %}
 <input type="{{ fieldType }}" 
 class="form-control" 
 id="{{ formName }}{{ fieldName | capitalize }}" 
 name="{{ fieldName }}" 
 required>
-<div class="invalid-feedback">Please enter a valid {{ fieldName }}.</div>
+<div class="invalid-feedback">Please enter a valid {{ fieldLabel | lower }}.</div>
 {% endif %}
 </div>
+{% endif %}
 {% endfor %}
-<button type="submit" class="btn btn-outline-primary">Send Message</button>
+<button type="submit" class="btn btn-outline-primary">{{ formSubmitLabel if formSubmitLabel else "Send Message" }}</button>
 </form>
 </div>
 </section>
@@ -68,7 +89,10 @@ if (v !== null && v !== undefined && v !== "") { el.value = v; return; }
 };
 {% for field in formFields %}
 {% set fieldName = field.name if field is mapping else field %}
+{% set fieldType = field.type if field is mapping and field.type else "text" %}
+{% if fieldType != "radio" %}
 setFieldFromParams('#{{ formName }}{{ fieldName | capitalize }}', ['{{ fieldName }}']);
+{% endif %}
 {% endfor %}
 })();
 </script>
