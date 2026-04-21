@@ -3,6 +3,7 @@ title: "LAIT Night: Linux and AI — April 2026"
 author: Linux & AI working group
 description: "Notes from our open discussion on Linux and AI: hardware for local inference, robotics, homelabbing, Home Assistant integration, coding agents, and more."
 tags: ["AI", "Linux", "Homelabbing", "Robotics"]
+image: /assets/images/linux-and-ai-group.webp
 postDate: 2026-04-21
 ---
 
