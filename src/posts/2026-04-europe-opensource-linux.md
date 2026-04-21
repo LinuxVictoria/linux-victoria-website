@@ -63,7 +63,7 @@ Australia is not starting from scratch. The foundations for a thoughtful, France
 
 The Digital Transformation Agency (DTA) has long recognised the value of open-source software. The 2011 federal policy required agencies to "consider open source software for all software procurements." The DTA's Digital Service Standard includes the principle to "make source code open and reusable where appropriate," and the Digital Marketplace has facilitated procurement of open-source tools and services. The policy language for sovereign and open choices is already part of the federal framework.
 
-Australia also hosts a mature open-source community. **linux.conf.au**, one of the Southern Hemisphere's premier open-source conferences, has run for over two decades. Victoria has a particularly strong tradition of community-led digital inclusion work: [Computer Bank Victoria](https://www.computerbank.org.au/) has for many years refurbished donated computers, installed Linux, and distributed them to people and communities who need them most -- a quiet but powerful demonstration that Linux is ready for everyday users of all backgrounds. Victoria has also undertaken significant open-source initiatives in government contexts over the years. The skills, the community, and the institutional knowledge are here.
+Victoria has a particularly strong tradition of community-led open-source work. [Computer Bank Victoria](https://www.computerbank.org.au/) has for many years refurbished donated computers, installed Linux, and distributed them to people and communities who need them most -- a quiet but powerful demonstration that Linux is ready for everyday users of all backgrounds. Linux Victoria itself has taken its events beyond Melbourne, with the [Linux Regional Summit 2025](https://linuxvictoria.org/events/2025-08-25_linux-regional-summit/) held in Gippsland showing that interest in open-source technology extends well into regional Victoria. Victoria has also undertaken significant open-source initiatives in government contexts over the years. The skills, the community, and the institutional knowledge are here.
 
 What's been missing is the kind of coordinated, senior-level policy commitment that France has now made. With growing national conversation around digital sovereignty, supply chain resilience, and the cost pressures facing public services, the conditions for that conversation have never been better.
 
@@ -102,7 +102,7 @@ Get in touch or get involved:
 
 - [team@linuxvictoria.org](mailto:team@linuxvictoria.org)
 - [linuxvictoria.org](https://linuxvictoria.org)
-- Events calendar via Luma -- see the website for upcoming meetups, workshops, and presentations
+- [Events calendar on Luma](https://lu.ma/linuxvictoria) -- upcoming meetups, workshops, and presentations
 - Join the conversation on our Telegram channel
 
 *Linux Victoria (LUV) is one of Australia's oldest and largest GNU/Linux, free software, and open-source user groups, founded in Melbourne in 1993.*
