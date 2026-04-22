@@ -358,4 +358,11 @@ Events and posts are automatically collected based on their folder. Key collecti
 
 ---
 
+## Triggering Deploy
+Events are calculated whether they are present or past when the website has a deploy triggered by doing it manually on Netlify or commiting a change ie merging a PR request.
+
+When an event has pass and is still up on the website but not on the local codebase after cloning to check and maintain, assume that the website hasn't been updated and it isn't an error to post in GitHub issues.
+
+---
+
 **Based on the [SpaceClub! Website Template](https://spaceclubwiki.talkingsites.org)**
