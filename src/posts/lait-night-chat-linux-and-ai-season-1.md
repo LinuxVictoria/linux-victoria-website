@@ -19,4 +19,4 @@ This series ran consistently from July to the end of September and delivered an 
 We are  hoping to incorporate all the learnings for re-launching this initiative in the coming year.
 
 So far we are discussing having Linux and AI workshops, events with a topic, pre-planned talks and much more ideas are brewing.    
-If you would like to be a part of organising, running a LAIT Night, or want to submit an event topic, [reach out to the team](https://linuxvictoria.org/engage/)!
+If you would like to be a part of organising, running a LAIT Night, or want to submit an event topic, [reach out to the team](/contact/)!
