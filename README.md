@@ -61,6 +61,10 @@ npx pagefind --site _site
 
 5. Save and commit your changes
 
+Note: Events are recalculated on each site deployment, whether triggered manually on Netlify or by committing changes (e.g., merging a PR), and this applies to both upcoming and past events.
+
+If an event has already passed but still appears on the live site and not in the local codebase after cloning, assume the site hasn’t been updated yet.
+
 ### Event File Example
 
 ```markdown
