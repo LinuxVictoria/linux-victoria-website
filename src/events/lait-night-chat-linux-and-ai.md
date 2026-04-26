@@ -1,6 +1,6 @@
 ---
 title: "LAIT Night Chats: Linux and AI Tuesday Conversations"
-eventDate: 2026-04-14
+eventDate: 2026-04-28
 startTime: 9:00 PM
 endTime: 10:00 PM
 location: "<a href='https://electronworkshop.com.au/goto/venue'>Electron eVenue</a>"
