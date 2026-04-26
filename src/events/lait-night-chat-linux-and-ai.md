@@ -22,6 +22,10 @@ Join us for the second round of **LAIT Night Chats** : a weekly gathering for an
 ## Previous LAIT Nights
 
 ### Season 2 (Current)
+- [April 21st](/posts/2026-04-21_lait-linux-and-ai)
+- April 14th
+- April 7th
+- March 31st
 - March 24th
 - March 17th
 - March 10th
