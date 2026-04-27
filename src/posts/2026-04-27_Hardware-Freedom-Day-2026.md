@@ -1,9 +1,9 @@
 ---
 title: "Recap: Hardware Freedom Day 2026"
 description: "A brilliant first - open hardware, robots, lightning talks and a room full of curious people coming together at Inspire9 Richmond."
-image: "/assets/images/hfd-2026/hfd-2026-1.webp"
-gallery: "/assets/images/hfd-2026/"
-postDate: 2026-04-18
+image: "/assets/images/hfd-recap.webp"
+gallery: "/assets/images/hfd-apr-2026/"
+postDate: 2026-04-27
 author: Sophie A
 eventPage: /events/2026-04-18_Hardware-Freedom-Day-2026/
 ---
@@ -35,7 +35,7 @@ A huge thank you to everyone who made this day happen:
 
 **Our lightning talk speakers** - planned or impromptu, every talk was worth staying for.
 
-**Our volunteers on the day** - Thank you Nick, Les, Fareed, and Robert for helping out on the day and leading up to the day. Thank you to Alexar as well for the hard work behind the scenes across both Linux Victoria and Electron Workshop, and for MC'ing and keeping the day running smoothly. It wouldn't have flowed the way it did without you.
+**Our volunteers on the day** - Thank you Nick, Les, Fareed, and Robert for helping out on the day and who help leading up to the day. I'd also like to the many members and advisors for your constant and continuous support, we are very grateful to have such a supportive community. Thank you to Alexar as well for the hard work behind the scenes across both Linux Victoria and Electron Workshop, and for MC'ing and keeping the day running smoothly. It wouldn't have flowed the way it did without you.
 
 **[Electron Workshop](https://electronworkshop.org)** - thank you for supporting community groups with the infrastructure and sponsorship that makes events like this possible.
 
@@ -44,15 +44,30 @@ A huge thank you to everyone who made this day happen:
 
 ## Stay in the Loop
 
-**Give us your feedback** - thoughts, ideas, what we should do again, what we should do differently. [Share your feedback here →](#feedback)
+**Give us your feedback**   
+Let us know your thoughts, ideas, what we should do again, what we should do differently or even nominate a location for a hardware event! [Share your feedback here →](https://engage.electronworkshop.com.au/form-hardware-freedom)
 
-**Get notified of upcoming hardware events** - [Subscribe to the Electron Workshop calendar](https://electronworkshop.org/awareness/hardware-freedom-day/#subscribe) to stay across everything in the ecosystem.
+**Tech Guilds**    
+[Website](https://techguilds.au/?utm_source=linuxvictoria)   
+[Discord](https://discord.gg/Qy6qd2Vm46?utm_source=linuxvictoria) for makers community   
+[Luma](https://luma.com/calendar/cal-ySHl4TwxUrVHZzC?referrer=linuxvictoria) for events   
 
-**Linux Victoria** - [Newsletter](https://linuxvictoria.org) · [Telegram](https://linuxvictoria.org) · [Luma calendar](https://lu.ma/linux-victoria)
+**Linux Victoria**   
+[Newsletter](/newsletter/) for announcements   
+[Telegram](https://t.me/linuxvictoria?utm_source=linuxvictoria) for group conversations and announcements   
+[Luma](https://lu.ma/linux-victoria?referrer=linuxvictoria) for events and calendar   
+[Github](https://github.com/LinuxVictoria/linux-victoria-website) for website content and project management   
 
-**Melbourne Tech Guilds** - [Website](https://melbourne.techguilds.au) · [Discord](https://melbourne.techguilds.au) · [Luma](https://lu.ma/linux-victoria)
+**Hardware Freedom Group**   
+For ongoing discussions, chats, events and sharing about hardware, [join the Hardware Freedom group](https://engage.electronworkshop.com.au/group-hardware-freedom?referrer=linuxvictoria&utm_source=linuxvictoria) (Super Bridged to Telegram, Signal, Whatsapp, Discord all connected)
 
-**Hardware Freedom Group** - Super Bridge connecting Telegram, Signal, WhatsApp and Discord all in one place.
+**Electron Workshop**   
+Subscribe to [Electron Workshop ](https://luma.com/electron-workshop?referrer=linuxvictoria)calendar to get notified of all events in the ecosystem.
+
+View the Electron Network for offerings and support for the community groups.
+
+**Photo Drop**
+If you joined us and have photos to share from the day, please upload to [eworkshop photo drop](https://cloud.electronworkshop.com.au/s/rCiMgEEEDwKJJx7) and we can add to the gallery.
 
 ---
 
