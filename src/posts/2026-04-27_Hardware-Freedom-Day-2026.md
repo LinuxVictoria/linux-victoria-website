@@ -8,7 +8,7 @@ author: Sophie A
 eventPage: /events/2026-04-18_Hardware-Freedom-Day-2026/
 ---
 
-What a day. Hardware Freedom Day brought together makers, engineers, and tinkerers at [Inspire9](https://inspire9.com) Richmond for an afternoon of open hardware, robots, and real community energy. This was the first collaboration between Melbourne Tech Guilds and Linux Victoria, the first event of this kind at this venue, and the first Hardware Freedom Day event in Australia. A great mix of familiar faces and people either brand new to the community or returning after years away, and every single one of them made the room better for it.
+What a day. Hardware Freedom Day brought together makers, engineers, and tinkerers at [Inspire9](https://inspire9.com?utm_source=linuxvictoria) Richmond for an afternoon of open hardware, robots, and real community energy. This was the first collaboration between Melbourne Tech Guilds and Linux Victoria, the first event of this kind at this venue, and the first Hardware Freedom Day event in Australia. A great mix of familiar faces and people either brand new to the community or returning after years away, and every single one of them made the room better for it.
 
 The first half of the day had a wonderful buzz to it, with people moving between exhibits, poking at robots, asking questions, and getting deep into conversations with the people who built them. After a lunch break (with plenty of good spots nearby), we regrouped for the lightning talks, a mix of planned presentations and spontaneous ones that were just as good, if not better.
 
@@ -45,7 +45,8 @@ A huge thank you to everyone who made this day happen:
 ## Stay in the Loop
 
 **Give us your feedback**   
-Let us know your thoughts, ideas, what we should do again, what we should do differently or even nominate a location for a hardware event! [Share your feedback here →](https://engage.electronworkshop.com.au/form-hardware-freedom)
+Let us know your thoughts, ideas, what we should do again, what we should do differently or even nominate a location for a hardware event!   
+[Share your feedback here →](https://engage.electronworkshop.com.au/form-hardware-freedom)
 
 **Tech Guilds**    
 [Website](https://techguilds.au/?utm_source=linuxvictoria)   
@@ -59,12 +60,12 @@ Let us know your thoughts, ideas, what we should do again, what we should do dif
 [Github](https://github.com/LinuxVictoria/linux-victoria-website) for website content and project management   
 
 **Hardware Freedom Group**   
-For ongoing discussions, chats, events and sharing about hardware, [join the Hardware Freedom group](https://engage.electronworkshop.com.au/group-hardware-freedom?referrer=linuxvictoria&utm_source=linuxvictoria) (Super Bridged to Telegram, Signal, Whatsapp, Discord all connected)
+For ongoing discussions, chats, events and sharing about hardware, [join the Hardware Freedom group](https://engage.electronworkshop.com.au/group-hardware-freedom&utm_source=linuxvictoria) (Super Bridged to Telegram, Signal, Whatsapp, Discord all connected)
 
 **Electron Workshop**   
 Subscribe to [Electron Workshop ](https://luma.com/electron-workshop?referrer=linuxvictoria)calendar to get notified of all events in the ecosystem.
 
-View the Electron Network for offerings and support for the community groups.
+View the [Electron Network](https://electronworkshop.org/network/?utm_source=linuxvictoria) for offerings and support for the community groups.
 
 **Photo Drop**
 If you joined us and have photos to share from the day, please upload to [eworkshop photo drop](https://cloud.electronworkshop.com.au/s/rCiMgEEEDwKJJx7) and we can add to the gallery.
