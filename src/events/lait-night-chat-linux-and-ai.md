@@ -26,16 +26,12 @@ We're planning the next season now. If you'd like to help shape it — propose t
 ## LAIT Nights
 
 ### Season 2
-- [April 21st](/posts/2026-04-21_lait-linux-and-ai)
-- April 14th
-- April 7th
-- March 31st
-- March 24th
-- March 17th
-- March 10th
-- March 3rd
-- February 24th
-- [February 17th](/posts/2026-02-17_LAIT-Night)
+
+**April 21st** — multi-modal models · agentic protocols · robotics simulation · hardware for local AI · homelabbing · Home Assistant — [notes →](/posts/2026-04-21_lait-linux-and-ai)
+
+**April 14th** · **April 7th** · **March 31st** · **March 24th** · **March 17th** · **March 10th** · **March 3rd** · **February 24th** — *[add topics via discussion](https://github.com/orgs/LinuxVictoria/discussions/61)*
+
+**February 17th** — AI pricing · benchmarks · Whisper · Goose AI · Jan AI · DeepSeek · AI sentience readings — [notes →](/posts/2026-02-17_LAIT-Night)
 
 ### Season 1
 
