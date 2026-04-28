@@ -43,4 +43,4 @@ Harnesses and coding agents were discussed — the tooling around directing AI t
 
 ---
 
-*LAIT Night runs monthly. See [upcoming events](https://linuxvictoria.org/events/lait-night-chat-linux-and-ai/) for the next session.*
+*LAIT Night runs monthly. See [upcoming events](/events/lait-night-chat-linux-and-ai/) for the next session.*
