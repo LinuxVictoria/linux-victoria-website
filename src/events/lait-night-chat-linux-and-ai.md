@@ -1,6 +1,6 @@
 ---
 title: "LAIT Night Chats: Linux and AI Tuesday Conversations"
-eventDate: 2026-04-28
+eventDate: 2026-04-21
 startTime: 9:00 PM
 endTime: 10:00 PM
 location: "<a href='https://electronworkshop.com.au/goto/venue'>Electron eVenue</a>"
@@ -10,18 +10,22 @@ image: "/assets/images/linux-and-ai-group.webp"
 hideEventDetails: true
 ---
 
-Join us for the second round of **LAIT Night Chats** : a weekly gathering for anyone curious about the intersection of Linux and Artificial Intelligence. Whether you're running local LLMs on your home server, exploring AI-powered system administration, or just fascinated by where open-source meets machine learning, these conversations are for you.
+**LAIT Night Chats** bring together anyone curious about the intersection of Linux and Artificial Intelligence — running local LLMs, AI-powered system administration, open-source ML, and everything in between.
 
-## 🗓️ Next Event
+Season 2 has wrapped. Season 3 is in the works.
 
+## Season 3 — Coming Soon
 
-{% include "partials/event-details.njk" %}
+We're planning the next season now. If you'd like to help shape it — propose topics, facilitate a session, or just be part of the conversation — jump into the community:
+
+- **Telegram:** [t.me/linuxvictoria](https://t.me/linuxvictoria)
+- **Mailing list:** [lists.linux.org.au/mailman/listinfo/luv-talk](https://lists.linux.org.au/mailman/listinfo/luv-talk)
 
 ---
 
-## Previous LAIT Nights
+## LAIT Nights
 
-### Season 2 (Current)
+### Season 2
 - [April 21st](/posts/2026-04-21_lait-linux-and-ai)
 - April 14th
 - April 7th
@@ -85,14 +89,10 @@ LAIT Night Chats work best when the community actively participates. Beyond atte
 - **Share**: Bring interesting projects, tools, or challenges to explore
 - **Connect**: Help spread the word to others who might be interested
 
-## Questions?
+## Questions or ideas?
 
-Curious about whether LAIT Night Chats are right for you? Want to propose a topic or get involved in organizing? [Reach out](/contact) or drop a message in our community chat.
-
-We're building something together - a space where the practical meets the experimental, where individual knowledge becomes collective wisdom, and where the powerful combination of Linux and AI gets explored by people who love both.
-
-See you Tuesday night!
+Want to propose a topic, help facilitate, or get involved in planning Season 3? [Reach out](/contact), or find us on [Telegram](https://t.me/linuxvictoria) or the [LUV mailing list](https://lists.linux.org.au/mailman/listinfo/luv-talk).
 
 ---
 
-*LAIT Night Chats happen every Tuesday evening. Join our community of Linux and AI enthusiasts for informal discussions, knowledge sharing, and collaborative learning.*
+*LAIT Night is a community of Linux and AI enthusiasts running informal discussions, knowledge sharing, and collaborative learning. Season 3 coming soon.*
