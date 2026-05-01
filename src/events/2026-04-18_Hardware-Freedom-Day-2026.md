@@ -3,7 +3,7 @@ title: Hardware Freedom Day
 description: Join us for Hardware Freedom Day! Melbourne Tech Guilds and Linux Victoria celebrate open hardware and maker culture with live demos, lightning talks, and more.
 tags: ["Hardware Freedom Day", "2026", "In-person", "Exhibition"]
 image: "/assets/images/hfd-2026.webp"
-eventDate: 2026-04-18
+eventDate: 2026-04-27
 startTime: 11:00 AM
 endTime: 4:00 PM
 location: "Inspire9 \n AKM Building Level 1/41-43 Stewart St, Richmond VIC"
