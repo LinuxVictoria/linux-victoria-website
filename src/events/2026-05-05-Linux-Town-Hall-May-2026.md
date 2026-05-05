@@ -11,7 +11,12 @@ location: "In-person: Inspire9 \n AKM Building Level 1/41-43 Stewart St, Richmon
 
 ## Key Discussion Points
 
-- TBC
+- Copy Fail; recent Linux kernel vulnerability (CVE-2026-41940)
+- Ivenhoe Linux Day (Under Planning)
+- Regional Victoria re-connect
+- Linux & AI initiative update
+- Update on the website
+ 
 
 For upcoming events, we welcome more talks, demos, lightning talk, and presentations:
 [https://linuxvictoria.org/submissions/]
