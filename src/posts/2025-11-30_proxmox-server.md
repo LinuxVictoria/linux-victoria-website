@@ -132,4 +132,4 @@ If you want access or want to help build more templates or LLM environments, [re
 ---
 
 ### Adding More Nodes
-Proxmox runs on a node, which is any PC or server with compatible hardware. Nodes can be easily added to the cluster, letting you expand computing power, GPU availability, and storage. If you have a machine, that is sitting around wanting to be put to use, with a good CPU, GPU, lots of RAM, or extra storage, [consider donating it](team@linuxvictoria.org). Every new node makes the playground bigger and faster for everyone.
+Proxmox runs on a node, which is any PC or server with compatible hardware. Nodes can be easily added to the cluster, letting you expand computing power, GPU availability, and storage. If you have a machine, that is sitting around wanting to be put to use, with a good CPU, GPU, lots of RAM, or extra storage, [consider donating it](mailto:team@linuxvictoria.org). Every new node makes the playground bigger and faster for everyone.
