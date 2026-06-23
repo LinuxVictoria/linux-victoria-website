@@ -1,9 +1,9 @@
 ---
 title: "LAIT Night Chats: Linux and AI Tuesday Conversations"
-eventDate: 2026-04-21
+eventDate: 2026-06-23
 startTime: 9:00 PM
 endTime: 10:00 PM
-location: "<a href='https://electronworkshop.com.au/goto/venue'>Electron eVenue</a>"
+location: "<a href='https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join'>Linux & AI eVenue</a>"
 description: "Join us for weekly informal discussions exploring the intersection of Linux and AI. Every Tuesday night, technologists gather to share knowledge, collaborate, and build community."
 preview_image: "http://linuxvictoria.org/assets/images/linux-and-ai-group.webp"
 image: "/assets/images/linux-and-ai-group.webp"
@@ -12,14 +12,11 @@ hideEventDetails: true
 
 **LAIT Night Chats** bring together anyone curious about the intersection of Linux and Artificial Intelligence — running local LLMs, AI-powered system administration, open-source ML, and everything in between.
 
-Season 2 has wrapped. Season 3 is in the works.
+Season 3 is here. The **Linux & AI soft launch** opens tonight — Tuesday 23 June, 9–10pm Melbourne time. Audio-only online session.
 
-## Season 3 — Coming Soon
+## Season 3
 
-We're planning the next season now. If you'd like to help shape it — propose topics, facilitate a session, or just be part of the conversation — jump into the community:
-
-- **Telegram:** [t.me/linuxvictoria](https://t.me/linuxvictoria)
-- **Mailing list:** [lists.linux.org.au/mailman/listinfo/luv-talk](https://lists.linux.org.au/mailman/listinfo/luv-talk)
+**June 23rd** — Soft launch · audio-only online · [Join on eVenue →](https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join)
 
 ---
 
