@@ -1,6 +1,6 @@
 ---
 title: "LAIT Night Chats: Linux and AI Tuesday Conversations"
-eventDate: 2026-06-23
+eventDate: 2026-06-30
 startTime: 9:00 PM
 endTime: 10:00 PM
 location: "<a href='https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join'>Linux & AI eVenue</a>"
@@ -10,13 +10,62 @@ image: "/assets/images/linux-and-ai-group.webp"
 hideEventDetails: true
 ---
 
+<div id="lait-banner" style="display:none" class="alert alert-info mb-4" role="status">
+  <div id="lait-banner-pre">
+    <strong>LAIT Night starts soon</strong> — informal chat about Linux and AI, 9–10pm Melbourne time.<br>
+    Audio-only online session. <a href="https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join" class="alert-link">Join on eVenue →</a>
+    <span id="lait-countdown"></span>
+  </div>
+  <div id="lait-banner-live" style="display:none">
+    <strong>LAIT Night is happening now</strong> — join us until 10pm Melbourne time.<br>
+    Informal chat about Linux and AI, audio-only. <a href="https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join" class="alert-link">Join on eVenue →</a>
+  </div>
+</div>
+<script>
+(function () {
+  // 2026-06-30 8:30pm–10pm AEST (UTC+10)
+  var warnStart = new Date('2026-06-30T10:30:00Z');
+  var start     = new Date('2026-06-30T11:00:00Z');
+  var end       = new Date('2026-06-30T12:00:00Z');
+
+  function update() {
+    var now     = new Date();
+    var banner  = document.getElementById('lait-banner');
+    var pre     = document.getElementById('lait-banner-pre');
+    var live    = document.getElementById('lait-banner-live');
+    var countdown = document.getElementById('lait-countdown');
+
+    if (now >= warnStart && now < start) {
+      banner.style.display = '';
+      banner.className = 'alert alert-info mb-4';
+      pre.style.display = '';
+      live.style.display = 'none';
+      var mins = Math.ceil((start - now) / 60000);
+      countdown.textContent = ' (' + mins + ' min' + (mins !== 1 ? 's' : '') + ')';
+    } else if (now >= start && now < end) {
+      banner.style.display = '';
+      banner.className = 'alert alert-success mb-4';
+      pre.style.display = 'none';
+      live.style.display = '';
+    } else {
+      banner.style.display = 'none';
+    }
+  }
+
+  update();
+  setInterval(update, 30000);
+})();
+</script>
+
 **LAIT Night Chats** bring together anyone curious about the intersection of Linux and Artificial Intelligence — running local LLMs, AI-powered system administration, open-source ML, and everything in between.
 
-Season 3 is here. The **Linux & AI soft launch** opens tonight — Tuesday 23 June, 9–10pm Melbourne time. Audio-only online session.
+Season 3 is underway. Join us every Tuesday, 9–10pm Melbourne time. Audio-only online session.
 
 ## Season 3
 
-**June 23rd** — Soft launch · audio-only online · [Join on eVenue →](https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join)
+**June 30th** — audio-only online · [Join on eVenue →](https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join)
+
+**June 23rd** — Soft launch
 
 ---
 
@@ -88,4 +137,4 @@ Want to propose a topic, help facilitate, or get involved in planning Season 3? 
 
 ---
 
-*LAIT Night is a community of Linux and AI enthusiasts running informal discussions, knowledge sharing, and collaborative learning. Season 3 coming soon.*
+*LAIT Night is a community of Linux and AI enthusiasts running informal discussions, knowledge sharing, and collaborative learning. Season 3 is underway.*
