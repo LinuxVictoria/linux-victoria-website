@@ -1,0 +1,461 @@
+---
+title: Linux Regional Summit 2026
+description: "Linux Regional Summit 2026 — celebrating open source in regional Victoria. Location and dates TBC, join the July Town Hall to help decide."
+permalink: "/linux-regional-summit/"
+layout: false
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linux Regional Summit 2026</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="icon" href="/assets/images/favicon-lv.ico" type="image/x-icon">
+  <meta property="og:image" content="https://linuxvictoria.org/assets/images/l8-gippsland-2025/Linux_Regional_Summit_2025_thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    :root {
+      --lrs-indigo: #4E45CA;
+      --lrs-purple: #803D99;
+      --lrs-gradient: linear-gradient(135deg, var(--lrs-indigo) 0%, var(--lrs-purple) 100%);
+    }
+
+    @font-face {
+      font-family: "Ubuntu";
+      src: url("/assets/fonts/UbuntuSans-VariableFont_wdth,wght.ttf") format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+    }
+
+    body {
+      font-family: "Ubuntu", var(--bs-body-font-family);
+      background: #fff;
+    }
+
+    .bg-primary { background-color: var(--lrs-purple) !important; }
+    .text-primary { color: var(--lrs-purple) !important; }
+    .border-primary { border-color: var(--lrs-purple) !important; }
+
+    .btn-primary {
+      background-color: var(--lrs-purple);
+      border-color: var(--lrs-purple);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--lrs-indigo);
+      border-color: var(--lrs-indigo);
+    }
+
+    .bg-primary-subtle {
+      background-color: rgba(128, 61, 153, 0.08) !important;
+    }
+
+    /* ---------- Hero ---------- */
+    .lrs-hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--lrs-gradient);
+      background-size: 220% 220%;
+      animation: lrs-aurora 16s ease-in-out infinite;
+      color: #fff;
+      padding: 6rem 1rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .lrs-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 35%, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0) 60%);
+      pointer-events: none;
+    }
+
+    @keyframes lrs-aurora {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .lrs-hero .shard {
+      position: absolute;
+      width: 140%;
+      max-width: none;
+      opacity: 0.28;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .lrs-hero .shard-a {
+      top: -20%;
+      left: -25%;
+      transform: rotate(8deg);
+      animation: lrs-drift-a 26s ease-in-out infinite;
+    }
+
+    .lrs-hero .shard-b {
+      bottom: -35%;
+      right: -30%;
+      transform: rotate(-14deg) scaleX(-1);
+      animation: lrs-drift-b 32s ease-in-out infinite;
+    }
+
+    @keyframes lrs-drift-a {
+      0%, 100% { transform: rotate(8deg) translate(0, 0); }
+      50% { transform: rotate(11deg) translate(2%, 3%); }
+    }
+
+    @keyframes lrs-drift-b {
+      0%, 100% { transform: rotate(-14deg) scaleX(-1) translate(0, 0); }
+      50% { transform: rotate(-17deg) scaleX(-1) translate(-2%, -2%); }
+    }
+
+    .lrs-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .lrs-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .lrs-hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.25);
+    }
+
+    .lrs-year-badge {
+      width: 110px;
+      height: auto;
+      flex-shrink: 0;
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,0.25));
+    }
+
+    @media (min-width: 768px) {
+      .lrs-year-badge {
+        width: 130px;
+      }
+    }
+
+    .lrs-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 0.5rem 1.25rem;
+      border-radius: 999px;
+      font-weight: 600;
+      animation: lrs-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes lrs-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+
+    .lrs-tbc-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.4);
+      color: #fff;
+      font-weight: 700;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      letter-spacing: 0.02em;
+    }
+
+    .lrs-hero-cta {
+      background: #fff;
+      color: var(--lrs-purple);
+      font-weight: 700;
+      border: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .lrs-hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+      color: var(--lrs-indigo);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .lrs-hero, .lrs-hero .shard, .lrs-badge {
+        animation: none !important;
+      }
+    }
+
+    /* ---------- Cards ---------- */
+    .theme-item:hover {
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+    }
+
+    .lrs-coming-soon {
+      border: 2px dashed rgba(128, 61, 153, 0.35);
+      border-radius: 1rem;
+      background: rgba(128, 61, 153, 0.03);
+    }
+
+    .sponsor-cta {
+      background: var(--lrs-gradient);
+      color: #fff;
+      border-radius: 1rem;
+    }
+
+    .sponsor-cta .btn-light {
+      font-weight: 700;
+      color: var(--lrs-purple);
+    }
+  </style>
+</head>
+
+<body class="bg-light">
+  <div class="container-fluid px-0">
+
+    <!-- Hero Section -->
+    <div class="lrs-hero">
+      <img src="/assets/linuxvic-divider.svg" class="shard shard-a" alt="">
+      <img src="/assets/linuxvic-divider.svg" class="shard shard-b" alt="">
+      <div class="container lrs-hero-content">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-10">
+            <div class="mb-3">
+              <span class="lrs-badge">
+                🎉 Linux's 35th Birthday Celebration
+              </span>
+            </div>
+            <div class="lrs-title-row">
+              <h1>Linux Regional Summit</h1>
+              <svg class="lrs-year-badge" width="150" height="84" viewBox="0 0 150 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g transform="rotate(-7 75 42)">
+                  <rect x="6" y="6" width="138" height="72" rx="15" fill="white" fill-opacity="0.92"/>
+                  <rect x="6" y="6" width="138" height="72" rx="15" stroke="url(#lrsBadgeGrad1)" style="mix-blend-mode:multiply" stroke-width="4"/>
+                  <rect x="13" y="13" width="124" height="58" rx="9" stroke="url(#lrsBadgeGrad2)" style="mix-blend-mode:multiply" stroke-width="3"/>
+                  <text x="75" y="52" text-anchor="middle" font-family="Ubuntu, sans-serif" font-weight="800" font-size="30" fill="url(#lrsBadgeGrad3)" style="mix-blend-mode:multiply">2026</text>
+                </g>
+                <defs>
+                  <linearGradient id="lrsBadgeGrad1" x1="0" y1="0" x2="150" y2="84" gradientUnits="userSpaceOnUse">
+                    <stop offset="0.22" stop-color="#4E45CA"/>
+                    <stop offset="0.71" stop-color="#803D99"/>
+                  </linearGradient>
+                  <linearGradient id="lrsBadgeGrad2" x1="0" y1="0" x2="150" y2="84" gradientUnits="userSpaceOnUse">
+                    <stop offset="0.22" stop-color="#4E45CA"/>
+                    <stop offset="0.71" stop-color="#803D99"/>
+                  </linearGradient>
+                  <linearGradient id="lrsBadgeGrad3" x1="0" y1="0" x2="150" y2="84" gradientUnits="userSpaceOnUse">
+                    <stop offset="0.22" stop-color="#4E45CA"/>
+                    <stop offset="0.71" stop-color="#803D99"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <p class="lead fs-5 mb-4">Celebrating open source in regional Victoria</p>
+            <div class="mb-4">
+              <span class="lrs-tbc-pill"><i class="bi bi-geo-alt-fill"></i> Location: TBC</span>
+            </div>
+            <a href="/events/2026-07-07-Linux-Town-Hall-July-2026/" class="btn lrs-hero-cta btn-lg px-4 py-3 rounded-pill">
+              <i class="bi bi-mic-fill me-2"></i>Help pick the location — join July's Town Hall
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main Content -->
+    <div class="container mb-5">
+
+      <!-- Event Details Row -->
+      <div class="row g-4 mb-5">
+        <div class="col-lg-6">
+          <div class="card h-100 border-0 shadow">
+            <div class="card-body p-4">
+              <div class="row g-4">
+                <!-- Pre-Summit Column -->
+                <div class="col-md-6 mb-4 mb-md-0">
+                  <h3 class="card-title text-primary fw-bold mb-4">
+                    <i class="bi bi-calendar-heart-fill me-2"></i>Pre-Summit
+                  </h3>
+
+                  <div class="d-flex align-items-start p-3 bg-light rounded border-start border-primary border-5">
+                    <i class="bi bi-calendar-event text-primary fs-4 me-3 mt-1"></i>
+                    <div>
+                      <h5 class="text-primary fw-semibold mb-1">Date</h5>
+                      <p class="mb-0">Monday, August 24, 2026</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Summit Column -->
+                <div class="col-md-6">
+                  <h3 class="card-title text-primary fw-bold mb-4">
+                    <i class="bi bi-info-circle-fill me-2"></i>Summit
+                  </h3>
+
+                  <div class="d-flex align-items-start p-3 bg-light rounded border-start border-primary border-5">
+                    <i class="bi bi-calendar-event text-primary fs-4 me-3 mt-1"></i>
+                    <div>
+                      <h5 class="text-primary fw-semibold mb-1">Date</h5>
+                      <p class="mb-0">Tuesday, August 25, 2026</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="my-4">
+
+              <div class="d-flex align-items-start p-3 bg-primary-subtle rounded">
+                <i class="bi bi-geo-alt-fill text-primary fs-4 me-3 mt-1"></i>
+                <div>
+                  <h5 class="text-primary fw-semibold mb-1">Location</h5>
+                  <p class="mb-2">The region/town is still to be confirmed. Come along to July's Town Hall (in person or online) to discuss options and nominate your town or region.</p>
+                  <a href="/events/2026-07-07-Linux-Town-Hall-July-2026/" class="btn btn-primary btn-sm">
+                    <i class="bi bi-arrow-right-circle me-1"></i>Go to July Town Hall event
+                  </a>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start p-3 bg-light rounded border-start border-primary border-5 mt-4">
+                <i class="bi bi-laptop text-primary fs-4 me-3 mt-1"></i>
+                <div>
+                  <h5 class="text-primary fw-semibold mb-1">Online Access</h5>
+                  <a id="lrsOnlineRegister" href="https://electronworkshop.com.au/goto/venue/" class="btn btn-primary disabled mt-2" aria-disabled="true" tabindex="-1">
+                    <i class="bi bi-laptop me-2"></i><span id="lrsOnlineRegisterText">Opens August 25, 2026</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Summit Program -->
+        <div class="col-lg-6">
+          <div class="card h-100 border-0 shadow">
+            <div class="card-body p-4">
+              <h3 class="card-title text-primary fw-bold mb-3">
+                <i class="bi bi-calendar3 me-2"></i>Summit Program
+              </h3>
+              <p class="text-muted mb-4">The schedule is still being developed, but here's what's planned so far:</p>
+
+              <div class="row g-2 text-wrap mb-4">
+                <div class="col-12">
+                  <div class="badge bg-primary-subtle text-primary fs-6 w-100 text-start p-2 rounded text-wrap">
+                    <i class="bi bi-terminal me-2"></i>InstallFest Workshop
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="badge bg-primary-subtle text-primary fs-6 w-100 text-start p-2 rounded text-wrap">
+                    <i class="bi bi-people me-2"></i>Facilitated Meetings
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="badge bg-primary-subtle text-primary fs-6 w-100 text-start p-2 rounded text-wrap">
+                    <i class="bi bi-lightning-charge-fill me-2"></i>Lightning Talks
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="badge bg-primary-subtle text-primary fs-6 w-100 text-start p-2 rounded text-wrap">
+                    <i class="bi bi-easel-fill me-2"></i>Talks
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-3 bg-light rounded border-start border-primary border-5">
+                <h5 class="text-primary fw-semibold mb-2"><i class="bi bi-pencil-square me-1"></i>Submissions</h5>
+                <p class="mb-2">Talks, demos and facilitated meeting proposals are open until <strong>July 28th</strong>.</p>
+                <a href="https://cloud.electronworkshop.com.au/apps/forms/s/qPiWsHPio8zWdKBHZCcGtaLC" target="_blank" rel="noopener" class="btn btn-primary btn-sm mb-2">
+                  <i class="bi bi-send-fill me-1"></i>Submit via form
+                </a>
+                <p class="mb-0 small text-muted">Lightning talks don't need to be submitted — there's a queue on the day.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Luma / RSVP -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="lrs-coming-soon p-5 text-center">
+            <i class="bi bi-hourglass-split text-primary" style="font-size: 2.5rem;"></i>
+            <h4 class="text-primary fw-bold mt-3 mb-2">RSVP — Coming Soon</h4>
+            <p class="text-muted mb-0">The Luma registration page will be embedded here once the date and location are locked in. Keep an eye on the Town Halls for updates.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Volunteer CTA -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="text-center">
+            <a href="https://linuxvictoria.org/volunteer-form/" class="btn btn-warning btn-lg px-5 py-3" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-hand-thumbs-up-fill me-2"></i>Volunteer and Advise
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sponsors -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="sponsor-cta p-4 p-md-5 text-center">
+            <h4 class="fw-bold mb-2"><i class="bi bi-star-fill me-2"></i>Sponsors & Partners — TBC</h4>
+            <p class="mb-4">We're still lining up sponsors and partners for this year's Summit. Interested in supporting Linux in regional Victoria?</p>
+            <a href="/contact/" class="btn btn-light btn-lg px-4">
+              <i class="bi bi-envelope-fill me-2"></i>Get in touch
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="row">
+        <div class="col-12">
+          <div class="card bg-primary text-white border-0">
+            <div class="card-body text-center py-4">
+              <p class="mb-2 fs-5">
+                Organised by <a href="/" class="text-warning text-decoration-none fw-bold">Linux Victoria</a>
+              </p>
+              <p class="mb-2">Supporting the open-source community since 1993</p>
+              <p class="mb-0 fs-4">🐧 Celebrating Linux, open source, and the power of community across Victoria!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function () {
+      var eventStart = new Date('2026-08-25T00:00:00+10:00');
+      var btn = document.getElementById('lrsOnlineRegister');
+      var label = document.getElementById('lrsOnlineRegisterText');
+      if (btn && new Date() >= eventStart) {
+        btn.classList.remove('disabled');
+        btn.removeAttribute('aria-disabled');
+        btn.removeAttribute('tabindex');
+        btn.setAttribute('target', '_blank');
+        btn.setAttribute('rel', 'noopener');
+        if (label) label.textContent = 'Register for Online Access';
+      }
+    })();
+  </script>
+</body>
+
+</html>
