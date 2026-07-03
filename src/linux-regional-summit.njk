@@ -61,7 +61,7 @@ layout: false
       background-size: 220% 220%;
       animation: lrs-aurora 16s ease-in-out infinite;
       color: #fff;
-      padding: 6rem 1rem;
+      padding: 6rem 1rem 5rem;
       margin-bottom: 3.5rem;
     }
 
@@ -127,7 +127,7 @@ layout: false
     }
 
     .lrs-hero h1 {
-      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-size: clamp(1.4rem, 3vw, 2rem);
       font-weight: 800;
       letter-spacing: -0.02em;
       margin-bottom: 0;
@@ -135,7 +135,7 @@ layout: false
     }
 
     .lrs-year-badge {
-      width: 110px;
+      width: 82px;
       height: auto;
       flex-shrink: 0;
       filter: drop-shadow(0 6px 14px rgba(0,0,0,0.25));
@@ -143,7 +143,7 @@ layout: false
 
     @media (min-width: 768px) {
       .lrs-year-badge {
-        width: 130px;
+        width: 96px;
       }
     }
 
@@ -154,10 +154,18 @@ layout: false
       background: rgba(255,255,255,0.15);
       backdrop-filter: blur(6px);
       border: 1px solid rgba(255,255,255,0.35);
-      padding: 0.5rem 1.25rem;
-      border-radius: 999px;
+      padding: 0.9rem 2.75rem;
+      clip-path: polygon(3% 50%, 8% 0%, 92% 0%, 97% 50%, 92% 100%, 8% 100%);
       font-weight: 600;
+      font-size: 1.1rem;
       animation: lrs-pulse 3s ease-in-out infinite;
+    }
+
+    .lrs-badge-num {
+      font-size: 1.5em;
+      font-weight: 900;
+      color: #FFD166;
+      text-shadow: 0 2px 10px rgba(255, 209, 102, 0.5);
     }
 
     @keyframes lrs-pulse {
@@ -165,34 +173,35 @@ layout: false
       50% { transform: scale(1.04); }
     }
 
-    .lrs-tbc-pill {
-      display: inline-flex;
+    .lrs-banner {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+      display: flex;
       align-items: center;
-      gap: 0.4rem;
-      background: rgba(255,255,255,0.15);
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.3rem;
+      background: rgba(255,255,255,0.14);
       backdrop-filter: blur(6px);
-      border: 1px solid rgba(255,255,255,0.4);
+      border-top: 1px solid rgba(255,255,255,0.3);
       color: #fff;
-      font-weight: 700;
-      padding: 0.35rem 0.9rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      letter-spacing: 0.02em;
+      font-weight: 500;
+      padding: 0.9rem 1rem;
+      text-align: center;
     }
 
-    .lrs-hero-cta {
-      background: #fff;
-      color: var(--lrs-purple);
-      font-weight: 700;
-      border: none;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    .lrs-banner a {
+      color: #fff;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
-    .lrs-hero-cta:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.3);
-      color: var(--lrs-indigo);
+    .lrs-banner a:hover {
+      color: rgba(255,255,255,0.8);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -211,6 +220,27 @@ layout: false
       border: 2px dashed rgba(128, 61, 153, 0.35);
       border-radius: 1rem;
       background: rgba(128, 61, 153, 0.03);
+    }
+
+    .lrs-online-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.5rem;
+      color: var(--lrs-purple);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .lrs-online-link:hover:not(.is-disabled) {
+      text-decoration: underline;
+      color: var(--lrs-indigo);
+    }
+
+    .lrs-online-link.is-disabled {
+      opacity: 0.55;
+      pointer-events: none;
+      cursor: not-allowed;
     }
 
     .sponsor-cta {
@@ -236,9 +266,9 @@ layout: false
       <div class="container lrs-hero-content">
         <div class="row justify-content-center text-center">
           <div class="col-lg-10">
-            <div class="mb-3">
+            <div class="mb-5">
               <span class="lrs-badge">
-                🎉 Linux's 35th Birthday Celebration
+                🎉 Linux's <span class="lrs-badge-num">35th</span> Birthday Celebration
               </span>
             </div>
             <div class="lrs-title-row">
@@ -267,14 +297,11 @@ layout: false
               </svg>
             </div>
             <p class="lead fs-5 mb-4">Celebrating open source in regional Victoria</p>
-            <div class="mb-4">
-              <span class="lrs-tbc-pill"><i class="bi bi-geo-alt-fill"></i> Location: TBC</span>
-            </div>
-            <a href="/events/2026-07-07-Linux-Town-Hall-July-2026/" class="btn lrs-hero-cta btn-lg px-4 py-3 rounded-pill">
-              <i class="bi bi-mic-fill me-2"></i>Help pick the location — join July's Town Hall
-            </a>
           </div>
         </div>
+      </div>
+      <div class="lrs-banner">
+        <i class="bi bi-geo-alt-fill me-2"></i>Help pick the location — <a href="/events/2026-07-07-Linux-Town-Hall-July-2026/">join July's Town Hall</a>
       </div>
     </div>
     <!-- Main Content -->
@@ -307,35 +334,33 @@ layout: false
                     <i class="bi bi-info-circle-fill me-2"></i>Summit
                   </h3>
 
-                  <div class="d-flex align-items-start p-3 bg-light rounded border-start border-primary border-5">
+                  <div class="d-flex align-items-start mb-4 p-3 bg-light rounded border-start border-primary border-5">
                     <i class="bi bi-calendar-event text-primary fs-4 me-3 mt-1"></i>
                     <div>
                       <h5 class="text-primary fw-semibold mb-1">Date</h5>
                       <p class="mb-0">Tuesday, August 25, 2026</p>
                     </div>
                   </div>
+
+                  <div class="d-flex align-items-start p-3 bg-light rounded border-start border-primary border-5">
+                    <i class="bi bi-laptop text-primary fs-4 me-3 mt-1"></i>
+                    <div>
+                      <h5 class="text-primary fw-semibold mb-1">Online Access</h5>
+                      <a id="lrsOnlineRegister" href="https://electronworkshop.com.au/goto/venue/" class="lrs-online-link is-disabled" aria-disabled="true" tabindex="-1" title="Online room open morning of the summit, 25th August 2026">
+                        <i class="bi bi-laptop me-1"></i><span id="lrsOnlineRegisterText">Electron eVenue</span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <hr class="my-4">
-
-              <div class="d-flex align-items-start p-3 bg-primary-subtle rounded">
+              <div class="d-flex align-items-start p-3 bg-primary-subtle rounded mt-4">
                 <i class="bi bi-geo-alt-fill text-primary fs-4 me-3 mt-1"></i>
                 <div>
                   <h5 class="text-primary fw-semibold mb-1">Location</h5>
-                  <p class="mb-2">The region/town is still to be confirmed. Come along to July's Town Hall (in person or online) to discuss options and nominate your town or region.</p>
+                  <p class="mb-2">Come along to July's Town Hall (in person or online) to discuss options and nominate your town or region.</p>
                   <a href="/events/2026-07-07-Linux-Town-Hall-July-2026/" class="btn btn-primary btn-sm">
                     <i class="bi bi-arrow-right-circle me-1"></i>Go to July Town Hall event
-                  </a>
-                </div>
-              </div>
-
-              <div class="d-flex align-items-start p-3 bg-light rounded border-start border-primary border-5 mt-4">
-                <i class="bi bi-laptop text-primary fs-4 me-3 mt-1"></i>
-                <div>
-                  <h5 class="text-primary fw-semibold mb-1">Online Access</h5>
-                  <a id="lrsOnlineRegister" href="https://electronworkshop.com.au/goto/venue/" class="btn btn-primary disabled mt-2" aria-disabled="true" tabindex="-1">
-                    <i class="bi bi-laptop me-2"></i><span id="lrsOnlineRegisterText">Opens August 25, 2026</span>
                   </a>
                 </div>
               </div>
@@ -411,29 +436,17 @@ layout: false
       </div>
 
       <!-- Sponsors -->
-      <div class="row mb-5">
+      <div class="row">
         <div class="col-12">
           <div class="sponsor-cta p-4 p-md-5 text-center">
-            <h4 class="fw-bold mb-2"><i class="bi bi-star-fill me-2"></i>Sponsors & Partners — TBC</h4>
-            <p class="mb-4">We're still lining up sponsors and partners for this year's Summit. Interested in supporting Linux in regional Victoria?</p>
+            <p class="mb-2 fs-5">
+              Organised by <a href="/" class="text-warning text-decoration-none fw-bold">Linux Victoria</a>
+            </p>
+            <p class="mb-2">Supporting the open-source community since 1993</p>
+            <p class="mb-4 fs-4">🐧 Celebrating Linux, open source, and the power of community across Victoria!</p>
             <a href="/contact/" class="btn btn-light btn-lg px-4">
               <i class="bi bi-envelope-fill me-2"></i>Get in touch
             </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <div class="row">
-        <div class="col-12">
-          <div class="card bg-primary text-white border-0">
-            <div class="card-body text-center py-4">
-              <p class="mb-2 fs-5">
-                Organised by <a href="/" class="text-warning text-decoration-none fw-bold">Linux Victoria</a>
-              </p>
-              <p class="mb-2">Supporting the open-source community since 1993</p>
-              <p class="mb-0 fs-4">🐧 Celebrating Linux, open source, and the power of community across Victoria!</p>
-            </div>
           </div>
         </div>
       </div>
@@ -445,14 +458,13 @@ layout: false
     (function () {
       var eventStart = new Date('2026-08-25T00:00:00+10:00');
       var btn = document.getElementById('lrsOnlineRegister');
-      var label = document.getElementById('lrsOnlineRegisterText');
       if (btn && new Date() >= eventStart) {
-        btn.classList.remove('disabled');
+        btn.classList.remove('is-disabled');
         btn.removeAttribute('aria-disabled');
         btn.removeAttribute('tabindex');
+        btn.removeAttribute('title');
         btn.setAttribute('target', '_blank');
         btn.setAttribute('rel', 'noopener');
-        if (label) label.textContent = 'Register for Online Access';
       }
     })();
   </script>
