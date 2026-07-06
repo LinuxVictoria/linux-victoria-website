@@ -1,0 +1,297 @@
+<mjml>
+  <mj-head>
+    <mj-title>Linux Victoria — Town Hall, Tuesday 7 July</mj-title>
+    <mj-preview>Hardware Exchange, Book Circulation, and a featured talk on UN Open Source Week — this Tuesday at Kathleen Syme Library.</mj-preview>
+    <mj-font name="Ubuntu" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Ubuntu, Arial, sans-serif" />
+      <mj-text font-size="15px" line-height="1.65" color="#2a2a2a" />
+    </mj-attributes>
+    <mj-style>
+      a { color: #753f98; }
+      .pill-primary {
+        display: inline-block;
+        background: #753f98;
+        color: #ffffff;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border-radius: 4px;
+        padding: 3px 8px;
+      }
+      .pill-label {
+        display: inline-block;
+        background: #ede6f5;
+        color: #5c3080;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border-radius: 4px;
+        padding: 3px 8px;
+      }
+      .shadow-card { box-shadow: 0 2px 6px rgba(117,63,152,0.12); }
+    </mj-style>
+  </mj-head>
+
+  <mj-body background-color="#f0ecf5">
+
+    <mj-section padding="16px 0 0" background-color="#f0ecf5">
+      <mj-column><mj-text font-size="1px" color="#f0ecf5" padding="0">&#160;</mj-text></mj-column>
+    </mj-section>
+
+    <!-- HEADER -->
+    <mj-section padding="0" background-color="#5b48c8" border-radius="10px 10px 0 0">
+      <mj-column padding="0">
+        <mj-image
+          src="https://linuxvictoria.org/assets/images/luv-lv-logo.png"
+          width="150px"
+          alt="Linux Victoria"
+          align="center"
+          padding="36px 0 12px"
+        />
+        <mj-text
+          align="center"
+          color="rgba(255,255,255,0.6)"
+          font-size="11px"
+          font-weight="400"
+          letter-spacing="0.14em"
+          padding="0 0 28px"
+        >
+          SUPPORTING LINUX IN VICTORIA SINCE 1993
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- accent strip -->
+    <mj-section padding="0" background-color="#803D99">
+      <mj-column><mj-text font-size="1px" color="#803D99" padding="5px 0">&#160;</mj-text></mj-column>
+    </mj-section>
+
+    <!-- INTRO -->
+    <mj-section background-color="#ffffff" padding="32px 36px 24px">
+      <mj-column>
+        <mj-text font-size="22px" font-weight="700" color="#1c1c1c" line-height="1.25" padding="0 0 16px">
+          July Town Hall — This Tuesday
+        </mj-text>
+        <mj-text color="#3a3a3a" padding="0 0 10px">
+          Hey Linux Victoria,
+        </mj-text>
+        <mj-text color="#3a3a3a" padding="0">
+          After a long stretch away, we got back to Kathleen Syme Library in June with a talk from <strong>Duncan</strong>, MLUG organiser. This Tuesday we're back for a second month running — with a new pre-activity hour, a featured talk from <strong>Alexar</strong>, our current president, and the usual open discussion. Bring hardware you don't need, a book you've finished with, or just yourself.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- EVENT CARD -->
+    <mj-section background-color="#ffffff" padding="0 36px 32px">
+      <mj-column
+        border="2px solid #d8ccea"
+        border-radius="8px"
+        background-color="#faf8fd"
+        padding="22px 24px"
+      >
+        <mj-text font-size="19px" font-weight="700" color="#1c1c1c" line-height="1.2" padding="0 0 4px">
+          Tuesday 7 July
+        </mj-text>
+        <mj-text font-size="15px" color="#753f98" font-weight="500" padding="0 0 18px">
+          6:00 PM to 8:30 PM
+        </mj-text>
+
+        <mj-divider border-color="#e0d6ee" border-width="1px" padding="0 0 18px" />
+
+        <mj-text font-size="14px" color="#3a3a3a" padding="0 0 12px">
+          <strong style="color:#1c1c1c;">In person</strong><br/>
+          <a href="https://maps.app.goo.gl/FhSaC53ERfJYRaBC7" style="color:#753f98;">Kathleen Syme Library and Community Centre</a><br/>
+          <span style="color:#666;">251 Faraday St, Carlton VIC 3053</span><br/>
+          <span style="color:#888; font-size:13px;">2nd floor lobby from 6pm, training and learning room from 7pm</span>
+        </mj-text>
+
+        <mj-text font-size="14px" color="#3a3a3a" padding="0">
+          <strong style="color:#1c1c1c;">Online</strong><br/>
+          <a href="https://electronworkshop.com.au/goto/venue" style="color:#753f98;">Electron eVenue</a>
+          <span style="color:#888; font-size:13px;"> — self-hosted BBB, from 7pm</span>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- PRE-ACTIVITY CARDS -->
+    <mj-section background-color="#ffffff" padding="0 36px 8px">
+      <mj-column>
+        <mj-text padding="0 0 14px">
+          <span class="pill-label">Pre-Activity · 6pm–7pm · 2nd floor lobby</span>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff" padding="0 36px 16px">
+      <mj-column
+        border="1px solid #e0d6ee"
+        border-radius="8px"
+        background-color="#faf8fd"
+        padding="18px"
+      >
+        <mj-text font-size="17px" font-weight="700" color="#1c1c1c" padding="0 0 6px">
+          🔧 Hardware Exchange
+        </mj-text>
+        <mj-text font-size="14px" color="#3a3a3a" padding="0">
+          Bring second-hand hardware you no longer need — take home whatever someone else has brought. This kicked off at Hardware Freedom Day back in April at Inspire9, and we want it to become a regular fixture, not just a one-off.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff" padding="0 36px 24px">
+      <mj-column
+        border="1px solid #e0d6ee"
+        border-radius="8px"
+        background-color="#faf8fd"
+        padding="18px"
+      >
+        <mj-text font-size="17px" font-weight="700" color="#1c1c1c" padding="0 0 6px">
+          📚 Book Circulation
+        </mj-text>
+        <mj-text font-size="14px" color="#3a3a3a" padding="0">
+          Bring books to lend — borrow one that catches your eye. This revives a tradition from the old days, when Wen, a former committee member, used to bring a stack along each month — we want to bring that back.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff" padding="0 36px 32px">
+      <mj-column>
+        <mj-text font-size="13px" color="#888" padding="0">
+          Tea and biscuits on hand. Come for one, both, or just the tea.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- DIVIDER -->
+    <mj-section background-color="#ffffff" padding="0 36px">
+      <mj-column><mj-divider border-color="#ede6f5" border-width="1px" padding="0" /></mj-column>
+    </mj-section>
+
+    <!-- FEATURED TALK -->
+    <mj-section background-color="#ffffff" padding="28px 36px 8px">
+      <mj-column>
+        <mj-text padding="0 0 10px">
+          <span class="pill-primary">🎤 Featured Talk · 7:45pm</span>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff" padding="0 36px 32px">
+      <mj-column
+        css-class="shadow-card"
+        border="2px solid #753f98"
+        border-radius="8px"
+        background-color="#ffffff"
+        padding="20px 22px"
+      >
+        <mj-text font-size="18px" font-weight="700" color="#1c1c1c" padding="0 0 6px">
+          <a href="https://www.unopensource.org/" style="color:#1c1c1c;">UN Open Source Week</a> — A Recap
+        </mj-text>
+        <mj-text font-size="14px" color="#5c3080" padding="0 0 12px">
+          with <strong>Alexar Pendashteh</strong>
+        </mj-text>
+        <mj-text font-size="13px" color="#666" padding="0">
+          UN Open Source Week ran 22–26 June at UN Headquarters in New York, with sessions live-streamed for remote attendees. It's the UN's forum for open source in support of the Sustainable Development Goals and the Global Digital Compact — covering open source and AI, Digital Public Infrastructure, and Open Source Programme Offices (OSPOs). Alexar joined online and will bring back the highlights.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- DIVIDER -->
+    <mj-section background-color="#ffffff" padding="0 36px">
+      <mj-column><mj-divider border-color="#ede6f5" border-width="1px" padding="0" /></mj-column>
+    </mj-section>
+
+    <!-- DISCUSSION + LIGHTNING TALKS -->
+    <mj-section background-color="#ffffff" padding="28px 36px 32px">
+      <mj-column>
+        <mj-text padding="0 0 10px">
+          <span class="pill-label">Also on the agenda</span>
+        </mj-text>
+        <mj-text font-size="18px" font-weight="700" color="#1c1c1c" padding="0 0 12px">
+          Discussion Points &amp; Lightning Talks
+        </mj-text>
+        <mj-text color="#3a3a3a" padding="0 0 6px">
+          • The server and domain
+        </mj-text>
+        <mj-text color="#3a3a3a" padding="0 0 6px">
+          • Linux Regional Summit (Linux Birthday, August 25)
+        </mj-text>
+        <mj-text color="#3a3a3a" padding="0 0 16px">
+          • Lightning talks — always welcome, always impromptu
+        </mj-text>
+        <mj-text color="#3a3a3a" padding="0">
+          Got something to share — a demo, a discovery, a Linux-y thing others should know about? <a href="https://linuxvictoria.org/submissions/" style="color:#753f98;">Let us know via the submissions page</a>.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- DIVIDER -->
+    <mj-section background-color="#ffffff" padding="0 36px">
+      <mj-column><mj-divider border-color="#ede6f5" border-width="1px" padding="0" /></mj-column>
+    </mj-section>
+
+    <!-- AFTER PARTY -->
+    <mj-section background-color="#ffffff" padding="28px 36px 8px">
+      <mj-column>
+        <mj-text padding="0 0 10px">
+          <span class="pill-label">🍕 After Closure · 8:30pm</span>
+        </mj-text>
+        <mj-text color="#3a3a3a" padding="0">
+          Anyone keen is welcome to walk over to <strong>Papa Gino's</strong> nearby for pizza.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- CTA -->
+    <mj-section background-color="#ffffff" padding="24px 36px 36px">
+      <mj-column>
+        <mj-button
+          href="https://linuxvictoria.org/events/2026-07-07-linux-town-hall-july-2026/"
+          background-color="#753f98"
+          color="#ffffff"
+          font-size="14px"
+          font-weight="700"
+          font-family="Ubuntu, Arial, sans-serif"
+          border-radius="6px"
+          inner-padding="13px 28px"
+          align="left"
+        >
+          Event details and RSVP
+        </mj-button>
+        <mj-text font-size="13px" color="#888" padding="12px 0 0">
+          RSVP on <a href="https://luma.com/p0cuv855?utm_source=linux-victoria" style="color:#753f98;">Luma</a> isn't required but helps us know numbers — or <a href="https://lu.ma/linux-victoria" style="color:#753f98;">subscribe to the calendar</a> for every event.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- SIGN-OFF -->
+    <mj-section background-color="#ffffff" padding="0 36px 36px">
+      <mj-column>
+        <mj-divider border-color="#ede6f5" border-width="1px" padding="0 0 24px" />
+        <mj-text color="#3a3a3a" padding="0">
+          See you Tuesday, in person or online.<br/><br/>
+          Sophie — LUV Treasurer, on behalf of the team
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- FOOTER -->
+    <mj-section background-color="#1e1a2e" padding="24px 36px" border-radius="0 0 10px 10px">
+      <mj-column>
+        <mj-text align="center" font-size="13px" padding="0 0 8px">
+          <a href="https://linuxvictoria.org" style="color:#b89fd4;">linuxvictoria.org</a>
+        </mj-text>
+        <mj-text align="center" font-size="12px" color="rgba(255,255,255,0.5)" padding="0 0 8px">
+          Questions? <a href="mailto:team@linuxvictoria.org" style="color:#b89fd4;">team@linuxvictoria.org</a>
+        </mj-text>
+        <mj-text align="center" color="rgba(255,255,255,0.35)" font-size="12px" padding="0">
+          {unsubscribe_text}
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="16px 0" background-color="#f0ecf5">
+      <mj-column><mj-text font-size="1px" color="#f0ecf5" padding="0">&#160;</mj-text></mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml>
