@@ -3,6 +3,7 @@ title: Linux Regional Summit 2026
 description: "Linux Regional Summit 2026: celebrating open source in regional Victoria and Linux's 35th Birthday!"
 eventDate: 2026-08-25
 location: Regional Victoria (join Linux Town Hall July to nominate)
+image: "/assets/images/lrs-2026-placeholder-img.png"
 ---
 
 
