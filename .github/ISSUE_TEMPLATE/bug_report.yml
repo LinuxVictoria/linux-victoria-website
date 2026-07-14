@@ -1,0 +1,54 @@
+name: Bug report
+description: Something on the site is broken
+labels: [bug]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Affected page
+      placeholder: "e.g. https://linuxvictoria.org/events or /faq"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened?
+      placeholder: "Describe what you saw — broken layout, missing content, error message, etc."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+      placeholder: "What should have happened instead?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. Go to...\n2. Click...\n3. See..."
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Other
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Device / OS
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - iOS / Android
