@@ -1,6 +1,6 @@
 ---
 title: "LAIT Night Chats: Linux and AI Tuesday Conversations"
-eventDate: 2026-06-30
+eventDate: 2026-07-28
 startTime: 9:00 PM
 endTime: 10:00 PM
 location: "<a href='https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join'>Linux & AI eVenue</a>"
@@ -23,9 +23,9 @@ hideEventDetails: true
 </div>
 <script>
 (function () {
-  var warnStart = new Date('2026-06-30T10:30:00Z');
-  var start     = new Date('2026-06-30T11:00:00Z');
-  var end       = new Date('2026-06-30T12:00:00Z');
+  var warnStart = new Date('2026-07-28T10:30:00Z');
+  var start     = new Date('2026-07-28T11:00:00Z');
+  var end       = new Date('2026-07-28T12:00:00Z');
   var now       = new Date();
 
   var banner  = document.getElementById('lait-banner');
@@ -50,7 +50,9 @@ Season 3 is underway. Join us every Tuesday, 9–10pm Melbourne time. Audio-only
 
 ## Season 3
 
-**June 30th** — audio-only online · [Join on eVenue →](https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join)
+**July 28th** — audio-only online · [Join on eVenue →](https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join)
+
+**July 21st** · **July 14th** · **July 7th** · **June 30th**
 
 **June 23rd** — Soft launch
 
