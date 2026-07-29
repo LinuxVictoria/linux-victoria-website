@@ -2,7 +2,7 @@
 title: Linux Town Hall August
 description: Join us for the Linux Town Hall August meeting, with two talks — finding Linux and sticking with it since 2017, and porting Debian 13 to LoongArch.
 tags: ["Town Hall", "2026", "In-person", "Online"]
-image: "/assets/images/linux-town-hall-august-2026-speakers/speaker-july-2026.webp"
+image: "/assets/images/linux-town-hall-august-26.webp"
 gallery: "/assets/images/linux-town-hall-august-2026"
 eventDate: 2026-08-04
 startTime: 6:00 PM
@@ -177,8 +177,8 @@ Join us for the Linux Town Hall August meeting for hardware, books, community di
 <div>
 <span class="badge bg-primary mb-2"><i class="bi bi-mic-fill me-1"></i> Featured Talk</span>
 <h3 class="card-title mb-1">Finding Linux: Why Nothing Else Comes Close</h3>
-<p class="mb-1 text-secondary"><i class="bi bi-person-fill me-1"></i> <strong>Astha Adhikari</strong></p>
-<p class="mb-0 small text-secondary">The story of discovering Linux — and why it's been the daily driver ever since 2017.</p>
+<p class="mb-2 text-secondary"><i class="bi bi-person-fill me-1"></i> <strong>Astha Adhikari</strong></p>
+<p class="mb-0 small text-secondary"><a href="https://www.linkedin.com/in/adhikariastha/" target="_blank" rel="noopener">Astha Adhikari</a> is an AI Engineer in Melbourne with 4+ years of experience in software development, Computer Vision, Deep Learning and Generative AI. Currently looking for full-time opportunities and will share her personal journey from Windows frustration to full-time Linux.</p>
 </div>
 </div>
 </div>
