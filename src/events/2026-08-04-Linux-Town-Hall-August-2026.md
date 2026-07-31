@@ -19,21 +19,32 @@ location: "In-person: Kathleen Syme Library and Community Centre, Carlton VIC (2
   margin-bottom: 2rem;
 }
 
-/* Headshot slot in the Featured Talk card — placeholder art until a real one lands. */
-.lth-talk-headshot {
-  width: 84px;
-  background: var(--gradient);
-  padding: 3px;
-  clip-path: polygon(0% 10%, 52% 0%, 100% 14%, 88% 100%, 12% 92%);
+/* Headshot in the Featured Talk card: a full-height strip down the left edge.
+   It lives inside .card-body (so it can float on phones — see below) but is
+   positioned against the card itself, which is what lets it clear the body
+   padding and run the full height. */
+.lth-talk {
+  position: relative;
+  overflow: hidden;   /* trims the strip to the card's rounded corners */
 }
 
-.lth-talk-headshot svg,
+.lth-talk-headshot {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 116px;
+}
+
 .lth-talk-headshot img {
   display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
   object-fit: cover;
-  clip-path: polygon(0% 10%, 52% 0%, 100% 14%, 88% 100%, 12% 92%);
+}
+
+.lth-talk .card-body {
+  padding-left: 132px;
 }
 
 /* Speaker mesh: runs flush into the card's top-right corner (the card is
@@ -65,6 +76,9 @@ location: "In-person: Kathleen Syme Library and Community Centre, Carlton VIC (2
 @media (min-width: 1200px) {
   .lth-speakers { width: 500px; }
 
+  .lth-talk-headshot { width: 140px; }
+  .lth-talk .card-body { padding-left: 156px; }
+
   .card-body > div > h1,
   .card-body > div > .mb-3 {
     padding-right: 522px;
@@ -81,17 +95,41 @@ location: "In-person: Kathleen Syme Library and Community Centre, Carlton VIC (2
   .lth-speaker-mesh { border-top-right-radius: 0; }
 }
 
-/* Two talks side by side halves the card width, so ease off the headshot and
-   the title to keep them from wrapping into ribbons. */
+/* On a phone a full-height strip would eat the card, so the headshot becomes a
+   torn shard in the top-right corner and the talk details wrap around it.
+   Floated rather than absolute so the bio reclaims the width below the shard —
+   this is why the headshot sits inside .card-body in the markup. */
+@media (max-width: 767.98px) {
+  .lth-talk-headshot {
+    position: static;
+    float: right;
+    width: 96px;
+    margin: 0 0 0.4rem 0.85rem;
+    background: var(--gradient);
+    padding: 3px;
+    clip-path: polygon(0% 10%, 52% 0%, 100% 14%, 88% 100%, 12% 92%);
+    shape-outside: polygon(0% 10%, 52% 0%, 100% 14%, 88% 100%, 12% 92%);
+  }
+
+  .lth-talk-headshot img {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    clip-path: polygon(0% 10%, 52% 0%, 100% 14%, 88% 100%, 12% 92%);
+  }
+
+  .lth-talk .card-body { padding-left: 1rem; }
+}
+
+/* Two talks side by side halves the card width, so ease off the title to keep
+   it from wrapping into a ribbon. */
 @media (min-width: 992px) {
-  .lth-talks .lth-talk-headshot { width: 68px; }
   .lth-talks .card-title { font-size: 1.2rem; }
 }
 
 /* On a narrow card the headshot starves the talk title of width. */
 @media (max-width: 575.98px) {
   .lth-hero { padding: 1.25rem; }
-  .lth-talk-headshot { width: 58px; }
+  .lth-talk-headshot { width: 84px; }
   .lth-hero .card-body { gap: 0.75rem !important; padding: 0.9rem; }
   .lth-hero .card-title { font-size: 1.15rem; }
 }
@@ -165,16 +203,11 @@ Join us for the Linux Town Hall August meeting for hardware, books, community di
 
 <div class="row g-3 lth-talks">
 <div class="col-lg-6">
-<div class="card border-primary shadow-sm h-100 mb-0">
-<div class="card-body d-flex align-items-center gap-3">
-<div class="lth-talk-headshot flex-shrink-0">
-<svg viewBox="0 0 100 100" role="img" aria-label="Speaker headshot to come">
-<rect width="100" height="100" fill="#e9d9f0"/>
-<circle cx="50" cy="38" r="17" fill="#803D99" opacity="0.45"/>
-<path d="M14 100c0-21 16-33 36-33s36 12 36 33z" fill="#803D99" opacity="0.45"/>
-</svg>
+<div class="card border-primary shadow-sm h-100 mb-0 lth-talk">
+<div class="card-body">
+<div class="lth-talk-headshot">
+<img src="/assets/images/linux-town-hall-august-2026-speakers/astha-adhikari.webp" alt="Astha Adhikari">
 </div>
-<div>
 <span class="badge bg-primary mb-2"><i class="bi bi-mic-fill me-1"></i> Featured Talk</span>
 <h3 class="card-title mb-1">Finding Linux: Why Nothing Else Comes Close</h3>
 <p class="mb-2 text-secondary"><i class="bi bi-person-fill me-1"></i> <strong>Astha Adhikari</strong></p>
@@ -182,22 +215,15 @@ Join us for the Linux Town Hall August meeting for hardware, books, community di
 </div>
 </div>
 </div>
-</div>
 <div class="col-lg-6">
-<div class="card border-primary shadow-sm h-100 mb-0">
-<div class="card-body d-flex align-items-center gap-3">
-<div class="lth-talk-headshot flex-shrink-0">
-<svg viewBox="0 0 100 100" role="img" aria-label="Speaker headshot to come">
-<rect width="100" height="100" fill="#e9d9f0"/>
-<circle cx="50" cy="38" r="17" fill="#803D99" opacity="0.45"/>
-<path d="M14 100c0-21 16-33 36-33s36 12 36 33z" fill="#803D99" opacity="0.45"/>
-</svg>
+<div class="card border-primary shadow-sm h-100 mb-0 lth-talk">
+<div class="card-body">
+<div class="lth-talk-headshot">
+<img src="/assets/images/linux-town-hall-august-2026-speakers/wencey-wang.webp" alt="Wencey Wang">
 </div>
-<div>
 <span class="badge bg-primary mb-2"><i class="bi bi-mic-fill me-1"></i> Featured Talk</span>
 <h3 class="card-title mb-1">Porting Debian 13 to LoongArch</h3>
 <p class="mb-0 text-secondary"><i class="bi bi-person-fill me-1"></i> <strong>Wencey Wang</strong></p>
-</div>
 </div>
 </div>
 </div>
