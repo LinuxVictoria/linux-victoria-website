@@ -1,6 +1,6 @@
 ---
 title: "LAIT Night Chats: Linux and AI Tuesday Conversations"
-eventDate: 2026-07-28
+eventDate: 2026-08-25
 startTime: 9:00 PM
 endTime: 10:00 PM
 location: "<a href='https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join'>Linux & AI eVenue</a>"
@@ -18,14 +18,14 @@ hideEventDetails: true
   </div>
   <div id="lait-banner-live">
     <strong>LAIT Night is happening now</strong> — join us until 10pm Melbourne time.<br>
-    Informal chat about Linux and AI, audio-only. <a href="https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join" class="alert-link">Join on eVenue →</a>
+    Linux turns 35 today. Informal chat about Linux and AI, audio-only. <a href="https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join" class="alert-link">Join on eVenue →</a>
   </div>
 </div>
 <script>
 (function () {
-  var warnStart = new Date('2026-07-28T10:30:00Z');
-  var start     = new Date('2026-07-28T11:00:00Z');
-  var end       = new Date('2026-07-28T12:00:00Z');
+  var warnStart = new Date('2026-08-25T10:30:00Z');
+  var start     = new Date('2026-08-25T11:00:00Z');
+  var end       = new Date('2026-08-25T12:00:00Z');
   var now       = new Date();
 
   var banner  = document.getElementById('lait-banner');
@@ -48,11 +48,13 @@ hideEventDetails: true
 
 Season 3 is underway. Join us every Tuesday, 9–10pm Melbourne time. Audio-only online session.
 
+Tonight, 25 August, marks 35 years since Linus Torvalds posted *“I'm doing a (free) operating system (just a hobby, won't be big and professional like gnu)”* to comp.os.minix. Same night, same time — bring a birthday story, a first-distro memory, or whatever you're running on Linux now. LUV is also marking the anniversary at the [Linux Regional Summit](/linux-regional-summit/).
+
 ## Season 3
 
-**July 28th** — audio-only online · [Join on eVenue →](https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join)
+**August 25th** — Linux's 35th birthday · audio-only online · [Join on eVenue →](https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join)
 
-**July 21st** · **July 14th** · **July 7th** · **June 30th**
+**August 18th** · **August 11th** · **August 4th** · **July 28th** · **July 21st** · **July 14th** · **July 7th** · **June 30th**
 
 **June 23rd** — Soft launch
 
@@ -122,7 +124,7 @@ LAIT Night Chats work best when the community actively participates. Beyond atte
 
 ## Questions or ideas?
 
-Want to propose a topic, help facilitate, or get involved in planning Season 3? [Reach out](/contact), or find us on [Telegram](https://t.me/linuxvictoria) or the [LUV mailing list](https://lists.linux.org.au/mailman/listinfo/luv-talk).
+Want to propose a topic, help facilitate, or help shape the rest of Season 3? [Reach out](/contact), or find us on [Telegram](https://t.me/linuxvictoria) or the [LUV mailing list](https://lists.linux.org.au/mailman/listinfo/luv-talk).
 
 ---
 
