@@ -13,6 +13,7 @@ Join us for the Linux Town Hall September meeting for hardware, books, and commu
 
 ## Key Discussion Points
 - Software Freedom Day: planning, ideas, and how to get involved
+- Linux & AI planning
 
 For upcoming events, we welcome more talks, demos, lightning talk, and presentations:   
 <https://linuxvictoria.org/submissions/>
