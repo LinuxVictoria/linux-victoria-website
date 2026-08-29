@@ -41,7 +41,7 @@ Link to join:
 
 We use a self-hosted Big Blue Button instance (aka BBB) for this meeting, managed by Electron Workshop and hosted by Serversaurus.
 
-[RSVP](https://luma.com/p0cuv855?utm_source=linux-victoria) isn't required but helps us to know numbers (and you will receive updates)
+[RSVP](https://luma.com/6p6cr6iz?utm_source=linux-victoria) isn't required but helps us to know numbers (and you will receive updates)
 
 ### Schedule
 
