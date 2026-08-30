@@ -1,0 +1,38 @@
+name: Content issue
+description: Wrong date, typo, outdated info, or missing event/post
+labels: [content]
+body:
+  - type: dropdown
+    id: content_type
+    attributes:
+      label: Content type
+      options:
+        - Event
+        - Post
+        - Page
+        - Navigation
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Where is the issue?
+      placeholder: "e.g. May Town Hall event, /faq page, navbar link"
+    validations:
+      required: true
+
+  - type: textarea
+    id: whats_wrong
+    attributes:
+      label: What's wrong or missing?
+      placeholder: "Describe the incorrect or missing information"
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested_fix
+    attributes:
+      label: Suggested correction
+      placeholder: "What should it say or include instead? (optional)"
