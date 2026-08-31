@@ -3,7 +3,7 @@ title: Linux Town Hall September
 description: Join us for the Linux Town Hall September meeting, with a featured talk on porting Debian 13 to LoongArch, plus short talks on the Framework laptop and Omarchy.
 tags: ["Town Hall", "2026", "In-person", "Online"]
 image: "/assets/images/linux-town-hall.webp"
-preview_image: "https://deploy-preview-172--linux-victoria.netlify.app/assets/images/linux-town-hall-september26-preview.png"
+preview_image: "https://linuxvictoria.org/assets/images/linux-town-hall-september26-preview.png"
 gallery: "/assets/images/linux-town-hall-community"
 eventDate: 2026-09-01
 startTime: 6:00 PM
