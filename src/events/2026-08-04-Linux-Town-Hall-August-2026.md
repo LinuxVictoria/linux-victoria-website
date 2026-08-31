@@ -1,6 +1,6 @@
 ---
 title: Linux Town Hall August
-description: Join us for the Linux Town Hall August meeting, with two talks — finding Linux and sticking with it since 2017, and porting Debian 13 to LoongArch.
+description: Join us for the Linux Town Hall August meeting, with a talk on finding Linux and sticking with it since 2017.
 tags: ["Town Hall", "2026", "In-person", "Online"]
 image: "/assets/images/linux-town-hall-august-26.webp"
 gallery: "/assets/images/linux-town-hall-august-2026"
@@ -199,10 +199,10 @@ location: "In-person: Kathleen Syme Library and Community Centre, Carlton VIC (2
 
 <div class="lth-hero">
 
-Join us for the Linux Town Hall August meeting for hardware, books, community discussion, and two featured talks.
+Join us for the Linux Town Hall August meeting for hardware, books, community discussion, and a featured talk.
 
 <div class="row g-3 lth-talks">
-<div class="col-lg-6">
+<div class="col-12">
 <div class="card border-primary shadow-sm h-100 mb-0 lth-talk">
 <div class="card-body">
 <div class="lth-talk-headshot">
@@ -212,18 +212,6 @@ Join us for the Linux Town Hall August meeting for hardware, books, community di
 <h3 class="card-title mb-1">Finding Linux: Why Nothing Else Comes Close</h3>
 <p class="mb-2 text-secondary"><i class="bi bi-person-fill me-1"></i> <strong>Astha Adhikari</strong></p>
 <p class="mb-0 small text-secondary"><a href="https://www.linkedin.com/in/adhikariastha/" target="_blank" rel="noopener">Astha Adhikari</a> is an AI Engineer in Melbourne with 4+ years of experience in software development, Computer Vision, Deep Learning and Generative AI. Currently looking for full-time opportunities and will share her personal journey from Windows frustration to full-time Linux.</p>
-</div>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="card border-primary shadow-sm h-100 mb-0 lth-talk">
-<div class="card-body">
-<div class="lth-talk-headshot">
-<img src="/assets/images/linux-town-hall-august-2026-speakers/wencey-wang.webp" alt="Wencey Wang">
-</div>
-<span class="badge bg-primary mb-2"><i class="bi bi-mic-fill me-1"></i> Featured Talk</span>
-<h3 class="card-title mb-1">Porting Debian 13 to LoongArch</h3>
-<p class="mb-0 text-secondary"><i class="bi bi-person-fill me-1"></i> <strong>Wencey Wang</strong></p>
 </div>
 </div>
 </div>
@@ -263,8 +251,7 @@ We use a self-hosted Big Blue Button instance (aka BBB) for this meeting, manage
 - 19:00 Meet and greet
 - 19:30 Opening - community discussion points
 - 19:45 Featured Talk - **Finding Linux: Why Nothing Else Comes Close** with Astha Adhikari
-- 20:05 Featured Talk - **Porting Debian 13 to LoongArch** with Wencey Wang
-- 20:20 Lightning talks (impromptu, all welcome)
+- 20:05 Lightning talks (impromptu, all welcome)
 - 20:30 Closure - then pizza at Papa Gino's nearby for anyone keen
 
 
