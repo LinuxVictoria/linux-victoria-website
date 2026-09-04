@@ -1,6 +1,6 @@
 ---
 title: Linux Town Hall October
-description: TBC
+description: Join us for our monthly event! Held on the first Tuesday of every month.
 tags: ["Town Hall", "2026", "In-person", "Online"]
 image: "/assets/images/linux-town-hall.webp"
 gallery: "/assets/images/linux-town-hall-community"
