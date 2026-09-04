@@ -50,7 +50,7 @@ module.exports = function (eleventyConfig) {
     if (!event.data.eventDate) return null;
 
     try {
-      const dateStr = dayjs(event.data.eventDate).format('YYYY-MM-DD');
+      const dateStr = dayjs(event.data.eventEndDate || event.data.eventDate).format('YYYY-MM-DD');
       const eventDateTz = dayjs.tz(dateStr, SITE_TIMEZONE);
 
       if (!eventDateTz.isValid()) {
