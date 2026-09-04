@@ -1,0 +1,134 @@
+{# Speaker talk cards, shared by the Linux Town Hall event pages.
+
+   Set a `speakers` list immediately before including this, e.g.
+
+     {% set speakers = [
+       { name: "Wencey Wang",
+         talk: "Porting Debian 13 to LoongArch",
+         image: "/assets/images/linux-town-hall-september-2026-speakers/wencey-wang.webp",
+         featured: true },
+       { name: "Andrew Pam",
+         talk: "Life With a Framework Laptop",
+         image: "/assets/images/linux-town-hall-september-2026-speakers/andrew-pam.webp" }
+     ] %}
+     {% include "partials/speakers.njk" %}
+
+   Per speaker:
+     name      required.
+     talk      required. Use "TBC" while the line-up is still being settled.
+     featured  optional. Gives the speaker a full-width card and a Featured Talk
+               badge; the rest share a row two-up. List as many as you like.
+     image     optional. Headshot path. Leave it out and the card drops the
+               headshot strip and reclaims its padding, which is what you want
+               for a TBC slot.
+     bio       optional. A sentence or two below the name, rendered as HTML so
+               it can carry a link. #}
+
+<style>
+/* ---------- Speaker talk cards ---------- */
+/* Headshot: a full-height strip down the left edge of the card. It lives inside
+   .card-body (so it can float on phones, see below) but is positioned against
+   the card itself, which is what lets it clear the body padding and run the
+   full height. */
+.lth-talk {
+  position: relative;
+  overflow: hidden;   /* trims the strip to the card's rounded corners */
+}
+
+.lth-talk-headshot {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 116px;
+}
+
+.lth-talk-headshot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lth-talk .card-body {
+  padding-left: 132px;
+}
+
+@media (min-width: 1200px) {
+  .lth-talk-headshot { width: 140px; }
+  .lth-talk .card-body { padding-left: 156px; }
+}
+
+/* On a phone a full-height strip would eat the card, so the headshot becomes a
+   torn shard in the top-right corner and the talk details wrap around it.
+   Floated rather than absolute so the bio reclaims the width below the shard,
+   which is why the headshot sits inside .card-body in the markup. */
+@media (max-width: 767.98px) {
+  .lth-talk-headshot {
+    position: static;
+    float: right;
+    width: 96px;
+    margin: 0 0 0.4rem 0.85rem;
+    background: var(--gradient);
+    padding: 3px;
+    clip-path: polygon(0% 10%, 52% 0%, 100% 14%, 88% 100%, 12% 92%);
+    shape-outside: polygon(0% 10%, 52% 0%, 100% 14%, 88% 100%, 12% 92%);
+  }
+
+  .lth-talk-headshot img {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    clip-path: polygon(0% 10%, 52% 0%, 100% 14%, 88% 100%, 12% 92%);
+  }
+
+  .lth-talk .card-body { padding-left: 1rem; }
+}
+
+/* On a narrow card the headshot starves the talk title of width. */
+@media (max-width: 575.98px) {
+  .lth-talk-headshot { width: 84px; }
+}
+
+/* Ease off the title once there is room for it to wrap into a ribbon. */
+@media (min-width: 992px) {
+  .lth-talks .card-title { font-size: 1.2rem; }
+}
+
+/* The unfeatured talks share a row, so at half width they need a narrower strip
+   and a smaller title still. Scoped above 768px because below that every
+   headshot becomes a floated shard. Sits after the rule above deliberately:
+   same specificity, so source order is what keeps these cards at 1.1rem. */
+@media (min-width: 768px) {
+  .lth-talk-sm .lth-talk-headshot { width: 100px; }
+  .lth-talk-sm .card-body { padding-left: 116px; }
+  .lth-talk-sm .card-title { font-size: 1.1rem; }
+}
+
+/* No headshot: reclaim the space the strip would otherwise hold open. Last in
+   the block so it beats the breakpoint paddings above. */
+.lth-talk-tbc .card-body { padding-left: 1rem; }
+</style>
+
+<div class="row g-3 lth-talks">
+{%- for s in speakers %}
+<div class="{% if s.featured %}col-12{% else %}col-md-6{% endif %}">
+<div class="card border-primary shadow-sm h-100 mb-0 lth-talk{% if not s.featured %} lth-talk-sm{% endif %}{% if not s.image %} lth-talk-tbc{% endif %}">
+<div class="card-body">
+{%- if s.image %}
+<div class="lth-talk-headshot">
+<img src="{{ s.image }}" alt="{{ s.name }}">
+</div>
+{%- endif %}
+{%- if s.featured %}
+<span class="badge bg-primary mb-2"><i class="bi bi-mic-fill me-1"></i> Featured Talk</span>
+{%- endif %}
+<h3 class="card-title mb-1">{{ s.talk }}</h3>
+<p class="{% if s.bio %}mb-2{% else %}mb-0{% endif %} text-secondary"><i class="bi bi-person-fill me-1"></i> <strong>{{ s.name }}</strong></p>
+{%- if s.bio %}
+<p class="mb-0 small text-secondary">{{ s.bio | safe }}</p>
+{%- endif %}
+</div>
+</div>
+</div>
+{%- endfor %}
+</div>
