@@ -65,6 +65,8 @@ Note: Events are recalculated on each site deployment, whether triggered manuall
 
 If an event has already passed but still appears on the live site and not in the local codebase after cloning, assume the site hasn’t been updated yet.
 
+**Raw HTML and `<script>` in an event body:** keep every `<div>` or `<script>` block free of blank lines. A blank line ends Markdown's raw-HTML block, so everything after it gets wrapped in `<p>` and `&&`/`<` are escaped, which silently breaks the script. Anything that should only appear at certain times (e.g. a "happening now" banner) should be hidden by default (`style="display:none"`) and revealed by the script, so a broken script hides it instead of showing it at the wrong time.
+
 ### Event File Example
 
 ```markdown

@@ -1,6 +1,6 @@
 ---
 title: "LAIT Night Chats: Linux and AI Tuesday Conversations"
-eventDate: 2026-08-25
+eventDate: 2026-09-29
 startTime: 9:00 PM
 endTime: 10:00 PM
 location: "<a href='https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join'>Linux & AI eVenue</a>"
@@ -10,36 +10,37 @@ image: "/assets/images/linux-and-ai-group.webp"
 hideEventDetails: true
 ---
 
-<div id="lait-banner" class="alert alert-success mb-4" role="status">
+<!-- Banner is hidden unless the script shows it. Keep the script free of blank
+     lines: a blank line ends Markdown's raw-HTML block and breaks the JS. -->
+<div id="lait-banner" class="alert alert-info mb-4" role="status" style="display:none">
   <div id="lait-banner-pre" style="display:none">
-    <strong>LAIT Night starts soon</strong> — informal chat about Linux and AI, 9–10pm Melbourne time.<br>
+    <strong>LAIT Night starts soon</strong><span id="lait-countdown"></span> — informal chat about Linux and AI, 9–10pm Melbourne time.<br>
     Audio-only online session. <a href="https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join" class="alert-link">Join on eVenue →</a>
-    <span id="lait-countdown"></span>
   </div>
-  <div id="lait-banner-live">
+  <div id="lait-banner-live" style="display:none">
     <strong>LAIT Night is happening now</strong> — join us until 10pm Melbourne time.<br>
-    Linux turns 35 today. Informal chat about Linux and AI, audio-only. <a href="https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join" class="alert-link">Join on eVenue →</a>
+    Informal chat about Linux and AI, audio-only. <a href="https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join" class="alert-link">Join on eVenue →</a>
   </div>
 </div>
 <script>
 (function () {
-  var warnStart = new Date('2026-08-25T10:30:00Z');
-  var start     = new Date('2026-08-25T11:00:00Z');
-  var end       = new Date('2026-08-25T12:00:00Z');
-  var now       = new Date();
-
-  var banner  = document.getElementById('lait-banner');
-  var pre     = document.getElementById('lait-banner-pre');
-  var live    = document.getElementById('lait-banner-live');
-
-  if (now >= warnStart && now < start) {
-    banner.className = 'alert alert-info mb-4';
-    pre.style.display = '';
-    live.style.display = 'none';
+  // UTC instants for the Melbourne day, start and end of this session.
+  var dayStart = new Date('2026-09-28T14:00:00Z');
+  var start    = new Date('2026-09-29T11:00:00Z');
+  var end      = new Date('2026-09-29T12:00:00Z');
+  var now      = new Date();
+  var banner = document.getElementById('lait-banner');
+  if (now >= dayStart && now < start) {
     var mins = Math.ceil((start - now) / 60000);
-    document.getElementById('lait-countdown').textContent = ' (' + mins + ' min)';
-  } else if (now < warnStart || now >= end) {
-    banner.style.display = 'none';
+    var h = Math.floor(mins / 60), m = mins % 60;
+    document.getElementById('lait-countdown').textContent =
+      ' (in ' + (h ? h + 'h ' : '') + m + ' min)';
+    document.getElementById('lait-banner-pre').style.display = '';
+    banner.style.display = '';
+  } else if (now >= start && now < end) {
+    banner.className = 'alert alert-success mb-4';
+    document.getElementById('lait-banner-live').style.display = '';
+    banner.style.display = '';
   }
 })();
 </script>
@@ -48,13 +49,11 @@ hideEventDetails: true
 
 Season 3 is underway. Join us every Tuesday, 9–10pm Melbourne time. Audio-only online session.
 
-Tonight, 25 August, marks 35 years since Linus Torvalds posted *“I'm doing a (free) operating system (just a hobby, won't be big and professional like gnu)”* to comp.os.minix. Same night, same time — bring a birthday story, a first-distro memory, or whatever you're running on Linux now. LUV is also marking the anniversary at the [Linux Regional Summit](/linux-regional-summit/).
-
 ## Season 3
 
-**August 25th** — Linux's 35th birthday · audio-only online · [Join on eVenue →](https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join)
+**September 29th** — tonight · audio-only online · [Join on eVenue →](https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join)
 
-**August 18th** · **August 11th** · **August 4th** · **July 28th** · **July 21st** · **July 14th** · **July 7th** · **June 30th**
+**September 22nd** · **September 15th** · **September 8th** · **September 1st** · **August 25th** (Linux's 35th birthday) · **August 18th** · **August 11th** · **August 4th** · **July 28th** · **July 21st** · **July 14th** · **July 7th** · **June 30th**
 
 **June 23rd** — Soft launch
 
