@@ -30,7 +30,8 @@ All Eleventy configuration lives in `.eleventy.js`.
 ### Content model
 
 **Events** (`src/events/*.md`) — Markdown with front matter:
-- `eventDate`, `startTime`, `endTime`, `location`, `featured`, optional `gallery`
+- `eventDate`, `startTime`, `endTime`, `location`, `featured`, optional `gallery`, optional `joinUrl`
+- `joinUrl` drives the site-wide "on now" bar (`partials/liveBar.njk` + `assets/js/live.js`) and the `/join` short link, via the `onlineEvents` collection
 - All times are interpreted in `Australia/Sydney` timezone
 - The `.eleventy.js` end-time parser supports multiple formats: `HH:MM`, `HHMM`, 12-hour AM/PM
 
@@ -65,4 +66,11 @@ Top-level pages (`src/*.md` / `src/*.njk`) specify their layout in front matter.
 
 ### Custom filters (`.eleventy.js`)
 
-`formatDate`, `concat`, `hasGallery`, `stripLeadingSlash`, `jsonify`
+`formatDate`, `concat`, `hasGallery`, `stripLeadingSlash`, `jsonify`, `scriptJson`
+
+## Design Standards
+
+Static site, no server-side input; content comes from trusted front matter.
+
+- **OWASP (light):** front-matter values that reach client-side JS are inlined via the `scriptJson` filter (escapes `<`) and written to the DOM with `textContent` only; links taken from data must be `https://`.
+- Anything time-dependent (live bars, redirects) is decided in the browser from absolute instants, never at build time, and is hidden by default so a script failure shows nothing rather than something wrong.

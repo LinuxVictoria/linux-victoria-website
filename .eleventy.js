@@ -25,20 +25,30 @@ module.exports = function (eleventyConfig) {
 
   // Helper: parse an event time string (e.g. "9:00 PM", "21:00") combined with a
   // YYYY-MM-DD date string into a dayjs object in the site timezone.
+  // The time is parsed here rather than by dayjs: dayjs.tz() without a format
+  // ignores AM/PM ("8:30 PM" came out as 9:30 am), and with a format it is
+  // lenient ("4:00PM" came out as 4 am). Returns null for anything unrecognised.
   function parseEventDateTime(dateStr, timeStr) {
     if (!timeStr) return null;
-    const t = timeStr.toString().trim();
-    let combined;
-    if (t.includes(':')) {
-      // Formats like "9:00 PM", "21:00", "4:00PM"
-      combined = dayjs.tz(`${dateStr} ${t}`, SITE_TIMEZONE);
-    } else if (t.length === 3 || t.length === 4) {
-      // Formats like "400" or "1400" (24-hour without colon)
-      const padded = t.padStart(4, '0');
-      combined = dayjs.tz(`${dateStr} ${padded.slice(0, 2)}:${padded.slice(2)}`, SITE_TIMEZONE);
+    const t = timeStr.toString().trim().toLowerCase();
+    let hours, minutes;
+    let m = t.match(/^(\d{1,2})(?:[:.](\d{2}))?\s*([ap])\.?m\.?$/);
+    if (m) {
+      // 12-hour: "9:00 PM", "4:00PM", "7pm", "9.30 am"
+      hours = Number(m[1]);
+      minutes = Number(m[2] || 0);
+      if (hours < 1 || hours > 12) return null;
+      hours = (hours % 12) + (m[3] === 'p' ? 12 : 0);
+    } else if ((m = t.match(/^(\d{1,2}):?(\d{2})$/))) {
+      // 24-hour: "21:00", "09:15", "1400", "400"
+      hours = Number(m[1]);
+      minutes = Number(m[2]);
     } else {
-      combined = dayjs.tz(`${dateStr} ${t}`, SITE_TIMEZONE);
+      return null;
     }
+    if (hours > 23 || minutes > 59) return null;
+    const hhmm = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+    const combined = dayjs.tz(`${dateStr} ${hhmm}`, SITE_TIMEZONE);
     return combined.isValid() ? combined : null;
   }
 
@@ -192,6 +202,42 @@ module.exports = function (eleventyConfig) {
         return endDateTime && endDateTime.isAfter(now);
       })
       .sort(sortEventsAsc);
+  });
+
+  // Upcoming events that can be joined online (have a joinUrl), reduced to what
+  // the "live now" bar and /join need. Times are absolute instants (ISO, UTC)
+  // so the browser can decide "is it on now?" without knowing the site timezone.
+  // Events without a parseable start and end are skipped: a bar that shows at
+  // the wrong time is worse than no bar.
+  eleventyConfig.addCollection("onlineEvents", function (collectionApi) {
+    const now = dayjs().tz(SITE_TIMEZONE);
+    return collectionApi.getFilteredByGlob("src/events/*.md")
+      .filter(e => e.data.joinUrl)
+      .map(e => {
+        const joinUrl = String(e.data.joinUrl).trim();
+        if (!/^https:\/\//.test(joinUrl)) {
+          console.warn(`joinUrl must be https: ${e.data.title || e.inputPath} - ${joinUrl}`);
+          return null;
+        }
+        const dateStr = dayjs(e.data.eventDate).format('YYYY-MM-DD');
+        const start = parseEventDateTime(dateStr, e.data.startTime);
+        const end = parseEventDateTime(dateStr, e.data.endTime);
+        if (!start || !end || !end.isAfter(start)) {
+          console.warn(`onlineEvents: needs a valid startTime and endTime: ${e.data.title || e.inputPath}`);
+          return null;
+        }
+        if (!end.isAfter(now)) return null;
+        return {
+          title: e.data.title,
+          url: e.url,
+          joinUrl,
+          start: start.toISOString(),
+          end: end.toISOString(),
+          when: `${start.format('ddd D MMM, h:mm a')}–${end.format('h:mm a')}`,
+        };
+      })
+      .filter(Boolean)
+      .sort((a, b) => a.start.localeCompare(b.start));
   });
 
   // Past events (event has ended)
@@ -444,6 +490,12 @@ module.exports = function (eleventyConfig) {
   // JSON stringify filter
   eleventyConfig.addFilter("jsonify", function(value) {
     return JSON.stringify(value);
+  });
+
+  // JSON safe to inline in a <script> block: escaping "<" means no value can
+  // close the script tag early.
+  eleventyConfig.addFilter("scriptJson", function(value) {
+    return JSON.stringify(value).replace(/</g, '\\u003c');
   });
 
   // Markdown filter for rendering README content

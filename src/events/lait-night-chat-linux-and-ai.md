@@ -3,47 +3,13 @@ title: "LAIT Night Chats: Linux and AI Tuesday Conversations"
 eventDate: 2026-09-29
 startTime: 9:00 PM
 endTime: 10:00 PM
+joinUrl: "https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join"
 location: "<a href='https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join'>Linux & AI eVenue</a>"
 description: "Join us for weekly informal discussions exploring the intersection of Linux and AI. Every Tuesday night, technologists gather to share knowledge, collaborate, and build community."
 preview_image: "http://linuxvictoria.org/assets/images/linux-and-ai-group.webp"
 image: "/assets/images/linux-and-ai-group.webp"
 hideEventDetails: true
 ---
-
-<!-- Banner is hidden unless the script shows it. Keep the script free of blank
-     lines: a blank line ends Markdown's raw-HTML block and breaks the JS. -->
-<div id="lait-banner" class="alert alert-info mb-4" role="status" style="display:none">
-  <div id="lait-banner-pre" style="display:none">
-    <strong>LAIT Night starts soon</strong><span id="lait-countdown"></span> — informal chat about Linux and AI, 9–10pm Melbourne time.<br>
-    Audio-only online session. <a href="https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join" class="alert-link">Join on eVenue →</a>
-  </div>
-  <div id="lait-banner-live" style="display:none">
-    <strong>LAIT Night is happening now</strong> — join us until 10pm Melbourne time.<br>
-    Informal chat about Linux and AI, audio-only. <a href="https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join" class="alert-link">Join on eVenue →</a>
-  </div>
-</div>
-<script>
-(function () {
-  // UTC instants for the Melbourne day, start and end of this session.
-  var dayStart = new Date('2026-09-28T14:00:00Z');
-  var start    = new Date('2026-09-29T11:00:00Z');
-  var end      = new Date('2026-09-29T12:00:00Z');
-  var now      = new Date();
-  var banner = document.getElementById('lait-banner');
-  if (now >= dayStart && now < start) {
-    var mins = Math.ceil((start - now) / 60000);
-    var h = Math.floor(mins / 60), m = mins % 60;
-    document.getElementById('lait-countdown').textContent =
-      ' (in ' + (h ? h + 'h ' : '') + m + ' min)';
-    document.getElementById('lait-banner-pre').style.display = '';
-    banner.style.display = '';
-  } else if (now >= start && now < end) {
-    banner.className = 'alert alert-success mb-4';
-    document.getElementById('lait-banner-live').style.display = '';
-    banner.style.display = '';
-  }
-})();
-</script>
 
 **LAIT Night Chats** bring together anyone curious about the intersection of Linux and Artificial Intelligence — running local LLMs, AI-powered system administration, open-source ML, and everything in between.
 

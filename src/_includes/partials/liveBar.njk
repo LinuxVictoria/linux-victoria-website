@@ -1,0 +1,12 @@
+{#- Site-wide "on now" bar. Data comes from the onlineEvents collection (events
+    with a joinUrl); /assets/js/live.js decides in the browser whether one is on,
+    so it works without a rebuild while the meeting runs. Hidden by default. -#}
+{% if collections.onlineEvents.length %}
+<script type="application/json" id="online-events">{{ collections.onlineEvents | scriptJson | safe }}</script>
+<div id="live-bar" class="alert alert-success rounded-0 border-0 mb-0 py-2 text-center" role="status" hidden>
+<i class="bi bi-broadcast me-1" aria-hidden="true"></i>
+<strong id="live-bar-title"></strong> <span id="live-bar-state"></span> —
+<a id="live-bar-link" class="alert-link" href="/join/">Join online →</a>
+</div>
+<script src="/assets/js/live.js" defer></script>
+{% endif %}
