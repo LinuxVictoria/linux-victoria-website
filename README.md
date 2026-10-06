@@ -136,6 +136,7 @@ Great turnout at last night's meetup! Here's what we covered...
 | `eventDate` | ✅ Yes | Format: `YYYY-MM-DD` (e.g., `2026-02-15`). Use `"TBA"` if unscheduled. |
 | `startTime` | ✅ Yes | Format: `H:MM AM/PM` (e.g., `7:00 PM`). |
 | `endTime` | ✅ Yes | Format: `H:MM AM/PM` (e.g., `9:00 PM`). |
+| `joinUrl` | ❌ No | `https://` link to the online room. While the event is on (from 15 min before start to `endTime`), every page shows a "join online" bar and `linuxvictoria.org/join` redirects to this link. Needs `startTime` and `endTime`. |
 | `location` | ✅ Yes | Venue name or address. For online events use `"Electron eVenue"` or `"Online - TBC"`. |
 | `image` | Optional | Path to event image. Use `.webp` format. Example: `"/assets/images/event.webp"` |
 | `preview_image` | Optional | Full URL for social sharing. Example: `"https://linuxvictoria.org/assets/images/event.webp"` |

@@ -1,0 +1,28 @@
+---
+title: Join online
+description: The short link to Linux Victoria's online meetings. During a meeting it takes you straight to the room.
+permalink: /join/
+---
+<div id="join-page" class="mx-auto" style="max-width: 40rem">
+
+<h1 class="mb-4">Join online</h1>
+
+<div id="join-live" class="alert alert-success" role="status" hidden>
+<p class="mb-2"><strong id="join-live-title"></strong> is on now <span class="text-body-secondary">(<span id="join-live-when"></span>)</span>.</p>
+<p class="mb-3">Taking you to the room…</p>
+<a id="join-live-link" class="btn btn-success" href="#">Join now →</a>
+</div>
+
+<p>During a meeting, <strong>linuxvictoria.org/join</strong> takes you straight to the online room. The link opens 15 minutes before the start.</p>
+
+<h2 class="h5 mt-4">Coming up online</h2>
+{% if collections.onlineEvents.length %}
+<ul class="list-unstyled">
+{% for ev in collections.onlineEvents %}
+<li class="mb-2" data-end="{{ ev.end }}"><a href="{{ ev.url }}">{{ ev.title }}</a><br><span class="text-body-secondary">{{ ev.when }} Melbourne time</span></li>
+{% endfor %}
+</ul>
+{% endif %}
+<p id="join-empty" {% if collections.onlineEvents.length %}hidden{% endif %}>Nothing scheduled online right now. See <a href="/events/">upcoming events</a>.</p>
+
+</div>

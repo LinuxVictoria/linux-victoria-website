@@ -7,6 +7,7 @@ gallery: "/assets/images/linux-town-hall-community"
 eventDate: 2026-10-06
 startTime: 6:00 PM
 endTime: 8:30 PM
+joinUrl: "https://electronworkshop.com.au/goto/venue"
 location: "In-person: Kathleen Syme Library and Community Centre, Carlton VIC (2nd floor lobby for pre-activity, then the training and learning room) \n Online: Electron eVenue"
 ---
 
