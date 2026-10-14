@@ -1,12 +1,14 @@
 {
   "name": "space-club-template",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A flexible Eleventy-based static site template that’s easy to edit, easy to deploy, and easy to take anywhere.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx @11ty/eleventy && npx pagefind --site _site",
-    "start": "npx @11ty/eleventy --serve"
+    "start": "npx @11ty/eleventy --serve",
+    "cms": "npx decap-server",
+    "serve": "node server.js"
   },
   "keywords": [],
   "author": "",
