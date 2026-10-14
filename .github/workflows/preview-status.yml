@@ -1,0 +1,48 @@
+name: Preview link
+
+# Coolify builds a preview for each PR but doesn't report it to GitHub. This sets a
+# "deploy/preview" commit status with the preview URL, which Decap shows as a link.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  statuses: write
+
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      STATUS_API: repos/${{ github.repository }}/statuses/${{ github.event.pull_request.head.sha }}
+      URL: https://${{ github.event.pull_request.number }}.linuxvictoria-decap.talkingsites.org
+    steps:
+      - name: Mark preview as building
+        run: |
+          gh api "$STATUS_API" -f state=pending -f context=deploy/preview \
+            -f target_url="$URL" -f description="Building preview"
+
+      # server.js sends X-Started, which changes when a new build goes live
+      - name: Wait for the new build
+        run: |
+          started() { curl -s -o /dev/null -D - --max-time 10 "$URL" | tr -d '\r' | awk 'tolower($1)=="x-started:" {print $2}'; }
+          before=$(started)
+          for i in $(seq 1 60); do
+            sleep 10
+            now=$(started)
+            if [ -n "$now" ] && [ "$now" != "$before" ]; then exit 0; fi
+          done
+          exit 1
+
+      - name: Mark preview as ready
+        if: success()
+        run: |
+          gh api "$STATUS_API" -f state=success -f context=deploy/preview \
+            -f target_url="$URL" -f description="Preview ready"
+
+      - name: Mark preview as failed
+        if: failure()
+        run: |
+          gh api "$STATUS_API" -f state=failure -f context=deploy/preview \
+            -f target_url="$URL" -f description="Preview didn't come up within 10 minutes"

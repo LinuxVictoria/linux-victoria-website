@@ -4,6 +4,8 @@ backend:
   branch: main
   base_url: https://linuxvictoria-decap.talkingsites.org
   auth_endpoint: api/auth
+  # Set by .github/workflows/preview-status.yml, shown as the "View preview" link
+  preview_context: deploy/preview
   commit_messages:
     create: "Adds {{collection}} {{slug}}"
     update: "Updates {{collection}} {{slug}}"

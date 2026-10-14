@@ -8,6 +8,8 @@ const path = require("node:path");
 const crypto = require("node:crypto");
 
 const PORT = process.env.PORT || 3000;
+// Changes on every deploy, so the preview-link workflow can tell when a rebuild is live
+const STARTED = Date.now().toString();
 const ROOT = path.join(__dirname, "_site");
 const { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET } = process.env;
 
@@ -87,6 +89,7 @@ function serveFile(res, file, status = 200) {
 
 http
   .createServer((req, res) => {
+    res.setHeader("X-Started", STARTED);
     const url = new URL(req.url, "http://localhost");
     if (url.pathname === "/api/auth" || url.pathname === "/api/callback") {
       handleAuth(req, res, url);
