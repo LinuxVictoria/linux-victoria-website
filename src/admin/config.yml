@@ -2,21 +2,24 @@ backend:
   name: github
   repo: TalkingSites/linux-victoria-website-decap
   branch: main
+  # Spacedash: sign-in is Authentik and GitHub calls go through server.js, which
+  # rewrites base_url (and adds api_root) to whichever address the CMS is opened on
   base_url: https://linuxvictoria-decap.talkingsites.org
   auth_endpoint: api/auth
   # Set by .github/workflows/preview-status.yml, shown as the "View preview" link
   preview_context: deploy/preview
   commit_messages:
-    create: "Adds {{collection}} {{slug}}"
-    update: "Updates {{collection}} {{slug}}"
-    delete: "Deletes {{collection}} {{slug}}"
-    uploadMedia: "Uploads {{path}}"
-    deleteMedia: "Deletes {{path}}"
+    create: "Adds {{collection}} {{slug}} ({{author-name}})"
+    update: "Updates {{collection}} {{slug}} ({{author-name}})"
+    delete: "Deletes {{collection}} {{slug}} ({{author-name}})"
+    uploadMedia: "Uploads {{path}} ({{author-name}})"
+    deleteMedia: "Deletes {{path}} ({{author-name}})"
 
 # Every edit becomes a pull request, nothing goes live until it's merged
 publish_mode: editorial_workflow
 
-# `npx decap-server` + http://localhost:8080/admin/ edits local files without signing in
+# `npx decap-server` + the Eleventy dev server edits local files without signing in
+# (server.js leaves this out, so the built site always signs in with Authentik)
 local_backend: true
 
 site_url: https://linuxvictoria-decap.talkingsites.org

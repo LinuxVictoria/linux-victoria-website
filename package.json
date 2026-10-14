@@ -1,6 +1,6 @@
 {
   "name": "space-club-template",
-  "version": "1.2.0",
+  "version": "1.4.0",
   "description": "A flexible Eleventy-based static site template that’s easy to edit, easy to deploy, and easy to take anywhere.",
   "main": "index.js",
   "scripts": {
