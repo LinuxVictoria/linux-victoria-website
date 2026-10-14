@@ -1,0 +1,76 @@
+backend:
+  name: github
+  repo: TalkingSites/linux-victoria-website-decap
+  branch: main
+  base_url: https://linuxvictoria-decap.talkingsites.org
+  auth_endpoint: api/auth
+  commit_messages:
+    create: "Adds {{collection}} {{slug}}"
+    update: "Updates {{collection}} {{slug}}"
+    delete: "Deletes {{collection}} {{slug}}"
+    uploadMedia: "Uploads {{path}}"
+    deleteMedia: "Deletes {{path}}"
+
+# Every edit becomes a pull request, nothing goes live until it's merged
+publish_mode: editorial_workflow
+
+# `npx decap-server` + http://localhost:8080/admin/ edits local files without signing in
+local_backend: true
+
+site_url: https://linuxvictoria-decap.talkingsites.org
+display_url: https://linuxvictoria-decap.talkingsites.org
+
+media_folder: src/assets/images/uploads
+public_folder: /assets/images/uploads
+
+collections:
+  - name: events
+    label: Events
+    label_singular: Event
+    folder: src/events
+    extension: md
+    format: frontmatter
+    create: true
+    slug: "{{eventDate | date('YYYY-MM-DD')}}_{{slug}}"
+    sortable_fields: [eventDate, title]
+    summary: "{{eventDate | date('YYYY-MM-DD')}}: {{title}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Event date, name: eventDate, widget: datetime, format: YYYY-MM-DD, date_format: YYYY-MM-DD, time_format: false }
+      - { label: End date (multi-day events), name: eventEndDate, widget: datetime, format: YYYY-MM-DD, date_format: YYYY-MM-DD, time_format: false, required: false }
+      - { label: Start time, name: startTime, widget: string, required: false, hint: "e.g. 6:30 PM (Melbourne time)" }
+      - { label: End time, name: endTime, widget: string, required: false, hint: "e.g. 9:00 PM" }
+      - { label: Location, name: location, widget: string, required: false, hint: "Plain text or a link" }
+      - { label: Join URL (online events), name: joinUrl, widget: string, required: false, pattern: ["^https://", "Must start with https://"], hint: "Shows the site-wide 'on now' bar while the event runs" }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Social preview image URL, name: preview_image, widget: string, required: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Featured, name: featured, widget: boolean, required: false, default: false }
+      - { label: Hide event details, name: hideEventDetails, widget: boolean, required: false, default: false }
+      - { label: Gallery folder, name: gallery, widget: string, required: false, hint: "e.g. /assets/images/my-event" }
+      - { label: Recap post, name: recapPost, widget: string, required: false, hint: "Link to the post written after the event" }
+      # Raw first: many pages carry inline HTML and Nunjucks that the rich text mode would rewrite
+      - { label: Body, name: body, widget: markdown, modes: [raw, rich_text] }
+
+  - name: posts
+    label: Posts
+    label_singular: Post
+    folder: src/posts
+    extension: md
+    format: frontmatter
+    create: true
+    slug: "{{postDate | date('YYYY-MM-DD')}}_{{slug}}"
+    sortable_fields: [postDate, title]
+    summary: "{{postDate | date('YYYY-MM-DD')}}: {{title}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Post date, name: postDate, widget: datetime, format: YYYY-MM-DD, date_format: YYYY-MM-DD, time_format: false }
+      - { label: Author, name: author, widget: string, required: false }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Social preview image URL, name: preview_image, widget: string, required: false }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Gallery folder, name: gallery, widget: string, required: false }
+      - { label: Event page, name: eventPage, widget: string, required: false, hint: "Link to the event this post is about" }
+      - { label: Body, name: body, widget: markdown, modes: [raw, rich_text] }
