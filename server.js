@@ -58,9 +58,28 @@ async function oidc() {
   return discovery;
 }
 
-// Signed-in editors: session token -> { user, expires }. Kept in memory, so a redeploy
-// just asks people to log in again.
-const sessions = new Map();
+// Signed-in editors get a signed token instead of a server-side session, so logins
+// survive a redeploy (every Publish redeploys the site). The token carries the person's
+// name, email and expiry, signed with a key derived from the Authentik client secret.
+function sessionKey() {
+  return crypto.createHash("sha256").update(`spacedash-session:${ENV.OIDC_CLIENT_SECRET}`).digest();
+}
+
+function signSession(user) {
+  const payload = Buffer.from(JSON.stringify({ ...user, exp: Date.now() + SESSION_HOURS * 3600 * 1000 })).toString("base64url");
+  const sig = crypto.createHmac("sha256", sessionKey()).update(payload).digest("base64url");
+  return `${payload}.${sig}`;
+}
+
+function verifySession(token) {
+  const [payload, sig] = String(token).split(".");
+  if (!payload || !sig) return null;
+  const expected = crypto.createHmac("sha256", sessionKey()).update(payload).digest();
+  const given = Buffer.from(sig, "base64url");
+  if (given.length !== expected.length || !crypto.timingSafeEqual(given, expected)) return null;
+  const user = JSON.parse(Buffer.from(payload, "base64url").toString("utf8"));
+  return user.exp > Date.now() ? user : null;
+}
 
 // The popup posts the result back to the CMS window, using Decap's handshake
 function authResult(res, status, content, allowedOrigin) {
@@ -124,23 +143,14 @@ async function handleAuth(req, res, url) {
   if (!tokens.access_token) throw new Error(tokens.error_description || "No token from Authentik");
   const info = await (await fetch(config.userinfo_endpoint, { headers: { Authorization: `Bearer ${tokens.access_token}` } })).json();
 
-  const token = crypto.randomBytes(32).toString("hex");
-  sessions.set(token, {
-    user: { sub: info.sub, name: info.name || info.preferred_username, email: info.email, login: info.preferred_username },
-    expires: Date.now() + SESSION_HOURS * 3600 * 1000,
-  });
+  const token = signSession({ sub: info.sub, name: info.name || info.preferred_username, email: info.email, login: info.preferred_username });
   authResult(res, "success", { token, provider: "github" }, origin(req));
 }
 
 function sessionFor(req) {
-  const token = /^(?:token|Bearer) (\w+)$/.exec(req.headers.authorization || "")?.[1];
-  const session = token && sessions.get(token);
-  if (!session) return null;
-  if (session.expires < Date.now()) {
-    sessions.delete(token);
-    return null;
-  }
-  return session;
+  const token = /^(?:token|Bearer) ([\w.-]+)$/.exec(req.headers.authorization || "")?.[1];
+  const user = token && verifySession(token);
+  return user ? { user } : null;
 }
 
 // --- GitHub App token, limited to this site's repo ---------------------------
