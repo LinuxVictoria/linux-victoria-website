@@ -8,8 +8,9 @@
   <link rel="icon" href="/assets/images/favicon-lv.ico" />
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@3.16.3/dist/decap-cms.js"></script>
-  <script src="/admin/components.js"></script>
-  <script src="/admin/spacedash.js"></script>
+  <!-- SpaceDash (github.com/TalkingSites/spacedash): Decap plus our widgets and login touches; @1 picks up every 1.x fix.
+       This site has its own blocks (components.js) instead of the SpaceClub template's. -->
+  <script>window.SPACEDASH = { blocks: false, scripts: ["/admin/components.js"] };</script>
+  <script src="https://cdn.jsdelivr.net/npm/spacedash@1/dist/spacedash.min.js"></script>
 </body>
 </html>
