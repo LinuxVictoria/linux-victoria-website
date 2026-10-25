@@ -1,6 +1,6 @@
 ---
 title: "LAIT Night Chats: Linux and AI Tuesday Conversations"
-eventDate: 2026-10-20
+eventDate: 2026-10-27
 startTime: 9:00 PM
 endTime: 10:00 PM
 joinUrl: "https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join"
@@ -17,9 +17,9 @@ Season 3 is underway. Join us every Tuesday, 9–10pm Melbourne time. Audio-only
 
 ## Season 3
 
-**October 20th** — tonight · audio-only online · [Join on eVenue →](https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join)
+**October 27th** — audio-only online · [Join on eVenue →](https://evenue.electronworkshop.com.au/rooms/rde-tyh-fqh-9z7/join)
 
-**October 13th** · **October 6th** · **September 29th** · **September 22nd** · **September 15th** · **September 8th** · **September 1st** · **August 25th** (Linux's 35th birthday) · **August 18th** · **August 11th** · **August 4th** · **July 28th** · **July 21st** · **July 14th** · **July 7th** · **June 30th**
+**October 20th** · **October 13th** · **October 6th** · **September 29th** · **September 22nd** · **September 15th** · **September 8th** · **September 1st** · **August 25th** (Linux's 35th birthday) · **August 18th** · **August 11th** · **August 4th** · **July 28th** · **July 21st** · **July 14th** · **July 7th** · **June 30th**
 
 **June 23rd** — Soft launch
 
