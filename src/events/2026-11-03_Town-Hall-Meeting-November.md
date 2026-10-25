@@ -45,3 +45,10 @@ RSVP link:
 ### Schedule
 
 - TBC
+
+
+## The Community That Shows Up
+
+Beyond the talks, Town Hall is tea and biscuits, hardware swaps, book circulation, and pizza afterwards. Here's the crowd from June and July.
+
+{% include "partials/communityGallery.njk" %}
