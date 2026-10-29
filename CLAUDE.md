@@ -32,6 +32,8 @@ All Eleventy configuration lives in `.eleventy.js`.
 **Events** (`src/events/*.md`) — Markdown with front matter:
 - `eventDate`, `startTime`, `endTime`, `location`, `featured`, optional `gallery`, optional `joinUrl`
 - `joinUrl` drives the site-wide "on now" bar (`partials/liveBar.njk` + `assets/js/live.js`) and the `/join` short link, via the `onlineEvents` collection
+- Optional `joinStartTime` / `joinEndTime` narrow that bar to the online part of a longer event (they fall back to `startTime` / `endTime`)
+- Optional `homeCardDateOnly: true` makes the home page card show only the date (no time or location)
 - All times are interpreted in `Australia/Sydney` timezone
 - The `.eleventy.js` end-time parser supports multiple formats: `HH:MM`, `HHMM`, 12-hour AM/PM
 

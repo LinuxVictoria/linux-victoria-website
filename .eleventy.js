@@ -220,8 +220,10 @@ module.exports = function (eleventyConfig) {
           return null;
         }
         const dateStr = dayjs(e.data.eventDate).format('YYYY-MM-DD');
-        const start = parseEventDateTime(dateStr, e.data.startTime);
-        const end = parseEventDateTime(dateStr, e.data.endTime);
+        // joinStartTime/joinEndTime cover events where only part of the day is
+        // online (e.g. a hybrid evening session after an in-person afternoon).
+        const start = parseEventDateTime(dateStr, e.data.joinStartTime || e.data.startTime);
+        const end = parseEventDateTime(dateStr, e.data.joinEndTime || e.data.endTime);
         if (!start || !end || !end.isAfter(start)) {
           console.warn(`onlineEvents: needs a valid startTime and endTime: ${e.data.title || e.inputPath}`);
           return null;

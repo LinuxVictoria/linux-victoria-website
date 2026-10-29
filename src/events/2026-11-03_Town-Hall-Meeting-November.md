@@ -1,14 +1,17 @@
 ---
-title: Linux Town Hall November
-description: Join us for the Linux Town Hall November meeting at Inspire9, after an afternoon of Tech Inclusion and dinner in Richmond on Melbourne Cup Day.
-tags: ["Town Hall", "2026", "In-person", "Online"]
-image: "/assets/images/linux-town-hall-november-26.webp"
+title: Linux Day Summit November 2026
+description: Afternoon session in person, then the Town Hall in the evening, hybrid.
+tags: ["Summit", "Town Hall", "2026", "In-person", "Online"]
+image: "/assets/images/linux-day-summit-november-26.webp"
 gallery: "/assets/images/linux-town-hall-community"
 eventDate: 2026-11-03
-startTime: 7:00 PM
+startTime: 3:00 PM
 endTime: 8:00 PM
+joinStartTime: 7:00 PM
+joinEndTime: 8:00 PM
 joinUrl: "https://electronworkshop.com.au/goto/venue"
-location: "In-person: Inspire9, Richmond \n Online: Electron eVenue"
+homeCardDateOnly: true
+location: "Inspire9, Richmond and Online"
 ---
 
 <style>
@@ -96,8 +99,8 @@ location: "In-person: Inspire9, Richmond \n Online: Electron eVenue"
 </style>
 
 <div class="lth-intro">
-<p>Join us for the Linux Town Hall November meeting at Inspire9.</p>
-<p>It's Melbourne Cup Day, a public holiday, so we're making a day of it with Tech Inclusion in the afternoon and dinner in Richmond before the Town Hall. Come for any part.</p>
+<p>Join us for the Linux Day Summit at Inspire9: an afternoon session in person, dinner in Richmond, then the Linux Town Hall in the evening, in person and online.</p>
+<p>Expect hardware, posters, a community gallery and a jobs discussion, with plenty of time to talk to one another. Come for any part.</p>
 </div>
 
 <div class="lth-rsvp">
