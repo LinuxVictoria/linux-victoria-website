@@ -1,0 +1,11 @@
+{#- Events with several sessions in different places set `sessions` (a list of
+    { time, place }) and show them in place of the single time and location. -#}
+<div class="d-flex gap-2 mb-2">
+<i class="bi bi-clock" aria-hidden="true"></i>
+<div>
+<span class="fw-semibold">Sessions:</span>
+{%- for s in sessions %}
+<div>{{ s.time }} {{ s.place }}</div>
+{%- endfor %}
+</div>
+</div>

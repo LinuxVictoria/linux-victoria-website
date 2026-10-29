@@ -10,7 +10,11 @@ endTime: 8:00 PM
 joinStartTime: 7:00 PM
 joinEndTime: 8:00 PM
 joinUrl: "https://electronworkshop.com.au/goto/venue"
-homeCardDateOnly: true
+sessions:
+  - time: 3pm
+    place: Richmond
+  - time: 7pm
+    place: Online and Richmond
 location: "Inspire9, Richmond and Online"
 ---
 

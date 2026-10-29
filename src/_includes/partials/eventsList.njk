@@ -51,9 +51,10 @@
 <span>{{ event.data.eventDate | formatDate }}</span>
 </div>
 {% endif %}
-{#- An event can opt in to a lighter home page card with `homeCardDateOnly: true`:
-    just the date, with time and location left to the event page. #}
-{% if not (event.data.homeCardDateOnly and (type == "preview" or type == "previewPast" or type == "previewUpcoming")) %}
+{% if event.data.sessions %}
+{% set sessions = event.data.sessions %}
+{% include "partials/sessions.njk" %}
+{% else %}
 {% if event.data.startTime or event.data.endTime %}
 <div class="d-flex align-items-center gap-2 mb-2">
 <i class="bi bi-clock" aria-hidden="true"></i>
