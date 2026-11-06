@@ -1,0 +1,125 @@
+---
+title: Linux Victoria Annual Report 2026-27
+description: "What Linux Victoria has done so far in the 2026-27 financial year. In progress, updated as the year goes."
+permalink: "/annual-report-2026-27/"
+layout: false
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Linux Victoria Annual Report 2026-27</title>
+  <meta name="description" content="What Linux Victoria has done so far in the 2026-27 financial year.">
+  <link rel="icon" href="/assets/images/favicon-lv.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/report.css">
+</head>
+
+<body data-pagefind-ignore="all">
+
+  <div class="toolbar">
+    <button type="button" id="printReport">Print or save as PDF</button>
+  </div>
+
+  <main class="report">
+
+    <header class="cover">
+      <div class="cover-top">
+        <div class="cover-logos">
+          <img class="cover-logo-lv" src="/assets/images/annual-report/logo-lv.svg" alt="Linux Victoria">
+          <img class="cover-logo-luv" src="/assets/images/logo-luv.webp" alt="LUV">
+        </div>
+        <h1>Annual Report<br>2026-27</h1>
+        <p class="cover-period">From 1 July 2026</p>
+        <p class="cover-status">In progress, last updated 5 November 2026</p>
+      </div>
+      {{ reportMeshes.townHallJuly | safe }}
+      <dl class="stats">
+        <div><dd>7</dd><dt>events on the calendar so far</dt></div>
+        <div><dd>5</dd><dt>Town Halls</dt></div>
+        <div><dd>18</dd><dt>LAIT Night sessions</dt></div>
+        <div><dd>1</dd><dt>Software Freedom Day</dt></div>
+      </dl>
+    </header>
+
+    <div class="sheet">
+    <section class="section">
+      <h2>President's preface</h2>
+      <p class="confirm">To confirm: Alexar to write this when the year closes.</p>
+    </section>
+
+    <section class="section">
+      <h2>Events so far</h2>
+
+      <div class="duo">
+        <div>
+          <img class="event-mark" src="/assets/images/annual-report/logos/sfd.webp" alt="Software Freedom Day">
+          <span class="meta">19 to 29 September 2026 · Richmond, Bendigo and more</span>
+          <h3>Software Freedom Day 2026</h3>
+          <p>Host-led activities across Victoria, with the Melbourne event at Inspire9 on Saturday 19 September: install fests for laptops that can't run Windows 11 and older Macs, an open exchange, talks and discussion.</p>
+          <p class="confirm">To confirm: the final list of locations, and event photos. Only three photos from that day were on the phone, none of them at Inspire9, and there are none on Nextcloud. This iMac shot is from 10:36am on the 19th and its location needs checking.</p>
+        </div>
+        <div class="duo-mesh">{{ reportMeshes.sfd2026 | safe }}</div>
+      </div>
+
+      <div class="duo flip">
+        <div>
+          <span class="meta">3 November 2026 · Inspire9, Richmond and online</span>
+          <h3>Linux Unconference</h3>
+          <p>On Melbourne Cup Day: an unconference in person, dinner in Richmond, then the Town Hall in the evening.</p>
+          <p class="confirm">To confirm: the topics covered, and photos of the day itself. The phone only has the signage.</p>
+        </div>
+        <div class="duo-mesh">{{ reportMeshes.unconference | safe }}</div>
+      </div>
+
+      <article class="feature">
+        <span class="meta">24 and 25 August 2026 · To confirm</span>
+        <h3>Linux Regional Summit and Linux's 35th birthday</h3>
+        <p>The community was invited to nominate a host town or region, with nominations closing on 4 August.</p>
+        <p class="confirm">To confirm: whether this ran, where, and what happened. The website still says the location is to be decided. Notes from 25 August describe a "Linux Week" with morning, afternoon and evening meetings.</p>
+      </article>
+    </section>
+    </div>
+
+    <div class="sheet">
+    <section class="section">
+      <h2 class="with-mark"><img class="event-mark" src="/assets/images/annual-report/logos/event-town-hall.webp" alt="">Town Halls</h2>
+      <p class="lead">Hybrid at Kathleen Syme Library in Carlton, now with a hardware exchange and book circulation from 6pm, tea and biscuits, and pizza afterwards.</p>
+      <table>
+        <thead>
+          <tr><th scope="col">Date</th><th scope="col">Where</th><th scope="col">On the agenda</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>7 Jul 2026</td><td>Kathleen Syme and online</td><td>UN Open Source Week recap, the server and domain, Regional Summit</td></tr>
+          <tr><td>4 Aug 2026</td><td>Kathleen Syme and online</td><td>Astha Adhikari on Finding Linux: Why Nothing Else Comes Close</td></tr>
+          <tr><td>1 Sep 2026</td><td>Kathleen Syme and online</td><td>Wencey Wang on porting Debian 13 to LoongArch, Andrew Pam on life with a Framework laptop, Alexar Pendashteh on Omarchy</td></tr>
+          <tr><td>6 Oct 2026</td><td>Kathleen Syme and online</td><td>Monthly meeting</td></tr>
+          <tr><td>3 Nov 2026</td><td>Inspire9 and online</td><td>Town Hall following the Linux Unconference</td></tr>
+        </tbody>
+      </table>
+      <p class="confirm">To confirm: the October agenda, which the website doesn't list.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="with-mark"><img class="event-mark" src="/assets/images/annual-report/logos/event-lait.webp" alt="">LAIT Night</h2>
+      <p>Season 3 carries on from last year: audio-only and online, every Tuesday from 9 to 10pm. There have been 18 sessions since 1 July, including one on 25 August for Linux's 35th birthday.</p>
+    </section>
+
+    <footer class="footer">
+      <strong>Linux Victoria</strong> · <a href="https://linuxvictoria.org">linuxvictoria.org</a> · Previous: <a href="/annual-report-2025-26/">2025-26 report</a>
+    </footer>
+    </div>
+
+  </main>
+
+  <script>
+    document.getElementById('printReport').addEventListener('click', function () {
+      window.print();
+    });
+  </script>
+</body>
+
+</html>

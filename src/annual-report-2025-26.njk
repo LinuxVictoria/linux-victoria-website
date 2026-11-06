@@ -1,0 +1,469 @@
+---
+title: Linux Victoria Annual Report 2025-26
+description: "What Linux Victoria did in the 2025-26 financial year: events, Town Halls, LAIT Nights and the people who made them happen."
+permalink: "/annual-report-2025-26/"
+layout: false
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Linux Victoria Annual Report 2025-26</title>
+  <meta name="description" content="What Linux Victoria did in the 2025-26 financial year.">
+  <link rel="icon" href="/assets/images/favicon-lv.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/report.css">
+</head>
+
+<body data-pagefind-ignore="all">
+
+  <div class="toolbar">
+    <button type="button" id="printReport">Print or save as PDF</button>
+  </div>
+
+  <main class="report">
+
+    <header class="cover">
+      <div class="cover-top">
+        <div class="cover-logos">
+          <img class="cover-logo-lv" src="/assets/images/annual-report/logo-lv.svg" alt="Linux Victoria">
+          <img class="cover-logo-luv" src="/assets/images/logo-luv.webp" alt="LUV">
+        </div>
+        <h1>Annual Report<br>2025-26</h1>
+        <p class="cover-period">1 July 2025 to 30 June 2026</p>
+      </div>
+      {{ reportMeshes.cover | safe }}
+      <dl class="stats">
+        <div><dd>23</dd><dt>events on the calendar</dt></div>
+        <div><dd>11</dd><dt>Town Halls</dt></div>
+        <div><dd>3</dd><dt>LAIT Night seasons started</dt></div>
+        <div><dd>3</dd><dt>cities and towns visited</dt></div>
+      </dl>
+    </header>
+
+    <div class="sheet">
+    <section class="section">
+      <h2>President's preface</h2>
+      <p class="confirm">To confirm: Alexar to write or approve this. For now it's Alexar's own opening from the 2025 LUV report, which covers the calendar year rather than this financial year.</p>
+      <p class="lead">Around a year ago, a small team put their hands up to take an active role in defining and shaping our local Linux community here in Victoria. It is my honour as the lead organiser to share our journey, what we tried as a team and accomplished as a community and what we learned. We are hoping this will be helpful for our future partners, volunteers and communities who are in similar positions as we are.</p>
+      <p class="lead">The 2025 LUV committee was formed at a long overdue AGM in an entirely different world than the previous AGM back in 2019. Looking back, the work of the committee in 2025 can be described as re-building organisational infrastructure as well as revisiting the identity of the group and the broader community.</p>
+      <p class="signoff"><strong>Alexar Pendashteh</strong><br>President, Linux Victoria</p>
+    </section>
+
+    <section class="section">
+      <h2>The year at a glance</h2>
+      <p class="lead">Linux Victoria spent this financial year turning a small volunteer team into a regular rhythm: a monthly Town Hall, an ongoing conversation about Linux and AI, and a run of bigger community days.</p>
+      <p>We took Linux out to Morwell and Canberra, brought the Penguin Picnic back after six years, and returned Software Freedom Day to Melbourne PC User Group. Document Freedom Day and Hardware Freedom Day joined the calendar in 2026, the second of them a first for Australia and a first collaboration with Melbourne Tech Guilds.</p>
+      <p>The year finished with the Town Hall moving to Kathleen Syme Library in Carlton, and a third season of LAIT Night getting underway.</p>
+    </section>
+    </div>
+
+    <div class="sheet">
+    <section class="section">
+      <div class="flagship-head">
+        <div>
+          <span class="meta">25 August 2025 · Morwell Innovation Centre and online</span>
+          <h2>Linux Regional Summit, Gippsland</h2>
+        </div>
+        <div class="logo-row"><img src="/assets/images/annual-report/logos/morwell-innovation-centre.webp" alt="Morwell Innovation Centre"><img src="/assets/images/annual-report/logos/federation-university.webp" alt="Federation University"><img src="/assets/images/annual-report/logos/serversaurus.webp" alt="Serversaurus"></div>
+      </div>
+      <p>In partnership with Federation University, a full day of talks, demos and local tech, celebrating Linux's 34th birthday in regional Victoria.</p>
+      <div class="band">{{ reportMeshes.summitTour | safe }}</div>
+      <div class="caption-row">
+        <h3>Gippsland Tech School tour</h3>
+        <p>Cait from Gippsland Tech School took us through the school, from the model city to the robots, for a look at the next generation of innovators in the region.</p>
+      </div>
+      <article class="zig">
+        <div class="zig-mesh">{{ reportMeshes.summitTalks | safe }}</div>
+        <div>
+          <h3>Talks and demos</h3>
+          <p>Brock gave a step-by-step demonstration of installing and using openSUSE. Marty from Serversaurus shared the benefits of Linux and open source for business.</p>
+        </div>
+      </article>
+      <article class="zig flip">
+        <div class="zig-mesh">{{ reportMeshes.summitOnline | safe }}</div>
+        <div>
+          <h3>Linux Regional Discourse</h3>
+          <p>The hybrid session joined the room with speakers online. Andrew showed how to use Ollama on your own machine, and Kiki explored how internet governance and open source principles build inclusive digital communities.</p>
+        </div>
+      </article>
+      <article class="callout">
+        <div>
+          <h3>Linux's 34th birthday</h3>
+          <p>The day finished with cake and a group photo, with newcomers and familiar faces, many attending in person for the first time.</p>
+        </div>
+        <div class="callout-mesh">{{ reportMeshes.summitBirthday | safe }}</div>
+      </article>
+    </section>
+    </div>
+
+    <div class="sheet">
+    <section class="section">
+      <div class="flagship-head">
+        <div>
+          <span class="meta">20 September 2025 · Melbourne PC User Group, Moorabbin and online</span>
+          <h2>Software Freedom Day 2025</h2>
+        </div>
+        <div class="logo-row"><img src="/assets/images/annual-report/logos/sfd.webp" alt="Software Freedom Day"><img src="/assets/images/annual-report/logos/melbpc.webp" alt="Melbourne PC User Group"><img src="/assets/images/annual-report/logos/electron-workshop.webp" alt="Electron Workshop"></div>
+      </div>
+      <p>We had the privilege of returning the flagship event of Software Freedom Day to one of its legendary past hosts, with the generous support of the Melbourne PC committee. It was a free event, open to newcomers, in person in Moorabbin and online in the Electron eVenue.</p>
+      <div class="band">{{ reportMeshes.sfdTalks | safe }}</div>
+      <div class="caption-row">
+        <h3>Presentations and lightning talks</h3>
+        <p>The room settled in for presentations and lightning talks, with a reminder on screen that freedom also means sharing.</p>
+      </div>
+      <article class="zig">
+        <div class="zig-mesh">{{ reportMeshes.sfdVolunteers | safe }}</div>
+        <div>
+          <h3>Volunteers</h3>
+          <p>Our volunteers brought the day together, with laptops, balloons and a very large Tux.</p>
+        </div>
+      </article>
+      <article class="callout">
+        <div>
+          <h3>Everyone together</h3>
+          <p>Thank you to everyone who came along. The afternoon also included a tour of the makerspace.</p>
+        </div>
+        <div class="callout-mesh">{{ reportMeshes.sfdCommunity | safe }}</div>
+      </article>
+      <p class="confirm">To confirm: the speakers and talk titles, and that the makerspace tour ran. This page comes from the published schedule and the photos.</p>
+    </section>
+    </div>
+
+    <div class="sheet">
+    <section class="section">
+      <h2>Canberra</h2>
+
+      <article class="feature">
+        <img class="event-mark" src="/assets/images/annual-report/logos/event-unforum.webp" alt="Canberra Un-forum">
+        <span class="meta">20 to 22 December 2025 · Skill Studio, Civic Square and online</span>
+        <h3>Canberra Un-forum: Linux Victoria and Skill Studio</h3>
+        <p>Three days of discussions and hands-on workshops on AI and open technology. The AI day covered running agentic AI offline on a Linux machine. The Linux day had a workshop where participants built a website from scratch and left with a live site of their own, then a discussion on digital freedoms and the technology commons. An open day closed things out with an unconference and a Linux install fest.</p>
+        <p class="confirm">To confirm: photos of the Un-forum, and whether Linux for Beginners at Skill Studio on 10 December was part of this collaboration. This text comes from the published program, so please check it matches what ran.</p>
+      </article>
+
+      <div class="duo">
+        <div>
+          <img class="event-mark" src="/assets/images/annual-report/logos/event-eo.webp" alt="LUV Breakfast at Everything Open">
+          <span class="meta">22 January 2026 · Mizzuna Cafe, University of Canberra</span>
+          <h3>LUV Breakfast at Everything Open</h3>
+          <p>A catch-up on the second day of the conference.</p>
+        </div>
+        <div class="duo-mesh">{{ reportMeshes.eo | safe }}</div>
+      </div>
+
+      <div class="duo flip">
+        <div>
+          <img class="event-mark" src="/assets/images/annual-report/logos/event-collab.webp" alt="Linux Collab with Canberra">
+          <span class="meta">24 January 2026 · Dissent Cafe and Bar</span>
+          <h3>Linux Collab with Canberra</h3>
+          <p>An install fest and a day of discussions, with sessions on Ventoy multi-boot drives and running Linux on Mac hardware.</p>
+        </div>
+        <div class="duo-mesh">{{ reportMeshes.canberra | safe }}</div>
+      </div>
+    </section>
+    </div>
+
+    <div class="sheet">
+    <section class="section">
+      <div class="flagship-head">
+        <div>
+          <span class="meta">31 January 2026 · Yarra Bank Reserve, Hawthorn</span>
+          <h2>Penguin Picnic</h2>
+        </div>
+        <div class="logo-row"><img src="/assets/images/annual-report/logos/event-picnic.webp" alt="Penguin Picnic"></div>
+      </div>
+      <p>Our first Penguin Picnic since 2020, and it exceeded all expectations.</p>
+      <div class="band">{{ reportMeshes.picnicGather | safe }}</div>
+      <div class="caption-row">
+        <h3>Back at Yarra Bank Reserve</h3>
+        <p>After six years it was truly special to gather again, with so many regular members alongside wonderful alumni who made the journey back to reconnect with the community.</p>
+      </div>
+      <article class="zig">
+        <div class="zig-mesh">{{ reportMeshes.picnicFood | safe }}</div>
+        <div>
+          <h3>A feast to share</h3>
+          <p>Everyone who brought food and drinks made for an incredible spread, with vegetarian, vegan and other dietary options so everyone could enjoy it. Special thanks to those who volunteered their cars to fetch supplies.</p>
+        </div>
+      </article>
+      <article class="zig flip">
+        <div class="zig-mesh">{{ reportMeshes.picnicCompany | safe }}</div>
+        <div>
+          <h3>Good company</h3>
+          <p>Conversations ranged from the latest in open source to memories of past LUV gatherings, with familiar faces and new ones swapping stories and tech tips.</p>
+        </div>
+      </article>
+      <article class="callout callout-text">
+        <div>
+          <h3>Thank you</h3>
+          <p>To everyone who joined us, especially those who came a long way from regional Victoria. We're already looking forward to the next one.</p>
+        </div>
+      </article>
+    </section>
+    </div>
+
+    <div class="sheet">
+    <section class="section">
+      <div class="flagship-head">
+        <div>
+          <span class="meta">15 February 2026 · Melbourne Business School and online</span>
+          <h2>Let's Hello World: n8n</h2>
+        </div>
+        <div class="logo-row"><img src="/assets/images/annual-report/logos/event-hello-world.webp" alt="Let's Hello World"></div>
+      </div>
+      <article class="zig">
+        <div class="zig-mesh">{{ reportMeshes.helloWorld | safe }}</div>
+        <div>
+          <h3>Getting started together</h3>
+          <p>For anyone who had heard of n8n but hadn't used it yet: a session on the open source automation tool, to get started and get a Hello World running.</p>
+        </div>
+      </article>
+      <div class="notes">
+        <article class="note">
+          <span class="meta">16 February 2026 · Electron eVenue</span>
+          <h3>Docker vs Podman</h3>
+          <p>A friendly online discussion comparing the two container tools.</p>
+        </article>
+      </div>
+    </section>
+    <section class="section">
+      <div class="flagship-head">
+        <div>
+          <span class="meta">25 March 2026 · Inspire9, Richmond</span>
+          <h2>Document (and Data) Freedom Day</h2>
+        </div>
+        <div class="logo-row"><img src="/assets/images/annual-report/logos/event-dfd.webp" alt="Document Freedom Day"></div>
+      </div>
+      <article class="zig flip">
+        <div class="zig-mesh">{{ reportMeshes.dfd | safe }}</div>
+        <div>
+          <h3>Open standards</h3>
+          <p>A gathering on the importance of open standards and free document formats, with discussion and lightning talks. We handed out the Open Standards flyer on the day.</p>
+        </div>
+      </article>
+    </section>
+    </div>
+
+    <div class="sheet">
+    <section class="section">
+      <div class="flagship-head">
+        <div>
+          <span class="meta">18 April 2026 · Inspire9, Richmond</span>
+          <h2>Hardware Freedom Day</h2>
+        </div>
+        <div class="logo-row"><img src="/assets/images/annual-report/logos/hfd.webp" alt="Hardware Freedom Day"><img src="/assets/images/annual-report/logos/melbourne-tech-guilds.svg" alt="Melbourne Tech Guilds"><img src="/assets/images/annual-report/logos/inspire9.webp" alt="Inspire9"><img src="/assets/images/annual-report/logos/electron-workshop.webp" alt="Electron Workshop"></div>
+      </div>
+      <p>The first collaboration between Melbourne Tech Guilds and Linux Victoria, and the first Hardware Freedom Day event in Australia.</p>
+      <div class="band">{{ reportMeshes.hfdFloor | safe }}</div>
+      <div class="caption-row">
+        <h3>Exhibition floor</h3>
+        <p>The first half of the day had a wonderful buzz, with people moving between exhibits, poking at robots and getting deep into conversations with the people who built them.</p>
+      </div>
+      <div class="band">{{ reportMeshes.hfdHardware | safe }}</div>
+      <div class="caption-row">
+        <h3>Hardware on show</h3>
+        <p>Six projects filled the floor: Minimax, RoboKitty, a hacked Robot Arm, SparkNodes, a Smart Home and LightBox.</p>
+      </div>
+      <div class="band">{{ reportMeshes.hfdTalks | safe }}</div>
+      <div class="caption-row">
+        <h3>Lightning talks</h3>
+        <p>After lunch the room regrouped for a mix of planned and spontaneous talks, from the making of a machine learning robot to how poor documentation can derail a project.</p>
+      </div>
+      <article class="callout callout-text">
+        <div>
+          <h3>Thank you</h3>
+          <p>To the Melbourne Tech Guilds team and Mick for the hardware, knowledge and energy, and to volunteers Nick, Les, Fareed and Robert on the day. Alexar was our MC.</p>
+        </div>
+      </article>
+    </section>
+    </div>
+
+    <div class="sheet">
+    <section class="section">
+      <h2 class="with-mark"><img class="event-mark" src="/assets/images/annual-report/logos/event-town-hall.webp" alt="">Town Halls</h2>
+      <p class="lead">Eleven meetings, and the place where most of the above was planned. Online through 2025, hybrid at Inspire9 from February 2026, then hybrid at Kathleen Syme Library from June.</p>
+      <table>
+        <thead>
+          <tr><th scope="col">Date</th><th scope="col">Where</th><th scope="col">On the agenda</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1 Jul 2025</td><td>Online</td><td>Quarter planning, financial year review, Regional Summit and Software Freedom Day planning</td></tr>
+          <tr><td>12 Aug 2025</td><td>Online</td><td>MLAI collaboration, Gippsland summit, Linux Birthday, Ballarat install fest planning</td></tr>
+          <tr><td>9 Sep 2025</td><td>Online</td><td>Monthly meeting</td></tr>
+          <tr><td>14 Oct 2025</td><td>Online</td><td>Monthly meeting</td></tr>
+          <tr><td>11 Nov 2025</td><td>Online</td><td>Monthly meeting</td></tr>
+          <tr><td>13 Jan 2026</td><td>Online</td><td>Year in review</td></tr>
+          <tr><td>10 Feb 2026</td><td>Inspire9 and online</td><td>New working groups, AI, gaming, regional and quarterly meetings</td></tr>
+          <tr><td>10 Mar 2026</td><td>Inspire9 and online</td><td>Document Freedom Day</td></tr>
+          <tr><td>7 Apr 2026</td><td>Inspire9 and online</td><td>Hardware Freedom Day, Project Moonshine demo (remote displays for Linux desktops)</td></tr>
+          <tr><td>5 May 2026</td><td>Inspire9 and online</td><td>Copy Fail kernel vulnerability, Ivanhoe Linux Day, regional re-connect</td></tr>
+          <tr><td>2 Jun 2026</td><td>Kathleen Syme and online</td><td>Duncan from MLUG on saving bash cd history, workshops, quarter planning</td></tr>
+        </tbody>
+      </table>
+      <p class="confirm">To confirm: agenda items for September to November 2025, which the website doesn't list.</p>
+      <div class="notes">
+        <article class="note">
+          <span class="meta">9 December 2025 · Online, then dinner</span>
+          <h3>AGM and Christmas Party</h3>
+          <p>The year in review, plans for the next one and committee elections, followed by a Christmas party at a nearby restaurant.</p>
+        </article>
+      </div>
+      <p class="confirm">To confirm: photos of the AGM. They aren't on the site, the phone or Nextcloud, so Telegram is the last place to check.</p>
+    </section>
+    </div>
+
+    <div class="sheet">
+    <section class="section">
+      <h2>Town Hall highlights</h2>
+      <div class="th-grid">
+        <article class="th-card">
+          {{ reportMeshes.townHallFeb | safe }}
+          <h3>February Town Hall</h3>
+          <p>Town Halls moved to a hybrid format at Inspire9, in the room and online.</p>
+        </article>
+        <article class="th-card">
+          {{ reportMeshes.townHallApril | safe }}
+          <h3>April Town Hall</h3>
+          <p>A work-in-progress report and demo of Project Moonshine, remote displays for Linux desktops.</p>
+        </article>
+        <article class="th-card">
+          {{ reportMeshes.townHallMay | safe }}
+          <h3>May Town Hall</h3>
+          <p>Copy Fail, a recent Linux kernel vulnerability, was on the agenda, alongside regional planning.</p>
+        </article>
+      </div>
+      <article class="feature">
+        <div class="band">{{ reportMeshes.townHallJune | safe }}</div>
+        <h3>June Town Hall</h3>
+        <p>Held at Kathleen Syme Library for the first time in a long time, with special guest Duncan from MLUG on saving bash cd history, and dinner at Papa Gino's afterwards.</p>
+      </article>
+    </section>
+    </div>
+
+    <div class="sheet">
+    <section class="section">
+      <h2 class="with-mark"><img class="event-mark" src="/assets/images/annual-report/logos/event-lait.webp" alt="">LAIT Night</h2>
+      <div class="duo">
+        <p class="lead">Linux and AI Tuesday Chats are informal, community-led conversations about where the two meet: local LLMs, AI tools for system administration, open source ML and everything in between.</p>
+        <div class="duo-mesh">{{ reportMeshes.lait | safe }}</div>
+      </div>
+      <div class="seasons">
+        <div class="season">
+          <h3>Season 1</h3>
+          <span class="meta">July to September 2025</span>
+          <p>Weekly chats exploring open source and open weight tools, plus the August talk at the Machine Learning &amp; AI Meetup.</p>
+        </div>
+        <div class="season">
+          <h3>Season 2</h3>
+          <span class="meta">17 February to 21 April 2026</span>
+          <p>Ten sessions, from Whisper, Goose and Jan AI to agentic protocols, robotics simulation and hardware for local AI.</p>
+        </div>
+        <div class="season">
+          <h3>Season 3</h3>
+          <span class="meta">From 23 June 2026</span>
+          <p>A soft launch on 23 June, then weekly audio-only sessions on Tuesdays, 9 to 10pm. It continues into next year's report.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Behind the scenes</h2>
+      <p>Much of the work doesn't show up on a calendar. Volunteers kept building the website, mailing list and bot integrations, and the community meets online in the Electron eVenue, a self-hosted Big Blue Button instance managed by Electron Workshop and hosted by Serversaurus.</p>
+      <p>We also worked to bring communities closer together, including Melbourne PC User Group, MLUG, Computerbank Victoria and Linux users interstate.</p>
+    </section>
+    </div>
+
+    <div class="sheet">
+    <section class="section">
+      <h2>Linux Victorians across the community</h2>
+      <article class="feature">
+        <div class="band">{{ reportMeshes.eoTalk | safe }}</div>
+        <span class="meta">21 January 2026 · Everything Open 2026, University of Canberra</span>
+        <h3>Sophie Allen at Everything Open</h3>
+        <p>Sophie Allen and Alexar Pendashteh presented Running Agentic AI Offline on your Linux Machine, a hands-on tutorial showing how to run a capable agent entirely offline on your own Linux laptop with open source tools.</p>
+        <p class="caption">Photos from the Everything Open 2026 gallery.</p>
+      </article>
+      <div class="notes">
+        <article class="note">
+          <span class="meta">19 August 2025 · 912 Collins St, Docklands</span>
+          <h3>Alexar Pendashteh at the Machine Learning &amp; AI Meetup</h3>
+          <p>On behalf of Linux Victoria, Alexar presented findings from exploring the intersection of Linux and AI, mainly open-weight models and running them locally.</p>
+        </article>
+      </div>
+      <p class="confirm">To confirm: permission and photo credit for the Everything Open photos, and any photos of the Meetup talk.</p>
+    </section>
+    </div>
+
+    <div class="sheet">
+    <section class="section">
+      <h2>Acknowledgements</h2>
+      <p>None of this happens without the people who turn up, bring hardware, give talks and do the work between events.</p>
+
+      <div class="ack-columns">
+        <div>
+          <h3>Team</h3>
+          <ul class="names">
+            <li><strong>Alexar Pendashteh</strong>, President</li>
+            <li><strong>Sophie Allen</strong>, Treasurer</li>
+            <li>Andrew, Brian, Brock, Fareed, Les, Nate, Nick, Robert, Simon, Steve and Terry</li>
+            <li>From our sister organisations: Bill, Kirsten, Lisa, Marty, Mic, Paul and Russel</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Speakers</h3>
+          <ul class="names">
+            <li><strong>Brock</strong>, installing and using openSUSE</li>
+            <li><strong>Marty</strong>, Linux and open source for business</li>
+            <li><strong>Andrew</strong>, running Ollama on your own machine</li>
+            <li><strong>Kiki</strong>, internet governance and inclusive communities</li>
+            <li><strong>Mick and Melbourne Tech Guilds</strong>, Hardware Freedom Day</li>
+            <li><strong>Duncan</strong>, saving bash cd history</li>
+            <li><strong>Sophie Allen and Alexar Pendashteh</strong>, running agentic AI offline</li>
+          </ul>
+        </div>
+      </div>
+      <p class="confirm">To confirm: full names and spelling (Brock is also spelled Brok on the site), anyone missing, and speakers not recorded on the site, including Software Freedom Day 2025, Project Moonshine and Document Freedom Day.</p>
+
+      <h3 class="partners-title">Partners</h3>
+      <ul class="partners">
+          <li><div class="partner-logo"><img src="/assets/images/annual-report/logos/inspire9.webp" alt=""></div><strong>Inspire9</strong><span>Venue and support</span></li>
+          <li><div class="partner-logo"><img src="/assets/images/annual-report/logos/electron-workshop.webp" alt=""></div><strong>Electron Workshop</strong><span>Infrastructure and sponsorship</span></li>
+          <li><div class="partner-logo"><img src="/assets/images/annual-report/logos/serversaurus.webp" alt=""></div><strong>Serversaurus</strong><span>Hosting and sponsorship</span></li>
+          <li><div class="partner-logo"><img src="/assets/images/annual-report/logos/vinnys.webp" alt=""></div><strong>Vinny's Eatery</strong><span>Community support</span></li>
+          <li><div class="partner-logo"><img src="/assets/images/annual-report/logos/melbourne-tech-guilds.svg" alt=""></div><strong>Melbourne Tech Guilds</strong><span>Hardware Freedom Day</span></li>
+          <li><div class="partner-logo"><span class="partner-name">Machine Learning &amp; AI Meetup</span></div><strong>Machine Learning &amp; AI Meetup</strong><span>Linux and AI talk</span></li>
+          <li><div class="partner-logo"><img src="/assets/images/annual-report/logos/melbpc.webp" alt=""></div><strong>Melbourne PC User Group</strong><span>Software Freedom Day</span></li>
+          <li><div class="partner-logo"><img src="/assets/images/annual-report/logos/federation-university.webp" alt=""></div><strong>Federation University</strong><span>Regional Summit</span></li>
+          <li><div class="partner-logo"><img src="/assets/images/annual-report/logos/morwell-innovation-centre.webp" alt=""></div><strong>Morwell Innovation Centre</strong><span>Regional Summit</span></li>
+          <li><div class="partner-logo"><img src="/assets/images/annual-report/logos/skill-studio.svg" alt=""></div><strong>Skill Studio</strong><span>Canberra Un-forum</span></li>
+          <li><div class="partner-logo"><img src="/assets/images/annual-report/logos/computerbank.webp" alt=""></div><strong>Computerbank Victoria</strong><span>Community partner</span></li>
+          <li><div class="partner-logo"><span class="partner-name">Gippsland Tech School</span></div><strong>Gippsland Tech School</strong><span>Regional Summit tour</span></li>
+          <li><div class="partner-logo"><span class="partner-name">Kathleen Syme Library</span></div><strong>Kathleen Syme Library</strong><span>Town Hall home</span></li>
+          <li><div class="partner-logo"><span class="partner-name">Dissent Cafe and Bar</span></div><strong>Dissent Cafe and Bar</strong><span>Linux Collab in Canberra</span></li>
+          <li><div class="partner-logo"><span class="partner-name">MLUG</span></div><strong>MLUG</strong><span>Community partner</span></li>
+      </ul>
+      <p class="confirm">To confirm: logos for Gippsland Tech School, Kathleen Syme Library, Dissent Cafe and Bar and MLUG (the Machine Learning &amp; AI Meetup has no logo), and the Skill Studio mark, which is taken from its website icon. Partners should check their logo use before this goes out.</p>
+    </section>
+    </div>
+
+    <div class="sheet sheet-end">
+    <div class="closing">{{ reportMeshes.closing | safe }}</div>
+
+    <footer class="footer">
+      <strong>Linux Victoria</strong> · <a href="https://linuxvictoria.org">linuxvictoria.org</a> · Next: <a href="/annual-report-2026-27/">2026-27 report, in progress</a>
+    </footer>
+    </div>
+
+  </main>
+
+  <script>
+    document.getElementById('printReport').addEventListener('click', function () {
+      window.print();
+    });
+  </script>
+</body>
+
+</html>
