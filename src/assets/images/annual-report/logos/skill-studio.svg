@@ -1,0 +1,18 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_16_448" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="12" y="54" width="179" height="95">
+<circle cx="100.241" cy="98.9631" r="40" transform="rotate(-15 100.241 98.9631)" fill="white" stroke="#A662E7" stroke-width="9"/>
+<circle cx="61.6845" cy="127.968" r="17.3157" transform="rotate(-15 61.6845 127.968)" fill="white" stroke="#A662E7" stroke-width="7"/>
+<ellipse cx="101.254" cy="102.315" rx="83.8529" ry="19.5" transform="rotate(-15 101.254 102.315)" stroke="#A662E7" stroke-width="16"/>
+</mask>
+<g mask="url(#mask0_16_448)">
+<rect x="-21.2938" y="77.6939" width="224" height="104" transform="rotate(-15 -21.2938 77.6939)" fill="url(#paint0_linear_16_448)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_16_448" x1="54.7061" y1="54.1939" x2="176.565" y2="188.681" gradientUnits="userSpaceOnUse">
+<stop stop-color="#3BC7F6"/>
+<stop offset="0.298077" stop-color="#A855F7"/>
+<stop offset="0.693358" stop-color="#CC4D9E"/>
+<stop offset="1" stop-color="#EF4444"/>
+</linearGradient>
+</defs>
+</svg>
