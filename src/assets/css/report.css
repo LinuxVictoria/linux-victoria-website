@@ -396,6 +396,41 @@ tr { break-inside: avoid; }
 
 .footer a { color: #fff; }
 
+/* ---------- Draft marking, remove with the draft class on body at release ---------- */
+.cover-draft {
+  display: inline-block;
+  margin: 18px 0 0;
+  padding: 8px 14px;
+  background: var(--flag);
+  color: var(--flag-ink);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.draft .cover, .draft .sheet { position: relative; }
+
+.draft .cover::before, .draft .sheet::before {
+  content: "DRAFT";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 4;
+  transform: translate(-50%, -50%) rotate(-32deg);
+  font-size: 170px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  color: rgba(128, 61, 153, 0.1);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.draft .cover::before { color: rgba(255, 255, 255, 0.1); }
+
+.to-add { background: var(--flag); color: var(--flag-ink); }
+
+.partner-logo-missing { background: var(--flag); color: var(--flag-ink); font-size: 12px; text-align: center; }
+
 /* ---------- Draft flags, remove each once confirmed ---------- */
 .confirm {
   margin: 10px 0;
@@ -452,6 +487,7 @@ tr { break-inside: avoid; }
   .cover, .sheet { box-shadow: none; overflow: visible; }
   .sheet { min-height: 0; margin: 0; break-before: page; }
   .sheet::after { content: none; }
+  .draft .sheet::before { top: 120mm; }
   .cover { height: 293mm; min-height: 0; overflow: hidden; break-after: page; }
   .cover-top { padding: 22mm 18mm 8mm; }
   .cover h1 { font-size: 46pt; }

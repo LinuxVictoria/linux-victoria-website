@@ -25,7 +25,7 @@ const sets = {
   },
   summitTour: {
     label: "Gippsland Tech School tour",
-    height: 190,
+    height: 172,
     photos: [
       { src: `${mesh}/20250825_133332.webp`, alt: "The group around a large model city" },
       { src: `${mesh}/20250825_131947.webp`, alt: "A welcome in front of the projector" },
@@ -54,7 +54,7 @@ const sets = {
   summitBirthday: {
     label: "Linux's 34th birthday",
     tone: "dark",
-    height: 165,
+    height: 150,
     layout: "cluster",
     photos: [{ src: `${mesh}/20250825_164217.webp`, alt: "Attendees together with a birthday cake" }],
   },
@@ -142,7 +142,7 @@ const sets = {
   },
   hfdFloor: {
     label: "The exhibition floor at Hardware Freedom Day",
-    height: 195,
+    height: 178,
     photos: [
       { src: `${mesh}/IMG_20260418_113859467_MFNR.webp`, alt: "People gathered around robots on an exhibition table" },
       { src: `${mesh}/IMG_4777.webp`, alt: "Exhibition tables at Inspire9" },
@@ -152,7 +152,7 @@ const sets = {
   hfdHardware: {
     label: "Hardware on show at Hardware Freedom Day",
     mirror: true,
-    height: 195,
+    height: 178,
     photos: [
       { src: `${mesh}/PXL_20260418_014646982.RAW-01.COVER.webp`, alt: "A desktop CNC machine with a copper board" },
       { src: `${mesh}/PXL_20260418_015535211.RAW-01.COVER.webp`, alt: "A circuit board with a keypad" },
@@ -216,17 +216,12 @@ const sets = {
   },
   eoTalk: {
     label: "Sophie Allen's tutorial at Everything Open 2026",
-    height: 195,
+    height: 215,
     photos: [
       { src: `${mesh}/eo-3W1A4334.webp`, alt: "Sophie Allen presenting at the front of the room" },
-      { src: `${mesh}/eo-3W1A4351.webp`, alt: "Sophie Allen speaking, seen side on" },
-      { src: `${mesh}/eo-3W1A4357.webp`, alt: "Sophie Allen gesturing while presenting" },
-      { src: `${mesh}/eo-3W1A4339.webp`, alt: "Sophie Allen at the front of the room" },
       { src: `${mesh}/eo-3W1A4342.webp`, alt: "Attendees following along on laptops" },
-      { src: `${mesh}/eo-3W1A4345.webp`, alt: "Attendees working on their laptops" },
+      { src: `${mesh}/eo-3W1A4351.webp`, alt: "Sophie Allen speaking, seen side on" },
       { src: `${mesh}/eo-3W1A4348.webp`, alt: "Attendees listening" },
-      { src: `${mesh}/eo-3W1A4340.webp`, alt: "A row of attendees listening" },
-      { src: `${mesh}/eo-3W1A4331.webp`, alt: "Sophie Allen at the lectern with a laptop" },
     ],
   },
   closing: {
